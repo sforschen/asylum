@@ -1,5 +1,5 @@
 import ProjectCard from "../components/ProjectCard";
-console.log('ProjectCard import:', ProjectCard);
+import Cards from "../components/blocks/cards/Cards";
 
 export default function Home() {
   return (
@@ -24,6 +24,10 @@ export default function Home() {
             description="Built and structured new hubspot build to accomodate 5+ brands."
           />
         </div>
+      </section>
+
+      <section className="mt-12">
+        <Cards />
       </section>
     </main>
   );
