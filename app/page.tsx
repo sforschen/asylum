@@ -1,5 +1,4 @@
 import ProjectCard from "../components/ProjectCard";
-import Cards from "../components/blocks/cards/Cards";
 
 export default function Home() {
   return (
@@ -26,9 +25,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-12">
-        <Cards />
-      </section>
     </main>
   );
 }
