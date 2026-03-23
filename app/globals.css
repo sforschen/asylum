@@ -3,13 +3,72 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* colors */
+  --link-color: var(--clr-light-blue);
+  --link-hover-color: var(--clr-orange);
+  --background-color: var(--clr-white);
+  --light-color: var(--clr-lighter-blue);
+  --dark-color: #ccc;
+  --text-color: var(--clr-black);
+  --clr-black: #0B0B0B;
+  --clr-light-grey: #efefef;
+  --clr-red: #C02042;
+  --clr-light-red: #F9EAED;
+  --clr-blue: #052B3E;
+  --clr-light-blue: #1C76C4;
+  --clr-lighter-blue: #eff8fc;
+  --clr-green: #36964b;
+  --clr-light-green: #F6FBF5;
+  --clr-orange: #D94928;
+  --clr-light-orange: #FBEAE6;
+  --clr-white: #fff;
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+
+  /* fonts */
+  --body-font-family: var(--font-lexend), sans-serif;
+  --heading-font-family: var(--body-font-family);
+  --fixed-font-family: var(--body-font-family);
+
+  /* body sizes */
+  --body-font-size-xl: 2rem;  
+  --body-font-size-l: 1.75rem;  
+  --body-font-size-m: 1.5rem; 
+  --body-font-size-s: 1rem; 
+  --body-font-size-xs: .75rem; 
+
+  /* heading sizes */
+  --heading-font-size-xxl: 3rem;
+  --heading-font-size-xl: 2.5rem;
+  --heading-font-size-l: 2rem;   
+  --heading-font-size-m: 1.75rem;    
+  --heading-font-size-s: 1.5rem;   
+  --heading-font-size-xs: 1.25rem; 
+
+  /* misc. */
+  --max-content-width: 80rem;      
+  --default-content-gap: 48px;
+  --spc-xl: var(--default-content-gap);
+  --spc-l: 3rem; 
+  --spc-m: 2rem; 
+  --spc-s: 1rem; 
+  --spc-xs: .5rem; 
+
+  /* breakpoints */
+  --breakpoint-xxl: 36rem; 
+  --breakpoint-xl: 30rem;
+  --breakpoint-l: 24rem;  
+  --breakpoint-m: 18rem;  
+  --breakpoint-s: 12rem;   
+  --breakpoint-xs: 6rem; 
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--body-font-family);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +81,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--body-font-family);
 }
