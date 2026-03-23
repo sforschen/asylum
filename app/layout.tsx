@@ -1,10 +1,4 @@
-import { Lexend } from "next/font/google";
 import "./globals.css";
-
-const lexend = Lexend({
-  subsets: ["latin"],
-  variable: "--font-lexend",
-});
 
 export default function RootLayout({
   children,
@@ -13,7 +7,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} bg-white text-black`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-white text-black">
         <header className="p-6 border-b">
           <nav className="max-w-6xl mx-auto flex justify-between">
             <div className="font-bold">Serenity Forschen</div>
