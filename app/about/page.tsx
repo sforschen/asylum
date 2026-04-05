@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import Image from "next/image";
+
 import ContentSection from "../../components/ContentSection";
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import KnowledgeCard from "../../components/KnowledgeCard";
@@ -80,9 +82,12 @@ export default function AboutPage() {
       <section className="section highlight">
         <div className="page-container page-section-content about-highlight">
           <div className="about-profile-image">
-            <img
+            <Image
               src="https://www.youneedserenity.com/media_135c912f84c197714e8676b933161af1597abeff9.png?width=750&format=png&optimize=medium"
               alt="Serenity Forschen portrait"
+              width={750}
+              height={750}
+              sizes="(min-width: 900px) 24rem, 100vw"
             />
           </div>
           <div className="about-profile-copy">

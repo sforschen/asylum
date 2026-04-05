@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
+import Image from "next/image";
 
 import ContentSection from "./ContentSection";
 
@@ -58,7 +59,13 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
             }
           }}
         >
-          <img src={item.imageSrc} alt={item.imageAlt ?? item.title} loading="lazy" />
+          <Image
+            src={item.imageSrc}
+            alt={item.imageAlt ?? item.title}
+            width={1200}
+            height={600}
+            sizes="(min-width: 960px) 50vw, 100vw"
+          />
           <div className="overlay-text">{expanded ? "CLOSE" : "EXPAND"}</div>
         </div>
       ) : null}

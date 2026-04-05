@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import ContentSection from "./ContentSection";
 
 export type GalleryItemLink = {
@@ -51,7 +53,13 @@ export default function GallerySection({ id, title, items, sectionClassName }: P
           {items.map((item, index) => (
             <li key={`${id}-${item.title}-${index}`}>
               <div className="gallery-card-image">
-                <img src={item.imageSrc} alt={item.imageAlt ?? item.title} loading="lazy" />
+                <Image
+                  src={item.imageSrc}
+                  alt={item.imageAlt ?? item.title}
+                  width={1200}
+                  height={1200}
+                  sizes="(min-width: 960px) 33vw, (min-width: 792px) 50vw, 100vw"
+                />
               </div>
               <div className="gallery-card-body">
                 <p>
