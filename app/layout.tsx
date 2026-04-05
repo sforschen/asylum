@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import "./globals.css";
 import HeaderNav from "../components/HeaderNav";
+import ScrollReveal from "../components/ScrollReveal";
 
 // Shared site chrome for every route.
 export default function RootLayout({
@@ -13,6 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning>
         <HeaderNav />
+        <ScrollReveal />
 
         {children}
 

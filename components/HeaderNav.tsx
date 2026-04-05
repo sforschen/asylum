@@ -23,7 +23,6 @@ export default function HeaderNav() {
           >
             <span />
             <span />
-            <span />
           </button>
         </div>
 
