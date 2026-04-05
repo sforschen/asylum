@@ -1061,17 +1061,13 @@ main .section.highlight-light-green {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spc-s);
-  color: var(--clr-blue);
+  color: var(--clr-green);
 }
 
 .home-pillar-icon svg {
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+  fill: currentColor;
 }
 
 .home-callout-copy {
@@ -1127,17 +1123,13 @@ main .section.highlight-light-green {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spc-s);
-  color: var(--clr-blue);
+  color: var(--clr-green);
 }
 
 .ai-highlight-icon svg {
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+  fill: currentColor;
 }
 
 .case-study-feed-header {

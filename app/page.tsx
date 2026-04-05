@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react";
 
 import websiteHeader from "../content/website-header.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
@@ -18,12 +19,7 @@ const homePillars: HomePillar[] = [
     description:
       "I lead small, energetic teams through complex work by setting direction, reducing friction, and building systems people can actually use.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <circle cx="24" cy="13" r="7" />
-        <path d="M10 39c1-7 7-12 14-12s13 5 14 12" />
-        <path d="M8 21h10" />
-        <path d="M30 21h10" />
-      </svg>
+      <FeaturePicker aria-hidden="true" />
     ),
     href: "/leadership",
     ctaLabel: "Explore Leadership",
@@ -33,12 +29,7 @@ const homePillars: HomePillar[] = [
     description:
       "From campaign planning to asset governance, I build structures, workflows, and relationships that support multi-brand marketing without slowing teams down.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="8" y="26" width="8" height="14" rx="1" />
-        <rect x="20" y="18" width="8" height="22" rx="1" />
-        <rect x="32" y="10" width="8" height="30" rx="1" />
-        <path d="M8 10l10 6 8-5 14-3" />
-      </svg>
+      <SkillLevelAdvanced aria-hidden="true" />
     ),
     href: "/experience",
     ctaLabel: "View Experience",
@@ -48,13 +39,7 @@ const homePillars: HomePillar[] = [
     description:
       "I connect content, creative, platforms, and process so websites, DAMs, project management, and reporting can evolve without constant rework.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="6" y="10" width="14" height="10" rx="2" />
-        <rect x="28" y="10" width="14" height="10" rx="2" />
-        <rect x="17" y="28" width="14" height="10" rx="2" />
-        <path d="M20 15h8" />
-        <path d="M24 20v8" />
-      </svg>
+      <Webhook aria-hidden="true" />
     ),
     href: "/knowledge",
     ctaLabel: "See Knowledge",

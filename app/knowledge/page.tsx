@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Bot, IbmWatsonxCodeAssistantForZValidationAssistant, UserAdmin } from "@carbon/icons-react";
 
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
@@ -118,14 +119,7 @@ const aiHighlights = [
     description:
       "Codex helped build and refine parts of this site, including page structure updates, content organization, reusable components, and practical cleanup work that made iteration faster.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="8" y="9" width="32" height="24" rx="3" />
-        <path d="M16 39h16" />
-        <path d="M24 33v6" />
-        <path d="M18 18l-4 3 4 3" />
-        <path d="M30 18l4 3-4 3" />
-        <path d="M26 16l-4 10" />
-      </svg>
+      <IbmWatsonxCodeAssistantForZValidationAssistant aria-hidden="true" />
     ),
   },
   {
@@ -133,15 +127,7 @@ const aiHighlights = [
     description:
       "I find emerging technology genuinely exciting because it opens up new ways to research, prototype, streamline workflows, and reduce the friction that slows strong teams down.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <circle cx="24" cy="18" r="8" />
-        <path d="M24 26v12" />
-        <path d="M18 38h12" />
-        <path d="M12 18h4" />
-        <path d="M32 18h4" />
-        <path d="M17 11l-3-3" />
-        <path d="M31 11l3-3" />
-      </svg>
+      <Bot aria-hidden="true" />
     ),
   },
   {
@@ -149,10 +135,7 @@ const aiHighlights = [
     description:
       "I use AI to speed up drafting, analysis, experimentation, and technical exploration, but I still rely on editing, critical thinking, and human context to shape the final result.",
     icon: (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M24 8l14 8v16l-14 8-14-8V16z" />
-        <path d="M18 24l4 4 8-8" />
-      </svg>
+      <UserAdmin aria-hidden="true" />
     ),
   },
 ];
