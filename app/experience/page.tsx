@@ -1,5 +1,6 @@
 import ExperienceCardsSection, { type ExperienceItem } from "../../components/ExperienceCardsSection";
 import PageIntro from "../../components/PageIntro";
+import { getCaseStudyUrl } from "../../lib/case-studies";
 
 // Full experience inventory, later split into featured and archive sections.
 const experienceItems: ExperienceItem[] = [
@@ -41,7 +42,7 @@ const experienceItems: ExperienceItem[] = [
     imageSrc:
       "https://www.youneedserenity.com/media_1457d32de283c663183fce53b5a5017f02e24b4a3.png?width=750&format=png&optimize=medium",
     link: {
-      href: "https://www.youneedserenity.com/portfolio/elixir-site",
+      href: getCaseStudyUrl("elixir-site"),
       label: "View Case Study",
     },
   },

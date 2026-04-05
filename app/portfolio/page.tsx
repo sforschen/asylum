@@ -1,5 +1,6 @@
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import PageIntro from "../../components/PageIntro";
+import { getCaseStudyUrl } from "../../lib/case-studies";
 
 // Gallery data mirrors the sections on the live portfolio site.
 type PortfolioSection = {
@@ -18,12 +19,12 @@ const portfolioSections: PortfolioSection[] = [
       {
         title: "Elixir's Website",
         imageSrc: "https://www.youneedserenity.com/media_10cd620b5802038dc6b72c0a54674b045e33f2cd9.jpg?width=750&format=jpg&optimize=medium",
-        links: [{ href: "https://www.youneedserenity.com/portfolio/elixir-site", label: "View Case Study" }],
+        links: [{ href: getCaseStudyUrl("elixir-site"), label: "Read Case Study" }],
       },
       {
         title: "Optum Website",
         imageSrc: "https://www.youneedserenity.com/media_179a80b17bfe9a6ef588ec0b3e8e6719ee0ebb45c.png?width=750&format=png&optimize=medium",
-        links: [{ href: "https://www.youneedserenity.com/portfolio/optum-site", label: "View Case Study" }],
+        links: [{ href: getCaseStudyUrl("optum-site"), label: "Read Case Study" }],
       },
       {
         title: "CPMI Solutions Website",
@@ -101,7 +102,7 @@ const portfolioSections: PortfolioSection[] = [
           href: "https://www.instagram.com/drevisualsphotography",
           label: "@drevisualsphotography",
         },
-        links: [{ href: "https://www.youneedserenity.com/portfolio/t-and-u-event-signage", label: "Learn More" }],
+        links: [{ href: getCaseStudyUrl("t-and-u-event-signage"), label: "Read Case Study" }],
       },
       {
         title: "Punny Bumper Stickers",
@@ -111,7 +112,7 @@ const portfolioSections: PortfolioSection[] = [
           href: "https://www.instagram.com/drevisualsphotography",
           label: "@drevisualsphotography",
         },
-        links: [{ href: "https://www.youneedserenity.com/portfolio/serious-silly", label: "View Case Study" }],
+        links: [{ href: getCaseStudyUrl("serious-silly"), label: "Read Case Study" }],
       },
       {
         title: "Castle & Cooke Brochure",

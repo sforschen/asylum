@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import ContentSection from "./ContentSection";
@@ -29,12 +30,19 @@ type Props = {
 
 function GalleryLink({ href, label, emphasis }: GalleryItemLink) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
+  const isExternal = href.startsWith("http");
 
   return (
     <p>
-      <a className="button" href={href} target="_blank" rel="noreferrer">
-        {content}
-      </a>
+      {isExternal ? (
+        <a className="button" href={href} target="_blank" rel="noreferrer">
+          {content}
+        </a>
+      ) : (
+        <Link className="button" href={href}>
+          {content}
+        </Link>
+      )}
     </p>
   );
 }

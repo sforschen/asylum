@@ -455,7 +455,7 @@ main .section a:hover {
 .page-lead {
   max-width: 48rem;
   margin: 1rem 0 0;
-  color: #666;
+  color: var(--clr-green);
   font-size: var(--body-font-size-m);
 }
 
@@ -1114,6 +1114,167 @@ main .section.highlight-light-green {
   max-width: 48rem;
 }
 
+.case-study-feed-header {
+  display: grid;
+  gap: var(--spc-s);
+  margin-bottom: var(--spc-m);
+}
+
+.case-study-feed-intro {
+  max-width: 48rem;
+}
+
+.case-study-feed-action {
+  margin-bottom: 0;
+}
+
+.case-study-feed-grid {
+  display: grid;
+  gap: var(--spc-m);
+}
+
+.case-study-card {
+  padding: var(--spc-m);
+  border: 1px solid var(--clr-black);
+  border-radius: 6px;
+  background-color: var(--background-color);
+}
+
+.case-study-card-meta,
+.case-study-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--spc-s);
+  color: var(--clr-orange);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+}
+
+.case-study-card-meta {
+  align-items: center;
+}
+
+.case-study-card-meta span,
+.case-study-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.case-study-hero-meta span + span::before {
+  content: "|";
+  color: var(--clr-orange);
+}
+
+.case-study-card-read-time {
+  margin-left: auto;
+  color: var(--clr-black);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+}
+
+.case-study-card-action {
+  margin-bottom: 0;
+}
+
+.case-study-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spc-s);
+  margin-top: var(--spc-m);
+}
+
+.case-study-hero {
+  display: grid;
+  gap: var(--spc-l);
+  align-items: center;
+}
+
+.case-study-hero-copy {
+  min-width: 0;
+}
+
+.case-study-hero-media img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--clr-black);
+  border-radius: 999px;
+}
+
+.case-study-hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.case-study-metrics {
+  display: grid;
+  gap: var(--spc-s);
+}
+
+.case-study-metric {
+  padding: var(--spc-m);
+  border: 1px solid var(--clr-black);
+  border-radius: 6px;
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.case-study-metric-value {
+  margin-bottom: var(--spc-xs);
+  color: var(--clr-black);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+}
+
+.case-study-metric-label {
+  margin-bottom: 0;
+}
+
+.case-study-section + .case-study-section {
+  margin-top: var(--spc-l);
+}
+
+.case-study-list {
+  padding-left: var(--spc-l);
+}
+
+.case-study-list li + li {
+  margin-top: var(--spc-xs);
+}
+
+.case-study-source {
+  margin-top: var(--spc-l);
+  padding-top: var(--spc-m);
+  border-top: 1px solid var(--clr-light-grey);
+  font-size: var(--body-font-size-s);
+}
+
+.case-study-image-grid {
+  display: grid;
+  gap: var(--spc-m);
+  margin-top: var(--spc-m);
+}
+
+.case-study-figure {
+  margin: 0;
+}
+
+.case-study-figure img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--clr-black);
+  border-radius: 6px;
+}
+
+.case-study-figure figcaption {
+  margin-top: var(--spc-xs);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+}
+
 /* Contact and about page specific helpers */
 .contact-details p {
   max-width: 48rem;
@@ -1259,7 +1420,8 @@ main .section.highlight-light-green {
 
   .home-intro > *,
   .home-leadership-callout > *,
-  .about-highlight > * {
+  .about-highlight > *,
+  .case-study-feed-header > * {
     min-width: 0;
   }
 }
@@ -1296,6 +1458,27 @@ main .section.highlight-light-green {
   .home-leadership-callout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
+  }
+
+  .case-study-feed-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
+  .case-study-feed-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-study-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-study-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.85fr);
+  }
+
+  .case-study-image-grid-multi {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

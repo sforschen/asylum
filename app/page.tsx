@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 
 import websiteHeader from "../content/website-header.png";
+import CaseStudyFeed from "../components/CaseStudyFeed";
 import ExperienceCardsSection, { type ExperienceItem } from "../components/ExperienceCardsSection";
+import { getCaseStudyUrl } from "../lib/case-studies";
 
 // Home page feature cards summarizing the main value pillars of the site.
 type HomePillar = {
@@ -99,7 +101,7 @@ const featuredExperience: ExperienceItem[] = [
     imageSrc:
       "https://www.youneedserenity.com/media_1457d32de283c663183fce53b5a5017f02e24b4a3.png?width=750&format=png&optimize=medium",
     link: {
-      href: "https://www.youneedserenity.com/portfolio/elixir-site",
+      href: getCaseStudyUrl("elixir-site"),
       label: "View Case Study",
     },
   },
@@ -220,6 +222,13 @@ export default function Home() {
         items={featuredExperience}
         sectionClassName="highlight"
         cardsClassName="cards-archive"
+      />
+
+      <CaseStudyFeed
+        title="Latest Case Studies"
+        intro="Selected portfolio pieces now live as posts, so visitors can scan recent work right from the home page."
+        limit={3}
+        showViewAll
       />
 
       {/* Closing CTA for visitors who want work samples next. */}

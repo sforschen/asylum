@@ -28,6 +28,7 @@ export default function HeaderNav() {
         </div>
 
         <div id="site-nav-links" className={`site-nav-links${isOpen ? " is-open" : ""}`}>
+          <Link href="/blog" onClick={() => setIsOpen(false)}>Case Studies</Link>
           <Link href="/knowledge" onClick={() => setIsOpen(false)}>Knowledge</Link>
           <Link href="/experience" onClick={() => setIsOpen(false)}>Experience</Link>
           <Link href="/leadership" onClick={() => setIsOpen(false)}>Leadership</Link>

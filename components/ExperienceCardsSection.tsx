@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import ContentSection from "./ContentSection";
 
@@ -31,12 +32,19 @@ type Props = {
 
 function ExperienceLink({ href, label, emphasis }: NonNullable<ExperienceItem["link"]>) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
+  const isExternal = href.startsWith("http");
 
   return (
     <p>
-      <a className="button" href={href} target="_blank" rel="noreferrer">
-        {content}
-      </a>
+      {isExternal ? (
+        <a className="button" href={href} target="_blank" rel="noreferrer">
+          {content}
+        </a>
+      ) : (
+        <Link className="button" href={href}>
+          {content}
+        </Link>
+      )}
     </p>
   );
 }
