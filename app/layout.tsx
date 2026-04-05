@@ -1,5 +1,9 @@
-import "./globals.css";
+import Link from "next/link";
 
+import "./globals.css";
+import HeaderNav from "../components/HeaderNav";
+
+// Shared site chrome for every route.
 export default function RootLayout({
   children,
 }: {
@@ -7,32 +11,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-white text-black">
-        <header className="p-6 border-b">
-          <nav className="max-w-6xl mx-auto flex justify-between">
-            <div className="font-bold">Serenity Forschen</div>
-            <div className="space-x-12">
-              <a href="/knowledge">Knowledge</a>
-              <a href="/experience">Experience</a>
-              <a href="/leadership">Leadership</a>
-              <a href="/portfolio">Portfolio</a>
-              <a href="/contact">Contact</a>
-            </div>
-          </nav>
-        </header>
+      <body>
+        <HeaderNav />
 
         {children}
 
-        <footer className="p-6 border-t mt-16 text-center">
-          © {new Date().getFullYear()} Serenity Forschen
+        <footer className="site-footer">
+          {/* Utility links live in the footer to keep the top nav focused. */}
+          <div className="site-footer-inner">
+            <p className="site-footer-copy">&copy; {new Date().getFullYear()} Serenity Forschen</p>
+            <div className="site-footer-links">
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+            </div>
+          </div>
         </footer>
       </body>
     </html>
