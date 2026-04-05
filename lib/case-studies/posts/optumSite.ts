@@ -1,4 +1,5 @@
 import type { CaseStudyPost } from "../types";
+import { siteAssets } from "../../../content/siteAssets";
 
 export const optumSiteCaseStudy: CaseStudyPost = {
   slug: "optum-site",
@@ -8,8 +9,7 @@ export const optumSiteCaseStudy: CaseStudyPost = {
   readTime: "3 min read",
   summary:
     "Managed a fast website migration to Adobe Experience Manager and helped launch the redesigned site in just three months.",
-  imageSrc:
-    "https://www.youneedserenity.com/portfolio/media_131b6016133fec809d3d9b7ee2bc13529556c4646.jpg?width=2000&format=jpg&optimize=medium",
+  imageSrc: siteAssets.caseStudies.optumSiteHero,
   imageAlt: "Optum website planning image from the original case study",
   portfolioTitle: "Optum Website",
   portfolioSectionId: "web-design-and-management",
@@ -41,7 +41,7 @@ export const optumSiteCaseStudy: CaseStudyPost = {
       ],
       images: [
         {
-          src: "https://www.youneedserenity.com/portfolio/media_1d244bc835583264ce63345228062026430fd1a6f.png?width=2000&format=png&optimize=medium",
+          src: siteAssets.caseStudies.optumSiteBefore,
           alt: "Optum website before state screenshot from the original case study",
         },
       ],
@@ -60,11 +60,11 @@ export const optumSiteCaseStudy: CaseStudyPost = {
       ],
       images: [
         {
-          src: "https://www.youneedserenity.com/portfolio/media_17a9cdcb1740247ff00c3fcf0a81a4af62c3f9ecb.png?width=2000&format=png&optimize=medium",
+          src: siteAssets.caseStudies.optumSiteAfter,
           alt: "Optum website after state screenshot from the original case study",
         },
         {
-          src: "https://www.youneedserenity.com/portfolio/media_1db8b8e3aea6a524a4c14400c3983ed9873869566.png?width=2000&format=png&optimize=medium",
+          src: siteAssets.caseStudies.optumSiteRebrand,
           alt: "Optum site guidelines through rebranding screenshot from the original case study",
         },
       ],

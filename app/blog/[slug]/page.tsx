@@ -110,8 +110,8 @@ export default async function CaseStudyPage({ params }: Props) {
 
               {section.images?.length ? (
                 <div className={`case-study-image-grid case-study-image-grid-${section.images.length > 1 ? "multi" : "single"}`}>
-                  {section.images.map((image) => (
-                    <figure key={image.src} className="case-study-figure">
+                  {section.images.map((image, index) => (
+                    <figure key={`${image.alt}-${index}`} className="case-study-figure">
                       <Image
                         src={image.src}
                         alt={image.alt}

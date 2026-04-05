@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
 import ContentSection from "./ContentSection";
 
@@ -11,7 +12,7 @@ export type GalleryItemLink = {
 
 export type GalleryItem = {
   title: string;
-  imageSrc: string;
+  imageSrc: string | StaticImageData;
   imageAlt?: string;
   links: GalleryItemLink[];
   note?: {

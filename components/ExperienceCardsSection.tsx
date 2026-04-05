@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import ContentSection from "./ContentSection";
@@ -13,7 +14,7 @@ export type ExperienceItem = {
   locationAndDates: string;
   summary: ReactNode;
   bullets?: string[];
-  imageSrc?: string;
+  imageSrc?: string | StaticImageData;
   imageAlt?: string;
   link?: {
     href: string;

@@ -1,4 +1,5 @@
 import ExperienceCardsSection, { type ExperienceItem } from "../../components/ExperienceCardsSection";
+import { siteAssets } from "../../content/siteAssets";
 import PageIntro from "../../components/PageIntro";
 import { getCaseStudyUrl } from "../../lib/case-studies";
 
@@ -39,8 +40,7 @@ const experienceItems: ExperienceItem[] = [
       "Led the marketing team to higher accessibility standards by advising on 508 and WCAG requirements and implementing changes across print and digital platforms.",
       "Managed and produced blog and email campaigns.",
     ],
-    imageSrc:
-      "https://www.youneedserenity.com/media_1457d32de283c663183fce53b5a5017f02e24b4a3.png?width=750&format=png&optimize=medium",
+    imageSrc: siteAssets.experience.elixir,
     link: {
       href: getCaseStudyUrl("elixir-site"),
       label: "View Case Study",

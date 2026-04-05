@@ -1,5 +1,7 @@
+import type { StaticImageData } from "next/image";
+
 export type CaseStudyImage = {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   caption?: string;
 };
@@ -19,7 +21,7 @@ export type CaseStudyPost = {
   publishedAt: string;
   readTime: string;
   summary: string;
-  imageSrc: string;
+  imageSrc: string | StaticImageData;
   imageAlt: string;
   portfolioTitle: string;
   portfolioSectionId: string;

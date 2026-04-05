@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import ContentSection from "../../components/ContentSection";
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
+import { siteAssets } from "../../content/siteAssets";
+import { siteDocuments } from "../../content/siteDocuments";
 import KnowledgeCard from "../../components/KnowledgeCard";
 import PageIntro from "../../components/PageIntro";
 
@@ -16,18 +18,18 @@ type AboutInfoCard = {
 const aboutGalleryItems: GalleryItem[] = [
   {
     title: "Snort",
-    imageSrc: "https://www.youneedserenity.com/media_1710a5697538927d09bf22e066601c1797930e034.jpeg?width=750&format=jpeg&optimize=medium",
-    links: [{ href: "https://www.youneedserenity.com/assets/about/snort.jpg", label: "View Image" }],
+    imageSrc: siteAssets.about.snortThumb,
+    links: [{ href: siteAssets.about.snortFull.src, label: "View Image" }],
   },
   {
     title: "Grunt",
-    imageSrc: "https://www.youneedserenity.com/media_10e927f384eff668f737c53f84e3fa675a8f4059a.jpeg?width=750&format=jpeg&optimize=medium",
-    links: [{ href: "https://www.youneedserenity.com/assets/about/grunt.jpg", label: "View Image" }],
+    imageSrc: siteAssets.about.gruntThumb,
+    links: [{ href: siteAssets.about.gruntFull.src, label: "View Image" }],
   },
   {
     title: "My Garden",
-    imageSrc: "https://www.youneedserenity.com/media_16f9445e2b15b5ea8dd73a53e778b4320ce790293.jpeg?width=750&format=jpeg&optimize=medium",
-    links: [{ href: "https://www.youneedserenity.com/assets/about/garden.jpg", label: "View Image" }],
+    imageSrc: siteAssets.about.gardenThumb,
+    links: [{ href: siteAssets.about.gardenFull.src, label: "View Image" }],
   },
 ];
 
@@ -83,7 +85,7 @@ export default function AboutPage() {
         <div className="page-container page-section-content about-highlight">
           <div className="about-profile-image">
             <Image
-              src="https://www.youneedserenity.com/media_135c912f84c197714e8676b933161af1597abeff9.png?width=750&format=png&optimize=medium"
+              src={siteAssets.about.portrait}
               alt="Serenity Forschen portrait"
               width={750}
               height={750}
@@ -122,7 +124,7 @@ export default function AboutPage() {
         <p className="about-links-copy">
           To learn more about my background and skills, check out my{" "}
           <a
-            href="https://www.youneedserenity.com/assets/about/serenity-forschen-resume-june-24.pdf"
+            href={siteDocuments.about.resume}
             target="_blank"
             rel="noreferrer"
           >

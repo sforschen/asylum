@@ -1,4 +1,5 @@
 import type { CaseStudyPost } from "../types";
+import { siteAssets } from "../../../content/siteAssets";
 
 export const elixirSiteCaseStudy: CaseStudyPost = {
   slug: "elixir-site",
@@ -8,8 +9,7 @@ export const elixirSiteCaseStudy: CaseStudyPost = {
   readTime: "4 min read",
   summary:
     "Led the move to Adobe AEM Live, improved authoring support, and helped raise Lighthouse scores from the mid-60s to 98-100.",
-  imageSrc:
-    "https://www.youneedserenity.com/media_10cd620b5802038dc6b72c0a54674b045e33f2cd9.jpg?width=750&format=jpg&optimize=medium",
+  imageSrc: siteAssets.portfolio.elixirWebsiteThumb,
   imageAlt: "Elixir website redesign preview",
   portfolioTitle: "Elixir's Website",
   portfolioSectionId: "web-design-and-management",
@@ -40,7 +40,7 @@ export const elixirSiteCaseStudy: CaseStudyPost = {
       ],
       images: [
         {
-          src: "https://www.youneedserenity.com/portfolio/media_1b77f75c7f636c73fbf936ee98729488ac6a96bd8.png?width=2000&format=png&optimize=medium",
+          src: siteAssets.caseStudies.elixirSiteBody,
           alt: "Full-page Elixir website case study image from the original portfolio page",
         },
       ],

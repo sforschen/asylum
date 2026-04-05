@@ -1,4 +1,5 @@
 import type { CaseStudyPost } from "../types";
+import { siteAssets } from "../../../content/siteAssets";
 
 export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   slug: "t-and-u-event-signage",
@@ -8,8 +9,7 @@ export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   readTime: "2 min read",
   summary:
     "Created customer event signage that translated campaign goals into an in-person environment with clear branding and strong visual impact.",
-  imageSrc:
-    "https://www.youneedserenity.com/portfolio/media_114a07093a91dac7bb857688417e33b3e093063eb.jpg?width=2000&format=jpg&optimize=medium",
+  imageSrc: siteAssets.caseStudies.tAndUEntranceBanner,
   imageAlt: "Trees and Utilities entrance banner from the original case study",
   portfolioTitle: "Customer Event Signage",
   portfolioSectionId: "print--misc",
@@ -40,17 +40,17 @@ export const tAndUEventSignageCaseStudy: CaseStudyPost = {
       ],
       images: [
         {
-          src: "https://www.youneedserenity.com/portfolio/media_114a07093a91dac7bb857688417e33b3e093063eb.jpg?width=2000&format=jpg&optimize=medium",
+          src: siteAssets.caseStudies.tAndUEntranceBanner,
           alt: "Trees and Utilities entrance banner",
           caption: "Entrance Banner",
         },
         {
-          src: "https://www.youneedserenity.com/portfolio/media_12870d76a9b59b49f5ce7be9310ea85f8fdd08a19.jpg?width=2000&format=jpg&optimize=medium",
+          src: siteAssets.caseStudies.tAndUDrinkSign,
           alt: "Trees and Utilities drink sign",
           caption: "Drink Sign",
         },
         {
-          src: "https://www.youneedserenity.com/portfolio/media_1b4c5290e03e070910bbcfa622efc25243c28bda6.jpg?width=2000&format=jpg&optimize=medium",
+          src: siteAssets.caseStudies.tAndUCigarSign,
           alt: "Trees and Utilities cigar sign",
           caption: "Cigar Sign",
         },

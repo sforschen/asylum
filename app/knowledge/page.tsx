@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
 import SkillBarGroup, { type SkillItem } from "../../components/SkillBarGroup";
@@ -17,6 +19,12 @@ type SkillGroup = {
 };
 
 const certifications: Certification[] = [
+  {
+    name: "HubSpot Marketing Software",
+    issuer: "HubSpot Academy",
+    date: "01/26",
+    href: "https://app.hubspot.com/academy/achievements/q76wb5mg/en/1/serenity-forschen/hubspot-marketing-hub-software",
+  },
   { name: "HTML", issuer: "W3Schools.com", date: "01/24", href: "https://verify.w3schools.com/1OFBKTXH1Q" },
   { name: "CSS", issuer: "W3Schools.com", date: "02/24", href: "https://verify.w3schools.com/1OL59LV4C2" },
   {
@@ -38,12 +46,6 @@ const certifications: Certification[] = [
     issuer: "HubSpot Academy",
     date: "06/22",
     href: "https://app.hubspot.com/academy/achievements/smrkq1nx/en/1/serenity-forschen/email-marketing",
-  },
-  {
-    name: "HubSpot Marketing Software",
-    issuer: "HubSpot Academy",
-    date: "08/22",
-    href: "https://app.hubspot.com/academy/achievements/tw7bwjxy/en/1/serenity-forschen/hubspot-marketing-software",
   },
   { name: "Emerging leadership", issuer: "UnitedHealth Group", date: "10/21" },
 ];
@@ -109,6 +111,69 @@ const skillGroups: SkillGroup[] = [
 
 const [techSkillGroup, ...otherSkillGroups] = skillGroups;
 
+const aiHighlights = [
+  {
+    title: "Codex In Practice",
+    description:
+      "Codex helped build and refine parts of this site, including page structure updates, content organization, reusable components, and practical cleanup work that made iteration faster.",
+    icon: (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="8" y="9" width="32" height="24" rx="3" />
+        <path d="M16 39h16" />
+        <path d="M24 33v6" />
+        <path d="M18 18l-4 3 4 3" />
+        <path d="M30 18l4 3-4 3" />
+        <path d="M26 16l-4 10" />
+      </svg>
+    ),
+  },
+  {
+    title: "Emerging Technology",
+    description:
+      "I find emerging technology genuinely exciting because it opens up new ways to research, prototype, streamline workflows, and reduce the friction that slows strong teams down.",
+    icon: (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="18" r="8" />
+        <path d="M24 26v12" />
+        <path d="M18 38h12" />
+        <path d="M12 18h4" />
+        <path d="M32 18h4" />
+        <path d="M17 11l-3-3" />
+        <path d="M31 11l3-3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Human Judgment First",
+    description:
+      "I use AI to speed up drafting, analysis, experimentation, and technical exploration, but I still rely on editing, critical thinking, and human context to shape the final result.",
+    icon: (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 8l14 8v16l-14 8-14-8V16z" />
+        <path d="M18 24l4 4 8-8" />
+      </svg>
+    ),
+  },
+];
+
+function AiHighlightCard({
+  title,
+  description,
+  icon,
+}: {
+  title: string;
+  description: string;
+  icon: ReactNode;
+}) {
+  return (
+    <article className="ai-highlight-card">
+      <div className="ai-highlight-icon">{icon}</div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </article>
+  );
+}
+
 export default function KnowledgePage() {
   return (
     <main className="page-shell">
@@ -132,10 +197,37 @@ export default function KnowledgePage() {
         }
         links={
           <p className="knowledge-jump-links">
-            <a href="#certifications">Certifications</a> | <a href="#skills">Skills</a> | <a href="#education">Education</a>
+            <a href="#artificial-intelligence-ai">AI</a> | <a href="#certifications">Certifications</a> | <a href="#skills">Skills</a> |{" "}
+            <a href="#education">Education</a>
           </p>
         }
       />
+
+      <ContentSection
+        id="artificial-intelligence-ai"
+        title="Artificial Intelligence (AI)"
+        outerClassName="section highlight-light-green"
+        innerClassName="page-container page-section-content knowledge-section"
+      >
+        <p>
+          I am genuinely excited by emerging technology and the practical ways it can improve how teams think, build,
+          and deliver work. AI is one of the most interesting shifts I have seen because it can accelerate research,
+          experimentation, problem-solving, and production without replacing the judgment that strong work still
+          depends on.
+        </p>
+        <p>
+          This site is a good example. Codex helped build and refine parts of it, from component updates and content
+          restructuring to blog architecture, local asset migration, and cleanup work across the codebase. That kind
+          of collaboration is exciting to me because it turns AI into a practical partner for thoughtful execution
+          rather than a shortcut around quality.
+        </p>
+
+        <div className="ai-highlight-grid">
+          {aiHighlights.map((item) => (
+            <AiHighlightCard key={item.title} {...item} />
+          ))}
+        </div>
+      </ContentSection>
 
       {/* Certifications are presented as a lightweight data table. */}
       <ContentSection
@@ -191,13 +283,6 @@ export default function KnowledgePage() {
           and direct marketing, I orchestrate campaigns that captivate audiences and drive results. Additionally, my
           proficiency in email marketing enhances communication strategies, creating lasting connections with clients
           and customers.
-        </p>
-
-        <h3 id="artificial-intelligence-ai">Artificial Intelligence (AI)</h3>
-        <p>
-          I believe in ethically using AI to make work easier. I am very excited about the future of this technology;
-          I have worked with Adobe&apos;s various AI additions to their apps, as well as Midjourney and ChatGPT. ChatGPT
-          helped write the Javascript that created the skill cards with dynamic percentages below.
         </p>
       </ContentSection>
 

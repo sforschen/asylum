@@ -79,7 +79,7 @@ function HomePillarCard({ title, description, icon, href, ctaLabel }: HomePillar
 function Stat({ value, label }: { value: string; label: ReactNode }) {
   return (
     <div className="home-stat">
-      <p className="home-stat-value">{value}</p>
+      <h3 className="home-stat-value">{value}</h3>
       <p className="home-stat-label">{label}</p>
     </div>
   );
@@ -153,6 +153,7 @@ export default function Home() {
             right technology choices so teams can take ownership and deliver confidently.
           </p>
         </div>
+
         <div className="home-callout-card">
           <h3>Core focus areas</h3>
           <ul className="home-focus-list">

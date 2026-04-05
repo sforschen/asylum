@@ -125,6 +125,14 @@ p, dl, ol, ul, pre, blockquote {
   margin-bottom: var(--spc-m);
 }
 
+p {
+  font-size: 20px;
+}
+
+li {
+  font-size: 20px;
+}
+
 ul {
   list-style-type: disc;
   margin-left: var(--spc-xs);
@@ -414,16 +422,6 @@ main .section h2 {
   font-size: var(--heading-font-size-xl);
 }
 
-.page-intro-header p,
-.knowledge-page-intro p,
-.knowledge-section p,
-.knowledge-section li,
-.portfolio-section p,
-main .section p,
-.page-copy p {
-  font-size: var(--body-font-size-m);
-}
-
 .page-intro-header a,
 .page-copy a,
 .knowledge-page-intro a,
@@ -448,15 +446,15 @@ main .section a:hover {
 
 .page-title {
   margin: 0.75rem 0 var(--spc-m);
-  font-size: calc(var(--heading-font-size-xl) * 2);
-  font-weight: 400;
+  font-size: calc(var(--heading-font-size-xl) * 1.7);
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .page-lead {
   max-width: 48rem;
   margin: 1rem 0 0;
   color: var(--clr-green);
-  font-size: var(--body-font-size-m);
 }
 
 .knowledge-jump-links,
@@ -907,7 +905,6 @@ main .section.highlight-light-green {
 }
 
 .knowledge-skill-group .k-body {
-  font-size: var(--body-font-size-m);
 }
 
 .k-list {
@@ -952,7 +949,6 @@ main .section.highlight-light-green {
 .k-text {
   margin: 0.5rem 0 0;
   color: var(--clr-black);
-  font-size: var(--body-font-size-s);
 }
 
 .k-text > :last-child {
@@ -978,7 +974,6 @@ main .section.highlight-light-green {
 .home-page-lead {
   margin-bottom: var(--spc-m);
   color: var(--clr-orange);
-  font-size: var(--body-font-size-m);
   font-weight: 700;
 }
 
@@ -991,7 +986,6 @@ main .section.highlight-light-green {
 
 .home-supporting-copy {
   max-width: 60rem;
-  font-size: var(--body-font-size-m);
 }
 
 .home-actions {
@@ -1003,7 +997,7 @@ main .section.highlight-light-green {
 
 .home-stat-grid {
   display: grid;
-  gap: var(--spc-s);
+  gap: var(--spc-m);
 }
 
 .home-stat {
@@ -1030,7 +1024,6 @@ main .section.highlight-light-green {
 
 .home-stat-label {
   margin-top: var(--spc-xs);
-  font-size: var(--body-font-size-m);
 }
 
 .home-pillars {
@@ -1112,6 +1105,39 @@ main .section.highlight-light-green {
 
 .home-cta p {
   max-width: 48rem;
+}
+
+.ai-highlight-grid {
+  display: grid;
+  gap: var(--spc-m);
+  margin-top: var(--spc-m);
+}
+
+.ai-highlight-card {
+  padding: var(--spc-m);
+  border: 1px solid var(--clr-black);
+  background-color: rgb(255 255 255 / 0.9);
+  border-radius: 6px;
+}
+
+.ai-highlight-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spc-s);
+  color: var(--clr-blue);
+}
+
+.ai-highlight-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 .case-study-feed-header {
@@ -1357,19 +1383,6 @@ main .section.highlight-light-green {
     font-size: clamp(2.75rem, 9vw, 4rem);
   }
 
-  .page-lead,
-  .home-page-lead,
-  .home-supporting-copy,
-  .page-intro-header p,
-  .knowledge-page-intro p,
-  .knowledge-section p,
-  .knowledge-section li,
-  .portfolio-section p,
-  main .section p,
-  .page-copy p {
-    font-size: 1.125rem;
-  }
-
   a.button:any-link,
   button {
     white-space: normal;
@@ -1447,8 +1460,17 @@ main .section.highlight-light-green {
   }
 
   .home-intro {
-    grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
+    gap: var(--spc-m);
+  }
+
+  .home-intro-copy {
+    grid-column: 1 / span 2;
+  }
+
+  .home-stat-grid {
+    grid-column: 3;
   }
 
   .home-pillars {
@@ -1456,8 +1478,21 @@ main .section.highlight-light-green {
   }
 
   .home-leadership-callout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--spc-m);
+  }
+
+  .home-callout-card {
+    grid-column: 2 / span 2;
+  }
+
+  .home-callout-copy {
+    grid-column: 1;
+  }
+
+  .ai-highlight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .case-study-feed-header {
