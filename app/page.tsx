@@ -2,8 +2,6 @@ import type { ReactNode } from "react";
 
 import websiteHeader from "../content/website-header.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
-import ExperienceCardsSection, { type ExperienceItem } from "../components/ExperienceCardsSection";
-import { getCaseStudyUrl } from "../lib/case-studies";
 
 // Home page feature cards summarizing the main value pillars of the site.
 type HomePillar = {
@@ -60,50 +58,6 @@ const homePillars: HomePillar[] = [
     ),
     href: "/knowledge",
     ctaLabel: "See Knowledge",
-  },
-];
-
-// Recent proof points reused from the broader experience page.
-const featuredExperience: ExperienceItem[] = [
-  {
-    title: "Creative Services Director",
-    company: "XKIG",
-    locationAndDates: "Remote | 8/24-Current",
-    summary: (
-      <>
-        Designing a robust marketing and creative technology ecosystem to drive growth and empower teams to do their
-        best work. Identifying the right technology and migration plan to eliminate redundant software and keep costs
-        in check while creating a stronger operational foundation.
-      </>
-    ),
-    bullets: [
-      "Built an operational excellence program with the VP of Marketing and Communications, including training materials and adoption support.",
-      "Created a Smartsheet-based project management system that improves visibility, delivery, and team organization.",
-      "Onboarded Brandfolder and built a scalable asset management system for multiple brands.",
-    ],
-  },
-  {
-    title: "Digital Content Marketing Manager",
-    company: "Elixir",
-    locationAndDates: "Remote | 6/22-2/24",
-    summary: (
-      <>
-        Led digital content, accessibility, and platform work across multiple teams. Managed the move to Adobe AEM
-        Live in under five months and improved site performance with{" "}
-        <strong>Google Lighthouse scores rising from an average of 65 to 98-100.</strong>
-      </>
-    ),
-    bullets: [
-      "Managed a development partner and helped establish authoring and development documentation.",
-      "Owned HubSpot and vendor relationships while reducing unnecessary annual costs.",
-      "Led accessibility improvements across digital and print platforms.",
-    ],
-    imageSrc:
-      "https://www.youneedserenity.com/media_1457d32de283c663183fce53b5a5017f02e24b4a3.png?width=750&format=png&optimize=medium",
-    link: {
-      href: getCaseStudyUrl("elixir-site"),
-      label: "View Case Study",
-    },
   },
 ];
 
@@ -215,37 +169,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected experience cards that reinforce the home page message. */}
-      <ExperienceCardsSection
-        id="leadership-in-practice"
-        title="Leadership In Practice"
-        items={featuredExperience}
-        sectionClassName="highlight"
-        cardsClassName="cards-archive"
-      />
-
       <CaseStudyFeed
         title="Latest Case Studies"
         intro="Selected portfolio pieces now live as posts, so visitors can scan recent work right from the home page."
         limit={3}
         showViewAll
       />
-
-      {/* Closing CTA for visitors who want work samples next. */}
-      <section className="section highlight-light-green">
-        <div className="page-container page-section-content home-cta">
-          <h2 className="section-title">Built For Complex Teams</h2>
-          <p>
-            If the work involves aligning marketing, design, websites, content, process, and technology, that is where
-            I do some of my best work.
-          </p>
-          <p>
-            <a className="button" href="/portfolio">
-              See Selected Work
-            </a>
-          </p>
-        </div>
-      </section>
     </main>
   );
 }

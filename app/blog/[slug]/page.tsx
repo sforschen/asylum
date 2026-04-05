@@ -128,16 +128,6 @@ export default async function CaseStudyPage({ params }: Props) {
           </section>
         ))}
 
-        {post.externalSource ? (
-          <section className="page-container page-section-content">
-            <p className="case-study-source">
-              Original portfolio source:{" "}
-              <a href={post.externalSource} target="_blank" rel="noreferrer">
-                {post.externalSource}
-              </a>
-            </p>
-          </section>
-        ) : null}
       </article>
     </main>
   );
