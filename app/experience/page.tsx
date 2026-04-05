@@ -1,5 +1,6 @@
 import ExperienceCardsSection, { type ExperienceItem } from "../../components/ExperienceCardsSection";
 import { siteAssets } from "../../content/siteAssets";
+import { siteDocuments } from "../../content/siteDocuments";
 import PageIntro from "../../components/PageIntro";
 import { getCaseStudyUrl } from "../../lib/case-studies";
 
@@ -17,6 +18,16 @@ const experienceItems: ExperienceItem[] = [
       "Onboarded Brandfolder and built an asset management system that works with multiple brands and scales with company growth.",
       "Led technology integration initiatives to ensure all software works together.",
       "Executing various creative tasks, including print, social media, emails, presentations, and internal documents.",
+    ],
+    relatedCaseStudies: [
+      {
+        href: getCaseStudyUrl("t-and-u-event-signage"),
+        label: "Customer Event Signage",
+      },
+      {
+        href: getCaseStudyUrl("serious-silly"),
+        label: "Punny Bumper Stickers",
+      },
     ],
   },
   {
@@ -41,10 +52,38 @@ const experienceItems: ExperienceItem[] = [
       "Managed and produced blog and email campaigns.",
     ],
     imageSrc: siteAssets.experience.elixir,
-    link: {
-      href: getCaseStudyUrl("elixir-site"),
-      label: "View Case Study",
-    },
+    relatedCaseStudies: [
+      {
+        href: getCaseStudyUrl("elixir-site"),
+        label: "Elixir Website Case Study",
+      },
+    ],
+    relatedAssets: [
+      {
+        href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU",
+        label: "Safety Month Post",
+      },
+      {
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7062426632422076416?utm_source=share&utm_medium=member_desktop",
+        label: "Video Post",
+      },
+      {
+        href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_happy-holidays-from-the-elixir-team-we-are-activity-7142891357659934720-4IuP?utm_source=share&utm_medium=member_desktop",
+        label: "Holiday Post",
+      },
+      {
+        href: "https://www.linkedin.com/posts/serenityforschen_defeatdiabetes-elixirpbm-activity-7053744684485005312-fSyj?utm_source=share&utm_medium=member_desktop",
+        label: "Defeat Diabetes Video Post",
+      },
+      {
+        href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_elixirpbm-activity-7087111883664625665-7zAi?utm_source=share&utm_medium=member_desktop",
+        label: "Event Announcement",
+      },
+      {
+        href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_flu-season-is-right-around-the-corner-read-activity-7101971724866371584-VgWY?utm_source=share&utm_medium=member_desktop",
+        label: "Blog Post Promotion",
+      },
+    ],
   },
   {
     title: "Marketing Specialist II",
@@ -68,6 +107,12 @@ const experienceItems: ExperienceItem[] = [
       "Met federal contractual obligations by adhering to design and communications standards.",
       "Managed blogs and digital content.",
     ],
+    relatedCaseStudies: [
+      {
+        href: getCaseStudyUrl("optum-site"),
+        label: "Optum Website Case Study",
+      },
+    ],
   },
   {
     title: "Creative Director",
@@ -81,6 +126,20 @@ const experienceItems: ExperienceItem[] = [
         Designed and managed company website and custom digital storefronts for clients.
       </>
     ),
+    relatedAssets: [
+      {
+        href: siteDocuments.portfolio.cpmiSolutionsWebsite,
+        label: "CPMI Website",
+      },
+      {
+        href: siteDocuments.portfolio.cpmiBrochure,
+        label: "CPMI Brochure",
+      },
+      {
+        href: siteDocuments.portfolio.logoDesignSignage,
+        label: "Logo Design & Signage",
+      },
+    ],
   },
   {
     title: "Front End Web and Graphic Designer",
@@ -93,6 +152,16 @@ const experienceItems: ExperienceItem[] = [
         <strong>steadily increased response rates while maintaining a professional, trustworthy aesthetic.</strong>
       </>
     ),
+    relatedAssets: [
+      {
+        href: siteDocuments.portfolio.crEnglandPage,
+        label: "C.R. England Page",
+      },
+      {
+        href: siteDocuments.portfolio.crEnglandRecruiting,
+        label: "C.R. England Recruiting",
+      },
+    ],
   },
   {
     title: "Marketing Specialist",
@@ -104,6 +173,12 @@ const experienceItems: ExperienceItem[] = [
         <strong>Maintained a broad portfolio of customized assets</strong> delivered to vendors and over 30 branches.
       </>
     ),
+    relatedAssets: [
+      {
+        href: siteDocuments.portfolio.castleCookeHomebuyersGuide,
+        label: "Castle & Cooke Brochure",
+      },
+    ],
   },
   {
     title: "Graphic Designer",

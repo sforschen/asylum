@@ -56,55 +56,56 @@ const skillGroups: SkillGroup[] = [
     id: "tech",
     title: "Tech",
     items: [
-      { name: "HubSpot", percent: 85 },
-      { name: "Figma", percent: 50 },
-      { name: "Web Design (HTML & CSS)", percent: 95 },
       { name: "508/WCAG", percent: 70 },
       { name: "Accessibility Compliance", percent: 65 },
-      { name: "Mac & PC (PC preferred)", percent: 95 },
+      { name: "ChatGPT", percent: 65 },
       { name: "Data/File Management", percent: 85 },
-      { name: "LinkedIn Campaigns", percent: 40 },
-      { name: "On24", percent: 60 },
+      { name: "Figma", percent: 50 },
       { name: "Hootsuite", percent: 55 },
-      { name: "WordPress", percent: 40 },
+      { name: "HubSpot", percent: 85 },
+      { name: "LinkedIn Campaigns", percent: 40 },
+      { name: "Mac & PC (PC preferred)", percent: 95 },
+      { name: "On24", percent: 60 },
       { name: "Smartsheet", percent: 80 },
+      { name: "Web Design (HTML & CSS)", percent: 95 },
+      { name: "WordPress", percent: 40 },
     ],
   },
   {
     id: "adobe",
     title: "Adobe",
     items: [
+      { name: "Acrobat", percent: 93 },
+      { name: "Adobe Experience Manager", percent: 70 },
+      { name: "Illustrator", percent: 65 },
       { name: "Indesign", percent: 95 },
       { name: "Photoshop", percent: 60 },
-      { name: "Illustrator", percent: 65 },
-      { name: "Adobe Experience Manager", percent: 70 },
       { name: "Workfront", percent: 60 },
-      { name: "Acrobat", percent: 93 },
     ],
   },
   {
     id: "microsoft",
     title: "Microsoft",
     items: [
-      { name: "Word", percent: 90 },
       { name: "Excel", percent: 85 },
-      { name: "Powerpoint", percent: 85 },
-      { name: "SharePoint", percent: 75 },
-      { name: "VS Code", percent: 60 },
-      { name: "Teams", percent: 90 },
-      { name: "Outlook", percent: 90 },
       { name: "Loop", percent: 90 },
+      { name: "Outlook", percent: 90 },
+      { name: "Powerpoint", percent: 85 },
       { name: "Project", percent: 70 },
+      { name: "SharePoint", percent: 75 },
+      { name: "Teams", percent: 90 },
+      { name: "VS Code", percent: 60 },
+      { name: "Word", percent: 90 },
     ],
   },
   {
     id: "google",
     title: "Google",
     items: [
-      { name: "Workspace", percent: 25 },
-      { name: "Docs", percent: 60 },
       { name: "Ads", percent: 25 },
       { name: "Analytics", percent: 45 },
+      { name: "Docs", percent: 60 },
+      { name: "Workspace", percent: 25 },
     ],
   },
 ];
@@ -272,6 +273,11 @@ export default function KnowledgePage() {
         <p>
           I am a highly tech-savvy professional with a proven track record in analytical thinking and critical
           problem-solving. I have adept process development, project management, strategy, and research skills.
+        </p>
+        <p>
+          I adapt quickly to existing tech stacks while staying genuinely interested in emerging tools and platforms.
+          Whether I am working inside established systems or learning something new, I focus on understanding how the
+          technology fits into real workflows so teams can use it effectively and sustainably.
         </p>
 
         <h3 id="marketing--design">Marketing &amp; Design</h3>

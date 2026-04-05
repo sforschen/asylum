@@ -102,11 +102,11 @@ export default function Home() {
       <section className="page-container page-intro home-intro">
         <div className="page-intro-copy home-intro-copy">
           <h1 className="page-title">Leadership for exceptional marketing teams who handle complex design systems, and advanced tech stacks</h1>
-          <p className="page-lead home-page-lead">
+          <p>
             I lead teams and build the operational foundations behind content, creative, websites, and digital
             platforms so organizations can scale with less chaos and better results.
           </p>
-          <p className="home-supporting-copy">
+          <p>
             My work sits at the intersection of leadership, marketing operations, design systems, website management,
             and technical implementation. That includes migrations, accessibility, asset management, content
             governance, vendor coordination, and the processes that help teams deliver strong work consistently.
@@ -173,7 +173,7 @@ export default function Home() {
       <CaseStudyFeed
         title="Latest Case Studies"
         intro="Selected portfolio pieces now live as posts, so visitors can scan recent work right from the home page."
-        limit={3}
+        limit={2}
         showViewAll
       />
     </main>

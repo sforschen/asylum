@@ -16,11 +16,16 @@ export type ExperienceItem = {
   bullets?: string[];
   imageSrc?: string | StaticImageData;
   imageAlt?: string;
-  link?: {
+  relatedAssets?: Array<{
     href: string;
     label: string;
     emphasis?: "strong";
-  };
+  }>;
+  relatedCaseStudies?: Array<{
+    href: string;
+    label: string;
+    emphasis?: "strong";
+  }>;
 };
 
 type Props = {
@@ -31,22 +36,41 @@ type Props = {
   cardsClassName?: string;
 };
 
-function ExperienceLink({ href, label, emphasis }: NonNullable<ExperienceItem["link"]>) {
+type ExperienceLinkItem = {
+  href: string;
+  label: string;
+  emphasis?: "strong";
+};
+
+function ExperienceLink({ href, label, emphasis }: ExperienceLinkItem) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
   const isExternal = href.startsWith("http");
 
   return (
-    <p>
+    <p className="experience-link-item">
       {isExternal ? (
-        <a className="button" href={href} target="_blank" rel="noreferrer">
+        <a href={href} target="_blank" rel="noreferrer">
           {content}
         </a>
       ) : (
-        <Link className="button" href={href}>
+        <Link href={href}>
           {content}
         </Link>
       )}
     </p>
+  );
+}
+
+function ExperienceLinkGroup({ title, links }: { title: string; links: ExperienceLinkItem[] }) {
+  return (
+    <div className="experience-link-group">
+      <h4>{title}</h4>
+      <div className="experience-link-list">
+        {links.map((link) => (
+          <ExperienceLink key={`${title}-${link.href}`} {...link} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -95,7 +119,12 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
             ))}
           </ul>
         ) : null}
-        {item.link ? <ExperienceLink {...item.link} /> : null}
+        {item.relatedCaseStudies?.length ? (
+          <ExperienceLinkGroup title="Related Case Studies" links={item.relatedCaseStudies} />
+        ) : null}
+        {item.relatedAssets?.length ? (
+          <ExperienceLinkGroup title="Related Assets" links={item.relatedAssets} />
+        ) : null}
       </div>
     </li>
   );

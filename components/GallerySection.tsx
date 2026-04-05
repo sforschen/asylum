@@ -71,9 +71,9 @@ export default function GallerySection({ id, title, items, sectionClassName }: P
                 />
               </div>
               <div className="gallery-card-body">
-                <p>
+                <h3>
                   <strong>{item.title}</strong>
-                </p>
+                </h3>
                 {item.note ? (
                   <p>
                     {item.note.text}{" "}

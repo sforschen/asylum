@@ -122,7 +122,7 @@ h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0;
-  margin-bottom: var(--spc-m);
+  margin-bottom: var(--spc-s);
 }
 
 p {
@@ -243,17 +243,6 @@ main img {
   height: auto;
 }
 
-.icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-}
-
-.icon img {
-  height: 100%;
-  width: 100%;
-}
-
 /* sections */
 
 main .section {
@@ -281,15 +270,6 @@ main .section.highlight {
 
 main .section.highlight-light-green {
   background-color: var(--clr-light-green);
-}
-
-main .section.highlight-light-grey-center {
-  background-color: var(--clr-light-grey);
-}
-
-main .section.highlight-light-grey-center > div > p > picture > img {
-  display: block;
-  margin: auto;
 }
 
 main .section.highlight-red {
@@ -355,20 +335,6 @@ main .hero-container {
 }
 
 
-/* Container for skill bars */
-.skills-container {
-  box-sizing: border-box;
-  width: 100%; 
-  font-weight: 700;
-  background-color: var(--clr-light-blue); 
-  padding-top: var(--spc-xs); 
-  padding-bottom: var(--spc-xs); 
-  padding-left: var(--spc-s);
-  border-radius: 0 var(--spc-l) var(--spc-l) 0;
-  margin-bottom: var(--spc-m);
-  color: var(--clr-white); 
-}
-
 /* Legacy merged block styles retained for compatibility with imported patterns. */
 /* App overrides restored for current asylum pages */
 
@@ -419,7 +385,6 @@ main .section {
 .portfolio-section h2,
 main .section h2 {
   color: var(--clr-black);
-  font-size: var(--heading-font-size-xl);
 }
 
 .page-intro-header a,
@@ -449,12 +414,6 @@ main .section a:hover {
   font-size: calc(var(--heading-font-size-xl) * 1.7);
   font-weight: 700;
   line-height: 1.15;
-}
-
-.page-lead {
-  max-width: 48rem;
-  margin: 1rem 0 0;
-  color: var(--clr-green);
 }
 
 .knowledge-jump-links,
@@ -695,7 +654,6 @@ main .section.highlight-light-green {
 .section-title {
   margin: 0 0 2rem;
   color: var(--clr-black);
-  font-size: var(--heading-font-size-l);
   font-weight: 700;
 }
 
@@ -787,7 +745,34 @@ main .section.highlight-light-green {
 }
 
 .experience-bullet-list li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.experience-link-group {
+  margin-top: var(--spc-s);
+  padding: var(--spc-s);
+  border: 1px solid var(--clr-black);
+  border-radius: 6px;
+  background-color: var(--clr-light-grey);
+}
+
+.experience-link-group h4 {
+  margin-bottom: var(--spc-xs);
+  color: var(--clr-blue);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.experience-link-list {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.experience-link-item,
+.experience-link-list p {
+  margin-bottom: 0;
 }
 
 .cards .cards-card-body > p > strong {
@@ -884,27 +869,14 @@ main .section.highlight-light-green {
   text-align: left;
 }
 
-.table.no-header table tbody tr {
-  border-top: 1px solid var(--clr-green);
-  font-weight: 400;
-}
-
-.table.striped tbody tr:nth-child(odd) {
-  background-color: var(--overlay-background-color);
-}
-
 .knowledge-skill-group h3 {
   margin-top: var(--spc-m);
   margin-bottom: var(--spc-s);
-  font-size: var(--heading-font-size-m);
 }
 
 .knowledge-skill-group .k-list > li {
   display: grid;
   gap: var(--spc-xs);
-}
-
-.knowledge-skill-group .k-body {
 }
 
 .k-list {
@@ -942,8 +914,6 @@ main .section.highlight-light-green {
 
 .k-title {
   margin: 0;
-  font-size: var(--heading-font-size-xs);
-  font-weight: 600;
 }
 
 .k-text {
@@ -971,21 +941,11 @@ main .section.highlight-light-green {
 }
 
 /* Home page specific layout and card styling */
-.home-page-lead {
-  margin-bottom: var(--spc-m);
-  color: var(--clr-orange);
-  font-weight: 700;
-}
-
 .home-intro {
   display: grid;
   gap: var(--spc-l);
   padding-top: var(--default-content-gap);
   padding-bottom: var(--default-content-gap);
-}
-
-.home-supporting-copy {
-  max-width: 60rem;
 }
 
 .home-actions {
@@ -1018,8 +978,6 @@ main .section.highlight-light-green {
 .home-stat-value {
   margin: 0;
   color: var(--clr-black);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
 }
 
 .home-stat-label {
@@ -1095,16 +1053,12 @@ main .section.highlight-light-green {
 }
 
 .home-focus-list li + li {
-  margin-top: var(--spc-s);
+  margin-top: 0.25rem;
 }
 
 .home-callout-card p:last-child {
   margin-top: var(--spc-m);
   margin-bottom: 0;
-}
-
-.home-cta p {
-  max-width: 48rem;
 }
 
 .ai-highlight-grid {
@@ -1268,14 +1222,7 @@ main .section.highlight-light-green {
 }
 
 .case-study-list li + li {
-  margin-top: var(--spc-xs);
-}
-
-.case-study-source {
-  margin-top: var(--spc-l);
-  padding-top: var(--spc-m);
-  border-top: 1px solid var(--clr-light-grey);
-  font-size: var(--body-font-size-s);
+  margin-top: 0.25rem;
 }
 
 .case-study-image-grid {
@@ -1325,10 +1272,6 @@ main .section.highlight-light-green {
 .about-profile-copy p,
 .about-links-copy {
   max-width: 48rem;
-}
-
-.about-card-grid {
-  margin-top: 0;
 }
 
 .about-facts-grid {
