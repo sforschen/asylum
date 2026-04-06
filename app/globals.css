@@ -1033,6 +1033,18 @@ main .section.highlight-light-green {
   padding-bottom: var(--default-content-gap);
 }
 
+.home-intro .page-title {
+  text-transform: uppercase;
+}
+
+.home-intro-lead {
+  margin-top: calc(var(--spc-s) * -1);
+  margin-bottom: var(--spc-m);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .home-actions {
   display: flex;
   flex-wrap: wrap;
