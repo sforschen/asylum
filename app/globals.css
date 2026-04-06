@@ -138,7 +138,10 @@ h2 {
   font-size: var(--heading-font-size-l);
   margin-bottom: var(--spc-m);
 }
-h3 { font-size: var(--heading-font-size-s) }
+h3 {
+  font-size: var(--heading-font-size-s);
+  line-height: 1.2;
+}
 h4 { font-size: var(--heading-font-size-xs) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
