@@ -135,7 +135,8 @@ li {
 
 ul {
   list-style-type: disc;
-  margin-left: var(--spc-xs);
+  margin-left: 0;
+  padding-left: 48px;
   margin-bottom: var(--spc-m);
 }
 
@@ -800,7 +801,7 @@ main .section.highlight-light-green {
 
 .experience-bullet-list {
   list-style-type: disc;
-  padding-left: var(--spc-xl);
+  padding-left: 48px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
 }
@@ -1105,7 +1106,7 @@ main .section.highlight-light-green {
 
 .home-focus-list {
   margin: 0;
-  padding-left: var(--spc-l);
+  padding-left: 48px;
   list-style-type: disc;
 }
 
@@ -1271,7 +1272,7 @@ main .section.highlight-light-green {
 }
 
 .case-study-list {
-  padding-left: var(--spc-l);
+  padding-left: 48px;
 }
 
 .case-study-list li + li {
