@@ -88,13 +88,10 @@ export default function Home() {
         <div className="page-intro-copy home-intro-copy">
           <h1 className="page-title">Leadership for exceptional marketing teams</h1>
           <p className="home-intro-lead">
-            Driven by complex design systems, advanced tech stacks, and the teams that keep both moving, together we build the operational foundations behind content, creative, websites, and digital platforms so
-            organizations can scale with less chaos and better results.
+            Driven by complex design systems, advanced tech stacks, and the dedicated teams that power them, we build the operational foundations for content, creative, websites, and digital platforms. This enables organizations to scale efficiently, reduce chaos, and achieve stronger outcomes.
           </p>
           <p>
-            My work sits at the intersection of business development, marketing operations, design systems, website management,
-            and technical implementation. That includes migrations, accessibility, asset management, content
-            governance, vendor coordination, and the processes that help teams deliver strong work consistently.
+            My work sits at the intersection of business development, marketing operations, design systems, website management, and technical implementation. That includes migrations, accessibility, asset management, content governance, vendor coordination, and the processes that help teams consistently deliver strong work.
           </p>
           <div className="home-actions">
             <a className="button" href="/experience">
@@ -134,8 +131,7 @@ export default function Home() {
             is especially rewarding to guide small, energetic teams through high-impact work together.
           </p>
           <p>
-            My approach is hands-on and systems-minded: clear direction, open communication, useful process, and the
-            right technology choices so teams can take ownership and deliver confidently.
+            My approach is all about being supportive, hands-on, and a little bit playful—clear direction, open communication, and practical processes. With the right tools and plenty of encouragement, I help teams take ownership and deliver their best work with confidence.
           </p>
         </div>
 
