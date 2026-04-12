@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Bot, IbmWatsonxCodeAssistantForZValidationAssistant, UserAdmin } from "@carbon/icons-react";
+import Link from "next/link";
 
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
@@ -213,6 +214,23 @@ export default function KnowledgePage() {
         </div>
       </ContentSection>
 
+      <ContentSection
+        id="marketing--design"
+        title="Marketing & Design"
+        outerClassName="page-container knowledge-section"
+        threeColumn
+      >
+        <p>
+          With a keen eye for design and a strategic marketing mindset, I excel in the intersection of creativity and
+          business. Proficient in website management, I ensure an engaging online presence. My art direction and
+          graphic design skills contribute to compelling visual narratives, while my expertise in brand management
+          guarantees a consistent and impactful brand image. Leveraging the power of social media, content marketing,
+          and direct marketing, I orchestrate campaigns that captivate audiences and drive results. Additionally, my
+          proficiency in email marketing enhances communication strategies, creating lasting connections with clients
+          and customers.
+        </p>
+      </ContentSection>
+
       {/* Certifications are presented as a lightweight data table. */}
       <ContentSection
         id="certifications"
@@ -252,7 +270,7 @@ export default function KnowledgePage() {
       </ContentSection>
 
       {/* Narrative skills overview before the scored skill cards. */}
-      <ContentSection id="skills" title="Skills" outerClassName="page-container knowledge-section">
+      <ContentSection id="skills" title="Skills" outerClassName="page-container knowledge-section" threeColumn>
         <p>
           I am a highly tech-savvy professional with a proven track record in analytical thinking and critical
           problem-solving. I have adept process development, project management, strategy, and research skills.
@@ -261,17 +279,6 @@ export default function KnowledgePage() {
           I adapt quickly to existing tech stacks while staying genuinely interested in emerging tools and platforms.
           Whether I am working inside established systems or learning something new, I focus on understanding how the
           technology fits into real workflows so teams can use it effectively and sustainably.
-        </p>
-
-        <h3 id="marketing--design">Marketing &amp; Design</h3>
-        <p>
-          With a keen eye for design and a strategic marketing mindset, I excel in the intersection of creativity and
-          business. Proficient in website management, I ensure an engaging online presence. My art direction and
-          graphic design skills contribute to compelling visual narratives, while my expertise in brand management
-          guarantees a consistent and impactful brand image. Leveraging the power of social media, content marketing,
-          and direct marketing, I orchestrate campaigns that captivate audiences and drive results. Additionally, my
-          proficiency in email marketing enhances communication strategies, creating lasting connections with clients
-          and customers.
         </p>
       </ContentSection>
 
@@ -301,6 +308,7 @@ export default function KnowledgePage() {
         title="Education"
         outerClassName="section highlight"
         innerClassName="page-container page-section-content knowledge-section"
+        threeColumn
       >
         <p>
           Salt Lake Community College
@@ -308,6 +316,21 @@ export default function KnowledgePage() {
           AAS in Visual Art &amp; Design, Graphic Design Emphasis <strong>w/Honors</strong>
         </p>
       </ContentSection>
+
+      <section className="section highlight-orange cta-section">
+        <div className="page-container page-section-content">
+          <h2 className="section-title">Want to put these skills to work?</h2>
+          <p>
+            If you would like to connect, ask a question, or talk about how this experience could support your team, I
+            would love to hear from you.
+          </p>
+          <p>
+            <Link className="button" href="/contact">
+              Contact Me
+            </Link>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

@@ -120,7 +120,7 @@ export default function AboutPage() {
       </ContentSection>
 
       {/* Closing links to resume and external profiles. */}
-      <ContentSection id="hey-there" title="Hey there!" outerClassName="page-container">
+      <ContentSection id="hey-there" title="Hey there!" outerClassName="page-container" threeColumn>
         <p className="about-links-copy">
           To learn more about my background and skills, check out my{" "}
           <a

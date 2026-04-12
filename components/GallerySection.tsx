@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
@@ -25,6 +26,7 @@ export type GalleryItem = {
 type Props = {
   id: string;
   title: string;
+  intro?: ReactNode;
   items: GalleryItem[];
   sectionClassName?: string;
 };
@@ -48,7 +50,7 @@ function GalleryLink({ href, label, emphasis }: GalleryItemLink) {
   );
 }
 
-export default function GallerySection({ id, title, items, sectionClassName }: Props) {
+export default function GallerySection({ id, title, intro, items, sectionClassName }: Props) {
   return (
     <ContentSection
       id={id}
@@ -57,6 +59,7 @@ export default function GallerySection({ id, title, items, sectionClassName }: P
       outerClassName={sectionClassName ? `section ${sectionClassName}` : "page-container portfolio-section"}
       innerClassName={sectionClassName ? "page-container page-section-content" : undefined}
     >
+      {intro ? <div className="section-intro">{intro}</div> : null}
       <div className="gallery">
         <ul>
           {items.map((item, index) => (

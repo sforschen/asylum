@@ -5,7 +5,7 @@ export const elixirSiteCaseStudy: CaseStudyPost = {
   slug: "elixir-site",
   title: "Rebuilding Elixir's Website for speed, accessibility, and easier publishing",
   category: "Web Design and Management",
-  publishedAt: "2024-02-20",
+  publishedAt: "2023-01-15",
   readTime: "4 min read",
   summary:
     "Led the move to Adobe AEM Live, improved authoring support, and helped raise Lighthouse scores from the mid-60s to 98-100.",

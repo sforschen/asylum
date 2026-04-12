@@ -5,7 +5,7 @@ export const seriousSillyCaseStudy: CaseStudyPost = {
   slug: "serious-silly",
   title: "Building a playful bumper sticker series with a clear point of view",
   category: "Print & Misc",
-  publishedAt: "2023-10-03",
+  publishedAt: "2024-03-01",
   readTime: "2 min read",
   summary:
     "Developed a lighthearted print concept that paired strong visual direction with a memorable, personality-driven campaign idea.",

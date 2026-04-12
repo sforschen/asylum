@@ -49,6 +49,7 @@
   /* misc. */
   --max-content-width: 80rem;      
   --max-content-width-wide: 74rem;
+  --max-copy-width: 48rem;
   --default-content-gap: 3rem;
   --spc-xl: var(--default-content-gap);
   --spc-l: 3rem; 
@@ -254,14 +255,14 @@ button:disabled, button:disabled:hover {
 
 a.button.secondary, button.secondary {
   background-color: unset;
-  border: var(--border-width-medium) solid var(--clr-orange);
-  color: var(--clr-orange)
+  border: var(--border-width-medium) solid var(--clr-green);
+  color: var(--clr-green)
 }
 
 a.button.secondary:hover, button.secondary:hover {
-  background-color: var(--clr-light-orange);
-  border: var(--border-width-medium) solid var(--clr-orange);
-  color: var(--clr-orange)
+  background-color: var(--clr-green);
+  border: var(--border-width-medium) solid var(--clr-green);
+  color: var(--clr-white)
 }
 
 main img {
@@ -297,6 +298,10 @@ main .section.highlight {
 
 main .section.highlight-light-green {
   background-color: var(--clr-light-green);
+}
+
+main .section.highlight-orange {
+  background-color: var(--clr-orange);
 }
 
 main .section.highlight-red {
@@ -379,8 +384,72 @@ ol:last-child {
   margin-bottom: 0;
 }
 
-main .section {
+main .section,
+.page-intro-header,
+.knowledge-page-intro,
+.page-copy,
+.home-intro,
+.home-leadership-callout,
+.portfolio-section,
+.knowledge-section {
   padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-shell > .page-container,
+.page-shell > .page-container.page-section-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-intro-header,
+.knowledge-page-intro,
+.page-copy,
+.page-shell > .page-container,
+.page-shell > .page-container.page-section-content,
+.home-intro,
+.home-leadership-callout,
+.portfolio-section,
+.knowledge-section {
+  overflow: visible;
+}
+
+main .section::after,
+.page-shell > .page-container::after,
+.page-shell > .page-container.page-section-content::after,
+.page-intro-header::after,
+.knowledge-page-intro::after,
+.page-copy::after,
+.home-intro::after,
+.home-leadership-callout::after,
+.portfolio-section::after,
+.knowledge-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: calc((100vw - 100%) / -2);
+  bottom: 0;
+  width: calc(min(26rem, 35%) + max(0px, (100vw - 100%) / 2));
+  pointer-events: none;
+  opacity: 0.45;
+  background:
+    radial-gradient(circle at 78% 18%, rgb(28 118 196 / 0.24), transparent 0 42%),
+    linear-gradient(180deg, rgb(11 11 11 / 0.1) 0, rgb(11 11 11 / 0.1) 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, rgb(11 11 11 / 0.1) 0, rgb(11 11 11 / 0.1) 1px, transparent 1px, transparent 100%);
+  background-size:
+    100% 100%,
+    100% 1.15rem,
+    1.15rem 100%;
+  background-position:
+    right center,
+    right center,
+    right center;
+  background-attachment:
+    scroll,
+    fixed,
+    fixed;
+  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
 }
 
 .page-shell {
@@ -396,11 +465,26 @@ main .section {
 .page-section-content {
   padding-top: var(--default-content-gap);
   padding-bottom: var(--default-content-gap);
+  position: relative;
+  z-index: 1;
 }
 
 .page-intro {
   padding-top: var(--default-content-gap);
   padding-bottom: var(--default-content-gap);
+}
+
+.page-intro-header > *,
+.knowledge-page-intro > *,
+.page-copy > *,
+.page-shell > .page-container > *,
+.page-shell > .page-container.page-section-content > *,
+.home-intro > *,
+.home-leadership-callout > *,
+.portfolio-section > *,
+.knowledge-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-intro-copy {
@@ -412,6 +496,20 @@ main .section {
 .page-copy {
   padding-top: var(--default-content-gap);
   padding-bottom: var(--default-content-gap);
+}
+
+.three-column-copy {
+  display: grid;
+  gap: var(--spc-m);
+}
+
+.three-column-copy-main,
+.three-column-copy-side {
+  min-width: 0;
+}
+
+.three-column-copy-side.is-empty {
+  display: none;
 }
 
 .page-intro-header h1,
@@ -444,6 +542,25 @@ main .section a:hover {
   color: var(--clr-black) !important;
 }
 
+.page-intro-header > p,
+.knowledge-page-intro > p,
+.knowledge-section > p,
+.page-copy > p,
+.page-intro-copy > p,
+.page-section-content > p,
+.home-callout-copy > p,
+.three-column-copy-main > p,
+.page-intro-header > ul,
+.knowledge-page-intro > ul,
+.knowledge-section > ul,
+.page-copy > ul,
+.page-intro-copy > ul,
+.page-section-content > ul,
+.home-callout-copy > ul,
+.three-column-copy-main > ul {
+  max-width: var(--max-copy-width);
+}
+
 .page-title {
   margin: 0.75rem 0 var(--spc-m);
   font-size: calc(var(--heading-font-size-xl) * 1.7);
@@ -466,9 +583,21 @@ main .section a:hover {
 
 /* Shared site header and footer */
 .site-header {
+  position: relative;
+  margin-top: 12px;
   padding: 1.5rem 0;
   background-color: var(--clr-blue);
   border-bottom: var(--border-width-thin) solid var(--clr-black);
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: 0;
+  left: 0;
+  height: 12px;
+  background-color: var(--clr-green);
 }
 
 .site-nav,
@@ -494,19 +623,33 @@ header .site-nav {
 }
 
 .site-brand {
+  position: relative;
+  display: inline-block;
   font-size: var(--heading-font-size-m);
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   line-height: 1;
   text-transform: uppercase;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible {
+  transform: translateY(-0.08rem) scale(1.01);
+  color: var(--clr-green);
+  text-shadow: 0 0.25rem 1rem rgb(255 255 255 / 0.24);
 }
 
 .site-nav-toggle {
   display: none;
   align-items: center;
   justify-content: center;
+  flex: 0 0 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
   width: 3rem;
   height: 3rem;
+  aspect-ratio: 1 / 1;
   padding: 0;
   border: var(--border-width-medium) solid var(--clr-white);
   background-color: var(--clr-green);
@@ -664,6 +807,17 @@ main .section a.button:focus {
   color: var(--clr-white);
 }
 
+a.button.secondary:hover,
+a.button.secondary:focus,
+.portfolio-section a.button.secondary:hover,
+.portfolio-section a.button.secondary:focus,
+.knowledge-section a.button.secondary:hover,
+.knowledge-section a.button.secondary:focus,
+main .section a.button.secondary:hover,
+main .section a.button.secondary:focus {
+  color: var(--clr-white);
+}
+
 main .hero-container > div {
   max-width: var(--hero-max-width);
 }
@@ -743,6 +897,49 @@ main .section.highlight-light-green {
   margin: 0 0 2rem;
   color: var(--clr-black);
   font-weight: 700;
+}
+
+.cta-section .section-title,
+.cta-section p {
+  color: var(--clr-black);
+}
+
+.cta-section .page-section-content > p,
+.cta-section .page-section-content > .section-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.cta-section::after {
+  background:
+    radial-gradient(circle at 78% 18%, rgb(255 255 255 / 0.22), transparent 0 42%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.2) 0, rgb(255 255 255 / 0.2) 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, rgb(255 255 255 / 0.2) 0, rgb(255 255 255 / 0.2) 1px, transparent 1px, transparent 100%);
+}
+
+.cta-section .page-section-content {
+  background-color: var(--clr-white);
+  border: var(--border-width-thin) solid rgb(11 11 11 / 0.12);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  max-width: 53.333rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-intro {
+  max-width: var(--max-copy-width);
+  margin-bottom: var(--spc-m);
+}
+
+.section-intro p {
+  margin: 0;
 }
 
 /* Shared card systems: experience cards, galleries, and knowledge cards */
@@ -998,6 +1195,8 @@ main .section.highlight-light-green {
 
 .k-body {
   margin: var(--spc-s);
+  display: grid;
+  gap: var(--spc-xs);
 }
 
 .k-title {
@@ -1013,19 +1212,42 @@ main .section.highlight-light-green {
   margin-bottom: 0;
 }
 
-.k-bar {
-  box-sizing: border-box;
-  width: 0;
-  min-height: var(--spc-m);
-  max-height: var(--spc-m);
+.k-rating {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  padding-left: var(--spc-s);
-  border-radius: 0 var(--spc-l) var(--spc-l) 0;
-  margin-bottom: var(--spc-m);
-  color: var(--clr-white);
-  transition: width 1s ease;
+  gap: 0.2rem;
+  min-height: 1.5rem;
+}
+
+.k-star {
+  color: var(--clr-light-grey);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.k-star.is-filled {
+  text-shadow: 0 0.0625rem 0 rgb(0 0 0 / 0.08);
+}
+
+.k-star.is-shining {
+  animation: skill-star-shine 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes skill-star-shine {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0.0625rem 0 rgb(0 0 0 / 0.08);
+  }
+
+  50% {
+    transform: scale(1.18);
+    text-shadow:
+      0 0.0625rem 0 rgb(0 0 0 / 0.08),
+      0 0 0.5rem rgb(255 255 255 / 0.45),
+      0 0 0.75rem currentcolor;
+  }
 }
 
 /* Home page specific layout and card styling */
@@ -1193,7 +1415,7 @@ main .section.highlight-light-green {
 }
 
 .case-study-feed-intro {
-  max-width: 48rem;
+  max-width: var(--max-copy-width);
 }
 
 .case-study-feed-action {
@@ -1342,7 +1564,7 @@ main .section.highlight-light-green {
 
 /* Contact and about page specific helpers */
 .contact-details p {
-  max-width: 48rem;
+  max-width: var(--max-copy-width);
 }
 
 .contact-details strong {
@@ -1417,7 +1639,35 @@ main .section.highlight-light-green {
   }
 }
 
-@media (width <= 45.625rem) {
+@media (width <= 54.375rem) {
+  main .section::after,
+  .page-shell > .page-container::after,
+  .page-shell > .page-container.page-section-content::after,
+  .page-intro-header::after,
+  .knowledge-page-intro::after,
+  .page-copy::after,
+  .home-intro::after,
+  .home-leadership-callout::after,
+  .portfolio-section::after,
+  .knowledge-section::after {
+    right: 0;
+    width: 24%;
+    opacity: 0.26;
+  }
+
+  main .section::after,
+  .page-shell > .page-container::after,
+  .page-shell > .page-container.page-section-content::after,
+  .page-intro-header::after,
+  .knowledge-page-intro::after,
+  .page-copy::after,
+  .home-intro::after,
+  .home-leadership-callout::after,
+  .portfolio-section::after,
+  .knowledge-section::after {
+    background-attachment: scroll, scroll, scroll;
+  }
+
   body {
     font-size: 1.125rem;
   }
@@ -1520,6 +1770,33 @@ main .section.highlight-light-green {
 }
 
 @media (width >= 56.25rem) {
+  .three-column-copy {
+    grid-template-columns: repeat(var(--three-column-columns, 3), minmax(0, 1fr));
+    align-items: start;
+    gap: var(--spc-m);
+  }
+
+  .three-column-copy-main {
+    grid-column: var(--three-column-main-start, 1) / span var(--three-column-main-span, 2);
+  }
+
+  .three-column-copy-side {
+    grid-column: var(--three-column-side-start, 3) / span var(--three-column-side-span, 1);
+    align-self: center;
+  }
+
+  .leadership-what-i-lead-layout .three-column-copy-main {
+    grid-column: 1;
+  }
+
+  .leadership-what-i-lead-layout .three-column-copy-side {
+    grid-column: 2 / span 2;
+  }
+
+  .leadership-style-layout .three-column-copy-main > p {
+    max-width: none;
+  }
+
   .section > div {
     max-width: 80rem;
     margin: auto;

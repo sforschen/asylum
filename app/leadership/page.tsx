@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
 
@@ -33,6 +35,9 @@ export default function LeadershipPage() {
         title="Leadership Style"
         outerClassName="section highlight"
         innerClassName="page-container page-section-content"
+        contentClassName="leadership-style-layout"
+        threeColumn
+        mainSpan={3}
       >
         <p>
           My leadership style is hands-on, practical, and rooted in clarity. I like to remove ambiguity early, define
@@ -48,18 +53,29 @@ export default function LeadershipPage() {
         </p>
       </ContentSection>
 
-      <ContentSection id="what-i-lead" title="What I Lead" outerClassName="page-container page-section-content">
+      <ContentSection
+        id="what-i-lead"
+        title="What I Lead"
+        outerClassName="page-container page-section-content"
+        contentClassName="leadership-what-i-lead-layout"
+        threeColumn
+        aside={
+          <div className="home-callout-card">
+            <h3>Focus areas</h3>
+            <ul className="home-focus-list">
+              <li>Website migrations, platform changes, and digital governance</li>
+              <li>Creative operations, project management systems, and workflow design</li>
+              <li>Accessibility improvements across web, print, and content practices</li>
+              <li>Cross-functional initiatives that require alignment between stakeholders, vendors, and internal teams</li>
+            </ul>
+          </div>
+        }
+      >
         <p>
           Much of my leadership work sits at the intersection of marketing, creative operations, website management,
           accessibility, and technology implementation. I am especially effective when work crosses disciplines and
           needs someone who can connect strategy, execution, and team coordination.
         </p>
-        <ul className="home-focus-list">
-          <li>Website migrations, platform changes, and digital governance</li>
-          <li>Creative operations, project management systems, and workflow design</li>
-          <li>Accessibility improvements across web, print, and content practices</li>
-          <li>Cross-functional initiatives that require alignment between stakeholders, vendors, and internal teams</li>
-        </ul>
       </ContentSection>
 
       <ContentSection
@@ -67,6 +83,7 @@ export default function LeadershipPage() {
         title="How I Support Teams"
         outerClassName="section highlight-light-green"
         innerClassName="page-container page-section-content"
+        threeColumn
       >
         <p>
           I care deeply about creating a team environment where people can contribute fully, ask questions early, and
@@ -79,7 +96,14 @@ export default function LeadershipPage() {
         </p>
       </ContentSection>
 
-      <ContentSection id="leadership-outcomes" title="Results That Matter" outerClassName="page-container page-section-content">
+      <ContentSection
+        id="leadership-outcomes"
+        title="Results That Matter"
+        outerClassName="page-container page-section-content"
+        contentClassName="leadership-style-layout"
+        threeColumn
+        mainSpan={3}
+      >
         <p>
           The outcomes I care most about are not just launches or completed projects, although those matter. I focus
           on whether the work leaves the team in a better place: stronger systems, clearer communication, better
@@ -90,6 +114,21 @@ export default function LeadershipPage() {
           through the current initiative; I help build the conditions for the next one to go better too.
         </p>
       </ContentSection>
+
+      <section className="section highlight-orange cta-section">
+        <div className="page-container page-section-content">
+          <h2 className="section-title">Looking for leadership that keeps work moving?</h2>
+          <p>
+            If you would like to connect, ask a question, or talk about leadership support for your team or project, I
+            would love to hear from you.
+          </p>
+          <p>
+            <Link className="button" href="/contact">
+              Contact Me
+            </Link>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

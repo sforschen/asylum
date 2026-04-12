@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import { siteAssets } from "../../content/siteAssets";
 import { siteDocuments } from "../../content/siteDocuments";
@@ -8,6 +10,7 @@ import { getCaseStudyUrl } from "../../lib/case-studies";
 type PortfolioSection = {
   id: string;
   title: string;
+  intro: string;
   sectionClassName?: string;
   items: GalleryItem[];
 };
@@ -16,6 +19,8 @@ const portfolioSections: PortfolioSection[] = [
   {
     id: "web-design-and-management",
     title: "Web Design and Management",
+    intro:
+      "This section highlights website strategy, design direction, publishing workflows, and the practical systems that help teams keep digital experiences current. The work spans redesigns, migrations, authoring support, and content structures built to scale.",
     sectionClassName: "highlight",
     items: [
       {
@@ -48,6 +53,8 @@ const portfolioSections: PortfolioSection[] = [
   {
     id: "social-media",
     title: "Social Media",
+    intro:
+      "These pieces show how I shape social content that supports campaigns, announcements, and brand storytelling across channels. The work balances visual clarity, audience engagement, and messaging that is concise enough to perform well in fast-moving feeds.",
     items: [
       {
         title: "Safety Month Post",
@@ -84,6 +91,8 @@ const portfolioSections: PortfolioSection[] = [
   {
     id: "print--misc",
     title: "Print & Misc",
+    intro:
+      "This collection brings together print design, branded collateral, event materials, and one-off creative pieces with a strong point of view. It reflects the kind of work that helps brands feel tangible, memorable, and human beyond the screen.",
     sectionClassName: "highlight-light-green",
     items: [
       {
@@ -141,6 +150,8 @@ const portfolioSections: PortfolioSection[] = [
   {
     id: "art",
     title: "Art",
+    intro:
+      "These personal illustration and art pieces show the playful, expressive side of my creative practice. They are a space for experimentation with color, character, texture, and mood that continues to influence my broader design work.",
     items: [
       {
         title: "Space Owl",
@@ -229,10 +240,26 @@ export default function PortfolioPage() {
           key={section.id}
           id={section.id}
           title={section.title}
+          intro={<p>{section.intro}</p>}
           items={section.items}
           sectionClassName={section.sectionClassName}
         />
       ))}
+
+      <section className="section highlight-orange cta-section">
+        <div className="page-container page-section-content">
+          <h2 className="section-title">Excited about what you have seen?</h2>
+          <p>
+            If you would like to connect, ask a question, or talk about working together, I would love to hear from
+            you.
+          </p>
+          <p>
+            <Link className="button" href="/contact">
+              Contact Me
+            </Link>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
