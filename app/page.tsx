@@ -88,9 +88,11 @@ export default function Home() {
             <Image
               src={websiteHeader}
               alt="Creative and digital systems work"
+              fill
               priority
               quality={70}
               sizes="100vw"
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>
