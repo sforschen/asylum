@@ -1,19 +1,14 @@
 :root {
   /* Shared design tokens used across the whole app. */
-  --background: var(--clr-white);
-  --foreground: #171717;
-
   /* colors */
   --link-color: var(--clr-light-blue);
   --link-hover-color: var(--clr-orange);
   --background-color: var(--clr-white);
   --light-color: var(--clr-lighter-blue);
-  --dark-color: var(--clr-light-grey);
   --text-color: var(--clr-black);
   --clr-black: #01090c;
   --clr-light-grey: #efefef;
   --clr-red: #C02042;
-  --clr-light-red: #F9EAED;
   --clr-blue: #052B3E;
   --clr-light-blue: #1C76C4;
   --clr-lighter-blue: #eff8fc;
@@ -23,9 +18,14 @@
   --clr-light-orange: #FBEAE6;
   --clr-white: #fffefa;
   --surface-stroke-color: var(--clr-orange);
-  --blur: 1rem;
-  --fs: clamp(3rem, 8vw, 7rem);
-  --ls: clamp(-0.109375rem, -0.25vw, -0.21875rem);
+  --surface-tint-color: rgb(255 255 255 / 0.9);
+  --section-pattern-accent: rgb(28 118 196 / 0.24);
+  --section-pattern-line: rgb(11 11 11 / 0.1);
+  --section-pattern-mask: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
+  --cta-pattern-accent: rgb(255 255 255 / 0.22);
+  --cta-pattern-line: rgb(255 255 255 / 0.2);
+  --nav-focus-outline-color: rgb(255 255 255 / 0.35);
+  --nav-divider-color: rgb(255 255 255 / 0.15);
 
   /* fonts */
   --body-font-family: "lexend", sans-serif;
@@ -44,7 +44,6 @@
   --text-size-5xl: 3.81rem;
 
   /* body sizes */
-  --body-font-size-xl: var(--text-size-xl);
   --body-font-size-l: var(--text-size-lg);
   --body-font-size-m: var(--text-size-md);
   --body-font-size-s: var(--text-size-sm);
@@ -52,7 +51,6 @@
 
   /* heading sizes */
   --heading-font-size-xxl: var(--text-size-5xl);
-  --heading-font-size-xl: var(--text-size-4xl);
   --heading-font-size-l: var(--text-size-3xl);
   --heading-font-size-m: var(--text-size-2xl);
   --heading-font-size-s: var(--text-size-xl);
@@ -69,15 +67,21 @@
   --spc-ms: 1.5rem;
   --spc-s: 1rem; 
   --spc-xs: .5rem;
-  --spc-xxs: .25rem;
   --spc-mobile-card: .75rem;
 
   --hero-max-width: 120rem;
   --hero-height: 26.25rem;
   --hero-title-max-width: 60rem;
   --case-study-image-max-width: 25rem;
+  --cta-max-width: 53.333rem;
+  --cta-padding: var(--spc-l);
   --icon-size: 3rem;
   --scroll-reveal-offset: 2rem;
+  --header-accent-height: 0.75rem;
+  --header-padding-y: var(--spc-ms);
+  --nav-control-size: var(--spc-l);
+  --nav-control-icon-width: var(--spc-ms);
+  --meta-gap: 0.75rem;
 
   --border-width-thin: 0.0625rem;
   --border-width-medium: 0.125rem;
@@ -91,12 +95,7 @@
   --tracking-wide: 0.25rem;
 
   /* breakpoints */
-  --breakpoint-xxl: 36rem; 
-  --breakpoint-xl: 30rem;
-  --breakpoint-l: 24rem;  
   --breakpoint-m: 18rem;  
-  --breakpoint-s: 12rem;   
-  --breakpoint-xs: 6rem; 
 
   /* nav height */
   --nav-height: auto;
@@ -344,6 +343,7 @@ main .hero-container {
   width: min(100%, var(--hero-max-width));
   height: var(--hero-height);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -360,9 +360,11 @@ main .hero-container {
   z-index: -1;
   top: 0;
   left: 50%;
+  display: block;
   width: min(100%, var(--hero-max-width));
   transform: translateX(-50%);
   box-sizing: border-box;
+  height: var(--hero-height);
   max-height: var(--hero-height);
   overflow: hidden;
 }
@@ -370,21 +372,11 @@ main .hero-container {
 .hero img {
   object-fit: cover;
   width: 100%;
-  height: var(--hero-height);
+  height: 100%;
+  max-height: 100%;
   display: block;
   margin: auto;
 }
-
-@media (width <= 49.5rem) {
-  .hero img {
-    display: none;
-  }
-
-  .hero {
-    height: 0;
-  }
-}
-
 
 /* Legacy merged block styles retained for compatibility with imported patterns. */
 /* App overrides restored for current asylum pages */
@@ -445,9 +437,9 @@ main .section::after,
   pointer-events: none;
   opacity: 0.45;
   background:
-    radial-gradient(circle at 78% 18%, rgb(28 118 196 / 0.24), transparent 0 42%),
-    linear-gradient(180deg, rgb(11 11 11 / 0.1) 0, rgb(11 11 11 / 0.1) 1px, transparent 1px, transparent 100%),
-    linear-gradient(90deg, rgb(11 11 11 / 0.1) 0, rgb(11 11 11 / 0.1) 1px, transparent 1px, transparent 100%);
+    radial-gradient(circle at 78% 18%, var(--section-pattern-accent), transparent 0 42%),
+    linear-gradient(180deg, var(--section-pattern-line) 0, var(--section-pattern-line) 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, var(--section-pattern-line) 0, var(--section-pattern-line) 1px, transparent 1px, transparent 100%);
   background-size:
     100% 100%,
     100% 1.15rem,
@@ -460,7 +452,7 @@ main .section::after,
     scroll,
     fixed,
     fixed;
-  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
+  mask-image: var(--section-pattern-mask);
 }
 
 /* Prevent nested section patterns on highlighted knowledge blocks. */
@@ -475,7 +467,7 @@ main .section .knowledge-section::after {
 .page-container {
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding: var(--default-content-gap) 1.5rem;
+  padding: var(--default-content-gap) var(--spc-ms);
 }
 
 .page-section-content {
@@ -600,8 +592,8 @@ main .section a:hover {
 /* Shared site header and footer */
 .site-header {
   position: relative;
-  margin-top: 12px;
-  padding: 1.5rem 0;
+  margin-top: var(--header-accent-height);
+  padding: var(--header-padding-y) 0;
   background-color: var(--clr-blue);
   border-bottom: var(--border-width-thin) solid var(--clr-black);
 }
@@ -609,10 +601,10 @@ main .section a:hover {
 .site-header::before {
   content: "";
   position: absolute;
-  top: -12px;
+  top: calc(var(--header-accent-height) * -1);
   right: 0;
   left: 0;
-  height: 12px;
+  height: var(--header-accent-height);
   background-color: var(--clr-green);
 }
 
@@ -626,7 +618,7 @@ header .site-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--spc-ms);
 }
 
 .site-nav-bar {
@@ -660,11 +652,11 @@ header .site-nav {
   display: none;
   align-items: center;
   justify-content: center;
-  flex: 0 0 3rem;
-  min-width: 3rem;
-  min-height: 3rem;
-  width: 3rem;
-  height: 3rem;
+  flex: 0 0 var(--nav-control-size);
+  min-width: var(--nav-control-size);
+  min-height: var(--nav-control-size);
+  width: var(--nav-control-size);
+  height: var(--nav-control-size);
   aspect-ratio: 1 / 1;
   padding: 0;
   border: var(--border-width-medium) solid var(--clr-white);
@@ -694,13 +686,13 @@ header .site-nav {
 }
 
 .site-nav-toggle:focus-visible {
-  outline: var(--outline-width) solid rgb(255 255 255 / 0.35);
+  outline: var(--outline-width) solid var(--nav-focus-outline-color);
   outline-offset: var(--outline-offset);
 }
 
 .site-nav-toggle span {
   display: block;
-  width: 1.5rem;
+  width: var(--nav-control-icon-width);
   height: var(--hamburger-bar-height);
   border-radius: var(--radius-full);
   background-color: var(--clr-white);
@@ -762,7 +754,7 @@ header .site-nav {
 }
 
 .site-footer {
-  padding: 1.5rem;
+  padding: var(--spc-ms);
   color: var(--clr-white);
   background-color: var(--clr-blue);
   border-top: var(--border-width-thin) solid var(--clr-black);
@@ -834,68 +826,6 @@ main .section a.button.secondary:focus {
   color: var(--clr-white);
 }
 
-main .hero-container > div {
-  max-width: var(--hero-max-width);
-}
-
-main .hero-container {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.hero {
-  position: relative;
-  width: min(100%, var(--hero-max-width));
-  height: var(--hero-height);
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.hero h1 {
-  max-width: var(--hero-title-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: var(--default-content-gap);
-  color: white;
-  visibility: hidden;
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 50%;
-  display: block;
-  width: min(100%, var(--hero-max-width));
-  transform: translateX(-50%);
-  box-sizing: border-box;
-  height: var(--hero-height);
-  max-height: var(--hero-height);
-  overflow: hidden;
-}
-
-.hero img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: auto;
-}
-
-main .section.highlight {
-  background-color: var(--light-color);
-}
-
-main .section.highlight-red {
-  background-color: var(--clr-red);
-}
-
-main .section.highlight-light-green {
-  background-color: var(--clr-light-green);
-}
-
 .has-scroll-reveal .scroll-reveal {
   opacity: 0;
   transform: translateY(var(--scroll-reveal-offset));
@@ -927,23 +857,23 @@ main .section.highlight-light-green {
 }
 
 .cta-section {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
+  padding-top: var(--cta-padding) !important;
+  padding-bottom: var(--cta-padding) !important;
 }
 
 .cta-section::after {
   background:
-    radial-gradient(circle at 78% 18%, rgb(255 255 255 / 0.22), transparent 0 42%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.2) 0, rgb(255 255 255 / 0.2) 1px, transparent 1px, transparent 100%),
-    linear-gradient(90deg, rgb(255 255 255 / 0.2) 0, rgb(255 255 255 / 0.2) 1px, transparent 1px, transparent 100%);
+    radial-gradient(circle at 78% 18%, var(--cta-pattern-accent), transparent 0 42%),
+    linear-gradient(180deg, var(--cta-pattern-line) 0, var(--cta-pattern-line) 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, var(--cta-pattern-line) 0, var(--cta-pattern-line) 1px, transparent 1px, transparent 100%);
 }
 
 .cta-section .page-section-content {
   background-color: var(--clr-white);
   border: var(--border-width-thin) solid var(--surface-stroke-color);
   border-radius: var(--radius-card);
-  padding: 48px;
-  max-width: 53.333rem;
+  padding: var(--cta-padding);
+  max-width: var(--cta-max-width);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1330,7 +1260,7 @@ main .section.highlight-light-green {
 .home-pillar {
   padding: var(--spc-m);
   border: var(--border-width-thin) solid var(--surface-stroke-color);
-  background-color: rgb(255 255 255 / 0.9);
+  background-color: var(--surface-tint-color);
   border-radius: var(--radius-card);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1404,7 +1334,7 @@ main .section.highlight-light-green {
 .ai-highlight-card {
   padding: var(--spc-m);
   border: var(--border-width-thin) solid var(--surface-stroke-color);
-  background-color: rgb(255 255 255 / 0.9);
+  background-color: var(--surface-tint-color);
   border-radius: var(--radius-card);
 }
 
@@ -1454,7 +1384,7 @@ main .section.highlight-light-green {
 .case-study-hero-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--meta-gap);
   margin-bottom: var(--spc-s);
   color: var(--clr-orange);
   font-size: var(--body-font-size-s);
@@ -1469,7 +1399,7 @@ main .section.highlight-light-green {
 .case-study-hero-meta span {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--meta-gap);
 }
 
 .case-study-hero-meta span + span::before {
@@ -1529,7 +1459,7 @@ main .section.highlight-light-green {
   padding: var(--spc-m);
   border: var(--border-width-thin) solid var(--surface-stroke-color);
   border-radius: var(--radius-card);
-  background-color: rgb(255 255 255 / 0.9);
+  background-color: var(--surface-tint-color);
 }
 
 .case-study-metric-value {
@@ -1776,7 +1706,7 @@ main .section.highlight-light-green {
     width: 100%;
     margin-top: 0;
     padding: var(--spc-s) 0 var(--spc-s);
-    border-top: var(--border-width-thin) solid rgb(255 255 255 / 0.15);
+    border-top: var(--border-width-thin) solid var(--nav-divider-color);
   }
 
   .site-nav-links.is-open {

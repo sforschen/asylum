@@ -89,6 +89,7 @@ export default function AboutPage() {
               alt="Serenity Forschen portrait"
               width={750}
               height={750}
+              loading="eager"
               sizes="(min-width: 900px) 24rem, 100vw"
             />
           </div>
