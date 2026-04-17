@@ -1,6 +1,6 @@
 :root {
   /* Shared design tokens used across the whole app. */
-  --background: #ffffff;
+  --background: var(--clr-white);
   --foreground: #171717;
 
   /* colors */
@@ -10,7 +10,7 @@
   --light-color: var(--clr-lighter-blue);
   --dark-color: var(--clr-light-grey);
   --text-color: var(--clr-black);
-  --clr-black: #0B0B0B;
+  --clr-black: #01090c;
   --clr-light-grey: #efefef;
   --clr-red: #C02042;
   --clr-light-red: #F9EAED;
@@ -21,7 +21,7 @@
   --clr-light-green: #F6FBF5;
   --clr-orange: #D94928;
   --clr-light-orange: #FBEAE6;
-  --clr-white: #fff;
+  --clr-white: #fffefa;
   --surface-stroke-color: var(--clr-orange);
   --blur: 1rem;
   --fs: clamp(3rem, 8vw, 7rem);
@@ -32,20 +32,31 @@
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: "lexend", sans-serif;
 
+  /* type scale */
+  --text-size-xs: 0.64rem;
+  --text-size-sm: 0.8rem;
+  --text-size-md: 1rem;
+  --text-size-lg: 1.25rem;
+  --text-size-xl: 1.56rem;
+  --text-size-2xl: 1.95rem;
+  --text-size-3xl: 2.44rem;
+  --text-size-4xl: 3.05rem;
+  --text-size-5xl: 3.81rem;
+
   /* body sizes */
-  --body-font-size-xl: 2rem;  
-  --body-font-size-l: 1.75rem;  
-  --body-font-size-m: 1.5rem; 
-  --body-font-size-s: 1rem; 
-  --body-font-size-xs: .75rem; 
+  --body-font-size-xl: var(--text-size-xl);
+  --body-font-size-l: var(--text-size-lg);
+  --body-font-size-m: var(--text-size-md);
+  --body-font-size-s: var(--text-size-sm);
+  --body-font-size-xs: var(--text-size-xs);
 
   /* heading sizes */
-  --heading-font-size-xxl: 3rem;
-  --heading-font-size-xl: 2.5rem;
-  --heading-font-size-l: 2rem;   
-  --heading-font-size-m: 1.75rem;    
-  --heading-font-size-s: 1.5rem;   
-  --heading-font-size-xs: 1.25rem; 
+  --heading-font-size-xxl: var(--text-size-5xl);
+  --heading-font-size-xl: var(--text-size-4xl);
+  --heading-font-size-l: var(--text-size-3xl);
+  --heading-font-size-m: var(--text-size-2xl);
+  --heading-font-size-s: var(--text-size-xl);
+  --heading-font-size-xs: var(--text-size-lg);
 
   /* misc. */
   --max-content-width: 80rem;      
@@ -153,11 +164,11 @@ p, dl, ol, ul, pre, blockquote {
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: var(--text-size-lg);
 }
 
 li {
-  font-size: 1.25rem;
+  font-size: var(--text-size-lg);
 }
 
 ul {
@@ -452,6 +463,11 @@ main .section::after,
   mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
 }
 
+/* Prevent nested section patterns on highlighted knowledge blocks. */
+main .section .knowledge-section::after {
+  content: none;
+}
+
 .page-shell {
   width: 100%;
 }
@@ -563,7 +579,7 @@ main .section a:hover {
 
 .page-title {
   margin: 0.75rem 0 var(--spc-m);
-  font-size: calc(var(--heading-font-size-xl) * 1.7);
+  font-size: var(--text-size-5xl);
   font-weight: 700;
   line-height: 1.15;
 }
@@ -722,7 +738,7 @@ header .site-nav {
 }
 
 .site-nav-links a {
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -773,7 +789,7 @@ header .site-nav {
 .site-footer a {
   position: relative;
   color: var(--clr-white);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
 }
 
 .site-footer-links a::after {
@@ -1003,7 +1019,7 @@ main .section.highlight-light-green {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--clr-white);
-  font-size: 1.5em;
+  font-size: var(--text-size-xl);
   font-weight: 700;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -1221,7 +1237,7 @@ main .section.highlight-light-green {
 
 .k-star {
   color: var(--clr-light-grey);
-  font-size: 1.35rem;
+  font-size: var(--text-size-lg);
   line-height: 1;
 }
 
@@ -1687,7 +1703,7 @@ main .section.highlight-light-green {
   }
 
   body {
-    font-size: 1.125rem;
+    font-size: var(--body-font-size-m);
   }
 
   .cards > ul,
@@ -1731,7 +1747,7 @@ main .section.highlight-light-green {
   }
 
   .page-title {
-    font-size: clamp(2.75rem, 9vw, 4rem);
+    font-size: clamp(var(--text-size-3xl), 9vw, var(--text-size-5xl));
   }
 
   a.button:any-link,
