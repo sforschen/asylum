@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import CtaSection from "../../components/CtaSection";
 import ExperienceCardsSection, { type ExperienceItem } from "../../components/ExperienceCardsSection";
 import { siteAssets } from "../../content/siteAssets";
 import { siteDocuments } from "../../content/siteDocuments";
@@ -232,20 +231,10 @@ export default function ExperiencePage() {
         cardsClassName="cards-archive"
       />
 
-      <section className="section highlight-orange cta-section">
-        <div className="page-container page-section-content">
-          <h2 className="section-title">Interested in the experience behind the work?</h2>
-          <p>
-            If you would like to connect, ask a question, or talk about how I could support your team, I would love to
-            hear from you.
-          </p>
-          <p>
-            <Link className="button" href="/contact">
-              Contact Me
-            </Link>
-          </p>
-        </div>
-      </section>
+      <CtaSection title="Interested in the experience behind the work?">
+        If you would like to connect, ask a question, or talk about how I could support your team, I would love to
+        hear from you.
+      </CtaSection>
     </main>
   );
 }

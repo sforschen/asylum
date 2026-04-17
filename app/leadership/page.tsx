@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import CtaSection from "../../components/CtaSection";
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
 
@@ -115,20 +114,10 @@ export default function LeadershipPage() {
         </p>
       </ContentSection>
 
-      <section className="section highlight-orange cta-section">
-        <div className="page-container page-section-content">
-          <h2 className="section-title">Looking for leadership that keeps work moving?</h2>
-          <p>
-            If you would like to connect, ask a question, or talk about leadership support for your team or project, I
-            would love to hear from you.
-          </p>
-          <p>
-            <Link className="button" href="/contact">
-              Contact Me
-            </Link>
-          </p>
-        </div>
-      </section>
+      <CtaSection title="Looking for leadership that keeps work moving?">
+        If you would like to connect, ask a question, or talk about leadership support for your team or project, I
+        would love to hear from you.
+      </CtaSection>
     </main>
   );
 }

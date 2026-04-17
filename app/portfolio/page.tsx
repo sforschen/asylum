@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import CtaSection from "../../components/CtaSection";
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import { siteAssets } from "../../content/siteAssets";
 import { siteDocuments } from "../../content/siteDocuments";
@@ -246,20 +245,9 @@ export default function PortfolioPage() {
         />
       ))}
 
-      <section className="section highlight-orange cta-section">
-        <div className="page-container page-section-content">
-          <h2 className="section-title">Excited about what you have seen?</h2>
-          <p>
-            If you would like to connect, ask a question, or talk about working together, I would love to hear from
-            you.
-          </p>
-          <p>
-            <Link className="button" href="/contact">
-              Contact Me
-            </Link>
-          </p>
-        </div>
-      </section>
+      <CtaSection title="Excited about what you have seen?">
+        If you would like to connect, ask a question, or talk about working together, I would love to hear from you.
+      </CtaSection>
     </main>
   );
 }

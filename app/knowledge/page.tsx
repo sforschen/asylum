@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { Bot, IbmWatsonxCodeAssistantForZValidationAssistant, UserAdmin } from "@carbon/icons-react";
-import Link from "next/link";
 
 import ContentSection from "../../components/ContentSection";
+import CtaSection from "../../components/CtaSection";
 import PageIntro from "../../components/PageIntro";
 import SkillBarGroup, { type SkillItem } from "../../components/SkillBarGroup";
 
@@ -317,20 +317,10 @@ export default function KnowledgePage() {
         </p>
       </ContentSection>
 
-      <section className="section highlight-orange cta-section">
-        <div className="page-container page-section-content">
-          <h2 className="section-title">Want to put these skills to work?</h2>
-          <p>
-            If you would like to connect, ask a question, or talk about how this experience could support your team, I
-            would love to hear from you.
-          </p>
-          <p>
-            <Link className="button" href="/contact">
-              Contact Me
-            </Link>
-          </p>
-        </div>
-      </section>
+      <CtaSection title="Want to put these skills to work?">
+        If you would like to connect, ask a question, or talk about how this experience could support your team, I
+        would love to hear from you.
+      </CtaSection>
     </main>
   );
 }
