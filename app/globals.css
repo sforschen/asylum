@@ -1242,6 +1242,7 @@ main .section a.button.secondary:focus {
 .home-stat-value {
   margin: 0;
   color: var(--clr-black);
+  font-weight: 700;
 }
 
 .home-stat-label {
