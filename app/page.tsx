@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react";
+import Image from "next/image";
 
 import websiteHeader from "../content/website-header.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
@@ -83,9 +84,15 @@ export default function Home() {
       <section className="hero-container">
         <div className="hero">
           <h1>Leadership for marketing, design, and technology systems</h1>
-          <picture>
-            <img src={websiteHeader.src} alt="Creative and digital systems work" />
-          </picture>
+          <div className="hero-media">
+            <Image
+              src={websiteHeader}
+              alt="Creative and digital systems work"
+              priority
+              quality={70}
+              sizes="100vw"
+            />
+          </div>
         </div>
       </section>
 

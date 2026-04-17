@@ -355,7 +355,7 @@ main .hero-container {
   visibility: hidden;
 }
 
-.hero picture {
+.hero-media {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -369,7 +369,7 @@ main .hero-container {
   overflow: hidden;
 }
 
-.hero img {
+.hero-media img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -1540,7 +1540,7 @@ main .section a.button.secondary:focus {
 
 /* Responsive adjustments */
 @media (width <= 49.5rem) {
-  .hero img {
+  .hero-media img {
     display: none;
   }
 
