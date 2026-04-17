@@ -5,6 +5,12 @@ import { siteDocuments } from "../../content/siteDocuments";
 import PageIntro from "../../components/PageIntro";
 import { getCaseStudyUrl } from "../../lib/case-studies";
 
+export const metadata = {
+  title: "Portfolio",
+  description:
+    "Browse portfolio work from Serenity Forschen across web design and management, social media, print, branding, and personal art.",
+};
+
 // Gallery data mirrors the sections on the live portfolio site.
 type PortfolioSection = {
   id: string;

@@ -2,6 +2,12 @@ import CtaSection from "../../components/CtaSection";
 import ContentSection from "../../components/ContentSection";
 import PageIntro from "../../components/PageIntro";
 
+export const metadata = {
+  title: "Leadership",
+  description:
+    "Read about Serenity Forschen's leadership style, team support approach, focus areas, and the systems thinking behind effective delivery.",
+};
+
 // Short narrative page focused on leadership approach and team style.
 export default function LeadershipPage() {
   return (

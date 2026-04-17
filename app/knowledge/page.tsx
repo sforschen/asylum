@@ -6,6 +6,12 @@ import CtaSection from "../../components/CtaSection";
 import PageIntro from "../../components/PageIntro";
 import SkillBarGroup, { type SkillItem } from "../../components/SkillBarGroup";
 
+export const metadata = {
+  title: "Knowledge",
+  description:
+    "Review Serenity Forschen's knowledge across AI, marketing, design, certifications, digital tools, and practical technical skills.",
+};
+
 // Structured table data for the certification section.
 type Certification = {
   name: string;

@@ -2,6 +2,12 @@ import CaseStudyFeed from "@/components/CaseStudyFeed";
 import CtaSection from "@/components/CtaSection";
 import PageIntro from "@/components/PageIntro";
 
+export const metadata = {
+  title: "Case Studies",
+  description:
+    "A growing archive of case studies from Serenity Forschen covering web launches, campaign systems, creative execution, and project outcomes.",
+};
+
 export default function BlogPage() {
   return (
     <main className="page-shell">

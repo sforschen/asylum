@@ -4,6 +4,12 @@ import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react"
 import websiteHeader from "../content/website-header.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
 
+export const metadata = {
+  title: "Home",
+  description:
+    "Leadership, marketing operations, and design systems work from Serenity Forschen, with experience across websites, digital platforms, accessibility, and team operations.",
+};
+
 // Home page feature cards summarizing the main value pillars of the site.
 type HomePillar = {
   title: string;

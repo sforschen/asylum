@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import "./globals.css";
 import HeaderNav from "../components/HeaderNav";
 import ScrollReveal from "../components/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Serenity Forschen",
+    template: "%s | Serenity Forschen",
+  },
+  description:
+    "Portfolio and professional site for Serenity Forschen, focused on leadership, marketing operations, design systems, website management, and digital execution.",
+};
 
 // Shared site chrome for every route.
 export default function RootLayout({

@@ -5,6 +5,12 @@ import { siteDocuments } from "../../content/siteDocuments";
 import PageIntro from "../../components/PageIntro";
 import { getCaseStudyUrl } from "../../lib/case-studies";
 
+export const metadata = {
+  title: "Experience",
+  description:
+    "Explore Serenity Forschen's experience across leadership, digital marketing, creative operations, website management, and production work.",
+};
+
 // Full experience inventory, later split into featured and archive sections.
 const experienceItems: ExperienceItem[] = [
   {

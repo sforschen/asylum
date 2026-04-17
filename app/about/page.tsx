@@ -9,6 +9,12 @@ import { siteDocuments } from "../../content/siteDocuments";
 import KnowledgeCard from "../../components/KnowledgeCard";
 import PageIntro from "../../components/PageIntro";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Learn more about Serenity Forschen, including personal background, creative interests, everyday life, and links to resume, LinkedIn, and GitHub.",
+};
+
 // Text-first cards used for the lighter personal facts section.
 type AboutInfoCard = {
   title: string;
