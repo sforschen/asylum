@@ -1623,6 +1623,7 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   backdrop-filter: blur(0.35rem);
   box-shadow: 0 1.25rem 3rem rgb(1 9 12 / 0.18);
   color: var(--clr-white);
+  text-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 0.85);
 }
 
 .parallax-section-panel .section-title {
