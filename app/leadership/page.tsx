@@ -1,6 +1,8 @@
 import CtaSection from "../../components/CtaSection";
 import ContentSection from "../../components/ContentSection";
+import ParallaxImageSection from "../../components/ParallaxImageSection";
 import PageIntro from "../../components/PageIntro";
+import { siteAssets } from "../../content/siteAssets";
 
 export const metadata = {
   title: "Leadership",
@@ -35,28 +37,22 @@ export default function LeadershipPage() {
         }
       />
 
-      <ContentSection
+      <ParallaxImageSection
         id="leadership-style"
         title="Leadership Style"
-        outerClassName="section highlight"
-        innerClassName="page-container page-section-content"
-        contentClassName="leadership-style-layout"
-        threeColumn
-        mainSpan={3}
+        imageSrc={siteAssets.about.saltairAurora}
+        imageAlt="Saltair aurora background"
       >
         <p>
-          My leadership style is hands-on, practical, and rooted in clarity. I like to remove ambiguity early, define
-          priorities, and build enough structure that teams can move confidently without feeling boxed in.
+          My leadership style is hands-on, clear, and supportive. I focus on removing confusion, setting priorities,
+          and creating enough structure for teams to work confidently without feeling restricted.
         </p>
         <p>
-          I also believe in leading with compassion. People do their best work when they are trusted to take care of
-          themselves, work in sustainable ways, and build habits that support both wellbeing and strong performance.
+          I believe in leading with compassion. People thrive when they are trusted to work in ways that support both
+          their wellbeing and strong results. Leadership is not about adding process for its own sake, but about
+          providing support and context so people can do their best work and take ownership.
         </p>
-        <p>
-          I believe good leadership is not about adding process for its own sake. It is about giving people the right
-          support, the right context, and the right systems so they can do strong work and take ownership of it.
-        </p>
-      </ContentSection>
+      </ParallaxImageSection>
 
       <ContentSection
         id="what-i-lead"

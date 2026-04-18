@@ -1574,6 +1574,63 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   margin-top: 0;
 }
 
+.parallax-section {
+  --parallax-offset: 0px;
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.parallax-section-media {
+  position: absolute;
+  inset: -8% 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate3d(0, var(--parallax-offset), 0) scale(1.08);
+  will-change: transform;
+}
+
+.parallax-section::before {
+  content: none;
+}
+
+.parallax-section-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: calc(var(--default-content-gap) * 2);
+  padding-bottom: calc(var(--default-content-gap) * 2);
+}
+
+.parallax-section-content.is-right {
+  display: block;
+}
+
+.parallax-section-panel {
+  padding: var(--spc-l);
+  border: var(--border-width-thin) solid rgb(255 254 250 / 0.22);
+  border-radius: var(--radius-card);
+  background-color: rgb(1 9 12 / 0.76);
+  backdrop-filter: blur(0.35rem);
+  box-shadow: 0 1.25rem 3rem rgb(1 9 12 / 0.18);
+  color: var(--clr-white);
+}
+
+.parallax-section-panel .section-title {
+  margin-bottom: var(--spc-m);
+}
+
+.parallax-section-panel .section-title a {
+  color: var(--clr-white) !important;
+}
+
+.parallax-section-panel p:last-child {
+  margin-bottom: 0;
+}
+
 /* Responsive adjustments */
 @media (width <= 49.5rem) {
   .hero-media img {
@@ -1591,6 +1648,15 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   .cards-card-image::before,
   .overlay-text {
     display: none;
+  }
+
+  .parallax-section {
+    min-height: 28rem;
+  }
+
+  .parallax-section-media {
+    inset: -4% 0;
+    transform: translate3d(0, calc(var(--parallax-offset) * 0.55), 0) scale(1.04);
   }
 }
 
@@ -1764,17 +1830,29 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 
   .home-intro,
   .home-leadership-callout,
-  .about-highlight {
+  .about-highlight,
+  .parallax-section {
     gap: var(--spc-m);
   }
 
   .home-intro > *,
   .home-leadership-callout > *,
   .about-highlight > *,
+  .parallax-section > *,
   .case-study-feed-header > * {
     min-width: 0;
   }
+
+  .parallax-section-panel {
+    padding: var(--spc-ms);
+  }
+
+  .parallax-section-content {
+    padding-top: calc(var(--spc-ms) * 2);
+    padding-bottom: calc(var(--spc-ms) * 2);
+  }
 }
+
 
 @media (width >= 49.5rem) {
   .gallery > ul {
@@ -1783,6 +1861,21 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 }
 
 @media (width >= 56.25rem) {
+  .parallax-section-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .parallax-section-panel {
+    grid-column: 1 / span 2;
+    max-width: none;
+  }
+
+  .parallax-section-content.is-right .parallax-section-panel {
+    grid-column: 2 / span 2;
+  }
+
   .three-column-copy {
     grid-template-columns: repeat(var(--three-column-columns, 3), minmax(0, 1fr));
     align-items: start;
