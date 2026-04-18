@@ -36,6 +36,12 @@ const experienceItems: ExperienceItem[] = [
         label: "Punny Bumper Stickers",
       },
     ],
+    relatedAssets: [
+      {
+        href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU",
+        label: "Safety Month Post",
+      },
+    ],
   },
   {
     title: "Digital Content Marketing Manager",
@@ -66,10 +72,6 @@ const experienceItems: ExperienceItem[] = [
       },
     ],
     relatedAssets: [
-      {
-        href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU",
-        label: "Safety Month Post",
-      },
       {
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7062426632422076416?utm_source=share&utm_medium=member_desktop",
         label: "Video Post",

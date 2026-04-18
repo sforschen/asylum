@@ -415,6 +415,7 @@ main .section,
 }
 
 main .section::after,
+main .section > .page-container.page-section-content::after,
 .page-shell > .page-container::after,
 .page-shell > .page-container.page-section-content::after,
 .page-intro-header::after,
@@ -451,8 +452,12 @@ main .section::after,
   mask-image: var(--section-pattern-mask);
 }
 
-/* Prevent nested section patterns on highlighted knowledge blocks. */
-main .section .knowledge-section::after {
+/* Highlighted knowledge sections use the same inner pattern treatment as white sections. */
+main .section.highlight::after,
+main .section.highlight-light-green::after,
+main .section.highlight-orange::after,
+main .section.highlight-red::after,
+main .section.highlight-white-center::after {
   content: none;
 }
 
@@ -481,6 +486,7 @@ main .section .knowledge-section::after {
 .page-intro-header > *,
 .knowledge-page-intro > *,
 .page-copy > *,
+main .section > .page-container.page-section-content > *,
 .page-shell > .page-container > *,
 .page-shell > .page-container.page-section-content > *,
 .home-intro > *,
@@ -1610,6 +1616,7 @@ main .section a.button.secondary:focus {
   }
 
   main .section::after,
+  main .section > .page-container.page-section-content::after,
   .page-shell > .page-container::after,
   .page-shell > .page-container.page-section-content::after,
   .page-intro-header::after,
@@ -1625,6 +1632,7 @@ main .section a.button.secondary:focus {
   }
 
   main .section::after,
+  main .section > .page-container.page-section-content::after,
   .page-shell > .page-container::after,
   .page-shell > .page-container.page-section-content::after,
   .page-intro-header::after,
@@ -1857,10 +1865,7 @@ main .section a.button.secondary:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .cards-archive > ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .cards-archive > ul,
   .cards-featured > ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
