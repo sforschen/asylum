@@ -50,6 +50,8 @@ export default function RootLayout({
             <div className="site-footer-links">
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/disclaimer">Disclaimer</Link>
+              <Link href="/privacy">Privacy</Link>
             </div>
           </div>
         </footer>

@@ -1,4 +1,5 @@
 import { elixirSiteCaseStudy } from "./posts/elixirSite";
+import { optumCeCampaignCaseStudy } from "./posts/optumCeCampaign";
 import { optumSiteCaseStudy } from "./posts/optumSite";
 import { seriousSillyCaseStudy } from "./posts/seriousSilly";
 import { tAndUEventSignageCaseStudy } from "./posts/tAndUEventSignage";
@@ -6,6 +7,7 @@ import type { CaseStudyPost } from "./types";
 
 const caseStudies: CaseStudyPost[] = [
   elixirSiteCaseStudy,
+  optumCeCampaignCaseStudy,
   optumSiteCaseStudy,
   tAndUEventSignageCaseStudy,
   seriousSillyCaseStudy,

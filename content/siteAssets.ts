@@ -19,6 +19,7 @@ import socialVideoPostTwoThumb from "./site-assets/social-video-post-two-thumb.p
 import eventAnnouncementThumb from "./site-assets/social-event-announcement-thumb.jpg";
 
 import elixirWebsiteThumb from "./site-assets/portfolio-elixir-website-thumb.jpg";
+import optumCeThumbnail from "./site-assets/OptumCE-thumbnail.jpg";
 import optumWebsiteThumb from "./site-assets/portfolio-optum-website-thumb.png";
 import cpmiSolutionsWebsiteThumb from "./site-assets/portfolio-cpmi-solutions-website-thumb.jpg";
 import crEnglandPageThumb from "./site-assets/portfolio-cr-england-page-thumb.jpg";
@@ -44,6 +45,21 @@ import weirdCraneThumb from "./site-assets/portfolio-weird-crane-thumb.jpg";
 import hummingbirdThumb from "./site-assets/portfolio-hummingbird-thumb.jpg";
 
 import elixirSiteBody from "./site-assets/case-study-elixir-body.png";
+import optumCeWeeklyEmail from "./site-assets/image1.png";
+import optumCeEducationPage from "./site-assets/image2.png";
+import optumCeTodayEmail from "./site-assets/image3.png";
+import optumCeSocialThirtyDays from "./site-assets/image4.png";
+import optumCeHomepageCarousel from "./site-assets/image5.png";
+import optumCeSocialTwoWeeks from "./site-assets/image6.png";
+import optumCeSocialDayBefore from "./site-assets/image7.png";
+import optumCeLastChanceEmail from "./site-assets/image8.png";
+import optumCeThankYouEmail from "./site-assets/image9.png";
+import optumCeOnDemandPage from "./site-assets/image10.png";
+import optumCeRegistrationEmail from "./site-assets/image11.png";
+import optumCeSorryMissedYouEmail from "./site-assets/image12.png";
+import optumCeEventConsole from "./site-assets/image13.png";
+import optumCeSocialDayAfter from "./site-assets/image14.png";
+import optumCeRegistrationPage from "./site-assets/image15.png";
 import optumSiteHero from "./site-assets/case-study-optum-hero.jpg";
 import optumSiteBefore from "./site-assets/case-study-optum-before.png";
 import optumSiteAfter from "./site-assets/case-study-optum-after.png";
@@ -99,6 +115,7 @@ export const siteAssets: {
     logoDesignSignageThumb,
     magpieThumb,
     neonOwlThumb,
+    optumCeThumbnail,
     optumWebsiteThumb,
     pinkOwlThumb,
     punnyBumperStickersThumb,
@@ -108,6 +125,21 @@ export const siteAssets: {
   },
   caseStudies: {
     elixirSiteBody,
+    optumCeEducationPage,
+    optumCeEventConsole,
+    optumCeHomepageCarousel,
+    optumCeLastChanceEmail,
+    optumCeOnDemandPage,
+    optumCeRegistrationEmail,
+    optumCeRegistrationPage,
+    optumCeSocialDayAfter,
+    optumCeSocialDayBefore,
+    optumCeSocialThirtyDays,
+    optumCeSocialTwoWeeks,
+    optumCeSorryMissedYouEmail,
+    optumCeThankYouEmail,
+    optumCeTodayEmail,
+    optumCeWeeklyEmail,
     optumSiteAfter,
     optumSiteBefore,
     optumSiteHero,

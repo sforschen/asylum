@@ -11,6 +11,8 @@ export type CaseStudySection = {
   paragraphs: string[];
   bullets?: string[];
   images?: CaseStudyImage[];
+  imagesLayout?: "grid" | "masonry" | "masonry-two-column" | "two-column-last-full";
+  firstImageFullWidth?: boolean;
   sectionClassName?: "highlight" | "highlight-light-green" | "highlight-white-center";
 };
 

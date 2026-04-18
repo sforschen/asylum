@@ -109,7 +109,9 @@ export default async function CaseStudyPage({ params }: Props) {
               </div>
 
               {section.images?.length ? (
-                <div className={`case-study-image-grid case-study-image-grid-${section.images.length > 1 ? "multi" : "single"}`}>
+                <div
+                  className={`case-study-image-grid case-study-image-grid-${section.images.length > 1 ? "multi" : "single"}${section.imagesLayout === "masonry" ? " case-study-image-grid-masonry" : ""}${section.imagesLayout === "masonry-two-column" ? " case-study-image-grid-masonry-two-column" : ""}${section.imagesLayout === "two-column-last-full" ? " case-study-image-grid-two-column-last-full" : ""}${section.firstImageFullWidth ? " case-study-image-grid-first-full" : ""}`}
+                >
                   {section.images.map((image, index) => (
                     <figure key={`${image.alt}-${index}`} className="case-study-figure">
                       <Image

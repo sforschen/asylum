@@ -125,6 +125,10 @@ const experienceItems: ExperienceItem[] = [
         href: getCaseStudyUrl("optum-site"),
         label: "Optum Website Case Study",
       },
+      {
+        href: getCaseStudyUrl("optum-ce-campaign"),
+        label: "Optum CE Campaign Case Study",
+      },
     ],
   },
   {

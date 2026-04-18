@@ -39,6 +39,11 @@ const portfolioSections: PortfolioSection[] = [
         links: [{ href: getCaseStudyUrl("optum-site"), label: "Read Case Study" }],
       },
       {
+        title: "Optum Continuing Education Campaign",
+        imageSrc: siteAssets.portfolio.optumCeThumbnail,
+        links: [{ href: getCaseStudyUrl("optum-ce-campaign"), label: "Read Case Study" }],
+      },
+      {
         title: "CPMI Solutions Website",
         imageSrc: siteAssets.portfolio.cpmiSolutionsWebsiteThumb,
         links: [{ href: siteDocuments.portfolio.cpmiSolutionsWebsite, label: "View Image" }],
