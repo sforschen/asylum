@@ -231,10 +231,16 @@ export default function PortfolioPage() {
         titleId="portfolio"
         variant="default"
         body={
-          <p>
-            Where creativity meets business needs and growth: This curated collection showcases my expertise in web
-            design and management, social media, print, and branding.
-          </p>
+          <>
+            <p>
+              Where creativity meets business needs and growth: This curated collection showcases my expertise in web
+              design and management, social media, print, and branding.
+            </p>
+            <p>
+              Some work shown here was created as part of my employment with current and former employers. Please see
+              the <a href="/disclaimer">Portfolio Disclaimer</a> for more context.
+            </p>
+          </>
         }
         links={
           <p className="portfolio-jump-links">
