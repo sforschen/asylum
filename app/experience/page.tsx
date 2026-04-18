@@ -41,6 +41,10 @@ const experienceItems: ExperienceItem[] = [
         href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU",
         label: "Safety Month Post",
       },
+      {
+        href: siteDocuments.portfolio.eventMugDesign,
+        label: "Event Mug Design",
+      },
     ],
   },
   {
