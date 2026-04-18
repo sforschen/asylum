@@ -1597,6 +1597,12 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   content: none;
 }
 
+.parallax-section::after,
+.parallax-section-content::after,
+.parallax-section-panel::after {
+  content: none;
+}
+
 .parallax-section-content {
   position: relative;
   z-index: 2;
