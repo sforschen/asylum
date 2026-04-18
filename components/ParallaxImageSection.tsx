@@ -21,12 +21,14 @@ export default function ParallaxImageSection({
   panelAlign = "left",
 }: Props) {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const mediaRef = useRef<HTMLDivElement | null>(null);
   const backgroundImage = `url(${typeof imageSrc === "string" ? imageSrc : imageSrc.src})`;
 
   useEffect(() => {
     const section = sectionRef.current;
+    const media = mediaRef.current;
 
-    if (!section) {
+    if (!section || !media) {
       return undefined;
     }
 
@@ -36,7 +38,7 @@ export default function ParallaxImageSection({
       frame = 0;
       const rect = section.getBoundingClientRect();
       const offset = Math.round(rect.top * -0.2);
-      section.style.setProperty("--parallax-offset", `${offset}px`);
+      media.style.setProperty("--parallax-offset", `${offset}px`);
     };
 
     const handleScroll = () => {
@@ -63,6 +65,7 @@ export default function ParallaxImageSection({
   return (
     <section className="parallax-section" ref={sectionRef}>
       <div
+        ref={mediaRef}
         className="parallax-section-media"
         style={{ backgroundImage }}
         aria-hidden="true"
