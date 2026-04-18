@@ -22,6 +22,7 @@
   --section-pattern-accent: rgb(28 118 196 / 0.24);
   --section-pattern-line: rgb(11 11 11 / 0.1);
   --section-pattern-mask: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
+  --section-pattern-mask-reverse: linear-gradient(270deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
   --cta-pattern-accent: rgb(255 255 255 / 0.22);
   --cta-pattern-line: rgb(255 255 255 / 0.2);
   --nav-focus-outline-color: rgb(255 255 255 / 0.35);
@@ -863,11 +864,32 @@ main .section a.button.secondary:focus {
   padding-bottom: var(--cta-padding) !important;
 }
 
-.cta-section::after {
+main .section.highlight-orange.cta-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: calc((100vw - 100%) / -2);
+  bottom: 0;
+  width: calc(min(26rem, 35%) + max(0px, (100vw - 100%) / 2));
+  pointer-events: none;
+  opacity: 0.45;
   background:
     radial-gradient(circle at 78% 18%, var(--cta-pattern-accent), transparent 0 42%),
     linear-gradient(180deg, var(--cta-pattern-line) 0, var(--cta-pattern-line) 1px, transparent 1px, transparent 100%),
     linear-gradient(90deg, var(--cta-pattern-line) 0, var(--cta-pattern-line) 1px, transparent 1px, transparent 100%);
+  background-size:
+    100% 100%,
+    100% 1.15rem,
+    1.15rem 100%;
+  background-position:
+    right center,
+    right center,
+    right center;
+  mask-image: var(--section-pattern-mask);
+}
+
+main .section.highlight-orange.cta-section > .page-container.page-section-content::after {
+  content: none;
 }
 
 .cta-section .page-section-content {
@@ -1046,6 +1068,9 @@ main .section a.button.secondary:focus {
 .table {
   width: 100%;
   overflow-x: auto;
+  background-color: var(--clr-white);
+  border-radius: var(--radius-card);
+  padding: var(--spc-s);
 }
 
 .table .button {
