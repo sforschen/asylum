@@ -64,7 +64,7 @@ export default function SkillBarGroup({ id, title, items, showTitle = true }: Pr
         {items.map((skill) => (
           <li key={`${id}-${skill.name}`} className="k-card">
             <div className="k-body">
-              <strong>{skill.name}</strong>
+              <strong className="k-skill-name">{skill.name}</strong>
               <SkillRating skill={skill} />
             </div>
           </li>

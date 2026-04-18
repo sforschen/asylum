@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 import "./globals.css";
 import HeaderNav from "../components/HeaderNav";
@@ -22,6 +23,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-99SG90FCVH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-99SG90FCVH');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning>
         <HeaderNav />
         <ScrollReveal />

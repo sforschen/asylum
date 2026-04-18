@@ -1138,11 +1138,17 @@ main .section a.button.secondary:focus {
 .k-body {
   margin: var(--spc-s);
   display: grid;
-  gap: var(--spc-xs);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--spc-s);
 }
 
 .k-title {
   margin: 0;
+}
+
+.k-skill-name {
+  min-width: 0;
 }
 
 .k-text {
@@ -1159,6 +1165,8 @@ main .section a.button.secondary:focus {
   align-items: center;
   gap: 0.2rem;
   min-height: 1.5rem;
+  justify-content: flex-end;
+  white-space: nowrap;
 }
 
 .k-star {
@@ -1779,6 +1787,10 @@ main .section a.button.secondary:focus {
   }
 
   .about-facts-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .knowledge-skill-group .k-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

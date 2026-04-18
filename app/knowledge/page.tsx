@@ -75,7 +75,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Mac & PC (PC preferred)", percent: 95 },
       { name: "On24", percent: 60 },
       { name: "Smartsheet", percent: 80 },
-      { name: "Web Design (HTML & CSS)", percent: 95 },
+      { name: "Web Design (HTML/CSS)", percent: 95 },
       { name: "WordPress", percent: 40 },
     ],
   },
@@ -84,7 +84,7 @@ const skillGroups: SkillGroup[] = [
     title: "Adobe",
     items: [
       { name: "Acrobat", percent: 93 },
-      { name: "Adobe Experience Manager", percent: 70 },
+      { name: "Experience Manager", percent: 70 },
       { name: "Illustrator", percent: 65 },
       { name: "Indesign", percent: 95 },
       { name: "Photoshop", percent: 60 },
@@ -175,14 +175,7 @@ export default function KnowledgePage() {
         variant="knowledge"
         body={
           <p>
-            Throughout my career, I have acquired a diverse skill set that spans marketing, website and asset
-            management, project management, and design. My expertise encompasses many competencies; I am tech-savvy,
-            proficient in website management, and possess analytical prowess and critical thinking abilities. My
-            proficiency extends to art direction, process development, brand management, and comprehensive knowledge of
-            social media and content marketing strategies. I am well-versed in utilizing tools such as HubSpot, Figma,
-            Adobe Creative Suite, Microsoft Office, and various web design and marketing technologies. My skill set is
-            underscored by certifications from reputable institutions, including W3Schools.com, HubSpot Academy, and
-            UnitedHealth Group, showcasing my commitment to continuous learning and professional development.{" "}
+            With a strong background in marketing, website and asset management, project management, and design, I bring a blend of creativity and technical expertise to every project. I am adept at website management, analytics, and critical thinking, and excel in art direction, process improvement, brand management, and social media and content marketing. I am more than proficient in HubSpot, Figma, Adobe Creative Suite, Microsoft Office, and various web and marketing platforms. My certifications from W3Schools.com, HubSpot Academy, and UnitedHealth Group demonstrate my dedication to continuous improvement and education.{" "}
             <a href="/portfolio">Visit my portfolio to see these skills in action.</a>
           </p>
         }
