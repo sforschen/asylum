@@ -237,7 +237,7 @@ export default function PortfolioPage() {
               design and management, social media, print, and branding.
             </p>
             <p>
-              Some work shown here was created as part of my employment with current and former employers. Please see
+              Much of the work shown here was created as part of my employment with current and former employers. Please see
               the <a href="/disclaimer">Portfolio Disclaimer</a> for more context.
             </p>
           </>
