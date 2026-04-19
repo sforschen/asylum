@@ -10,7 +10,7 @@ type Props = {
 
 export default function CtaSection({ title, children, href = "/contact", buttonLabel = "Contact Me" }: Props) {
   return (
-    <section className="section highlight-orange cta-section">
+    <section className="section highlight-red cta-section">
       <div className="page-container page-section-content">
         <h2 className="section-title">{title}</h2>
         <p>{children}</p>

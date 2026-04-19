@@ -5,10 +5,10 @@ import gruntFull from "./grunt.jpg";
 import snortFull from "./snort.jpg";
 
 import aboutGardenThumb from "./site-assets/about-garden-thumb.jpeg";
-import aboutPortrait from "./site-assets/about-portrait.png";
 import aboutGruntThumb from "./site-assets/about-grunt-thumb.jpeg";
 import aboutSnortThumb from "./site-assets/about-snort-thumb.jpeg";
 import abstractPaintingBg from "./site-assets/abstract-painting-bg.jpg";
+import serenityPro from "./site-assets/serenity-pro.png";
 import saltairAurora from "./site-assets/saltair-aurora.jpg";
 import experienceElixir from "./site-assets/experience-elixir-card.png";
 import blogPostThumb from "./site-assets/social-blog-post-thumb.jpg";
@@ -88,7 +88,7 @@ export const siteAssets: {
     gardenThumb: aboutGardenThumb,
     gruntFull,
     gruntThumb: aboutGruntThumb,
-    portrait: aboutPortrait,
+    portrait: serenityPro,
     saltairAurora,
     snortFull,
     snortThumb: aboutSnortThumb,
