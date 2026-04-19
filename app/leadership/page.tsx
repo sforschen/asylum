@@ -75,7 +75,8 @@ export default function LeadershipPage() {
         <p>
           Much of my leadership work sits at the intersection of marketing, creative operations, website management,
           accessibility, and technology implementation. I am especially effective when work crosses disciplines and
-          needs someone who can connect strategy, execution, and team coordination.
+          needs someone who can connect strategy, execution, and team coordination. You can see examples of that work
+          in my <a href="/portfolio">portfolio</a>.
         </p>
       </ContentSection>
 
