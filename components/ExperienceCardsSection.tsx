@@ -1,12 +1,13 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useState } from "react";
-import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import ContentSection from "./ContentSection";
+import MediaModalImage from "./MediaModalImage";
+import MediaModalLink from "./MediaModalLink";
+import { getMediaTypeFromUrl } from "../lib/media";
 
 export type ExperienceItem = {
   title: string;
@@ -45,10 +46,15 @@ type ExperienceLinkItem = {
 function ExperienceLink({ href, label, emphasis }: ExperienceLinkItem) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
   const isExternal = href.startsWith("http");
+  const mediaType = getMediaTypeFromUrl(href);
 
   return (
     <p className="experience-link-item">
-      {isExternal ? (
+      {mediaType ? (
+        <MediaModalLink href={href} modalTitle={label}>
+          {content}
+        </MediaModalLink>
+      ) : isExternal ? (
         <a href={href} target="_blank" rel="noreferrer">
           {content}
         </a>
@@ -75,32 +81,19 @@ function ExperienceLinkGroup({ title, links }: { title: string; links: Experienc
 }
 
 function ExperienceCard({ item }: { item: ExperienceItem }) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <li>
       {item.imageSrc ? (
-        <div
-          className={`cards-card-image${expanded ? " expanded" : ""}`}
-          onClick={() => setExpanded((current) => !current)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              setExpanded((current) => !current);
-            }
-          }}
+        <MediaModalImage
+          buttonClassName="cards-card-image media-modal-image-button"
+          src={item.imageSrc}
+          alt={item.imageAlt ?? item.title}
+          width={1200}
+          height={600}
+          sizes="(min-width: 960px) 50vw, 100vw"
         >
-          <Image
-            src={item.imageSrc}
-            alt={item.imageAlt ?? item.title}
-            width={1200}
-            height={600}
-            sizes="(min-width: 960px) 50vw, 100vw"
-          />
-          <div className="overlay-text">{expanded ? "CLOSE" : "EXPAND"}</div>
-        </div>
+          <div className="overlay-text">OPEN</div>
+        </MediaModalImage>
       ) : null}
       <div className="cards-card-body">
         <h3>

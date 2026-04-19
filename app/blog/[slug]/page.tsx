@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import MediaModalImage from "@/components/MediaModalImage";
 import { getCaseStudies, getCaseStudy } from "@/lib/case-studies";
 
 type Props = {
@@ -63,7 +63,8 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
 
           <div className="case-study-hero-media">
-            <Image
+            <MediaModalImage
+              buttonClassName="media-modal-image-button"
               src={post.imageSrc}
               alt={post.imageAlt}
               width={1600}
@@ -114,7 +115,8 @@ export default async function CaseStudyPage({ params }: Props) {
                 >
                   {section.images.map((image, index) => (
                     <figure key={`${image.alt}-${index}`} className="case-study-figure">
-                      <Image
+                      <MediaModalImage
+                        buttonClassName="media-modal-image-button"
                         src={image.src}
                         alt={image.alt}
                         width={2000}

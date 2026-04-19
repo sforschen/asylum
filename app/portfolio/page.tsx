@@ -259,6 +259,7 @@ export default function PortfolioPage() {
           intro={<p>{section.intro}</p>}
           items={section.items}
           sectionClassName={section.sectionClassName}
+          eagerFirstImage={section.id === "web-design-and-management"}
         />
       ))}
 

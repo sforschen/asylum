@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
-import Image from "next/image";
-
 import ContentSection from "../../components/ContentSection";
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import { siteAssets } from "../../content/siteAssets";
 import { siteDocuments } from "../../content/siteDocuments";
 import KnowledgeCard from "../../components/KnowledgeCard";
+import MediaModalImage from "../../components/MediaModalImage";
+import MediaModalLink from "../../components/MediaModalLink";
 import PageIntro from "../../components/PageIntro";
 
 export const metadata = {
@@ -90,7 +90,8 @@ export default function AboutPage() {
       <section className="section highlight">
         <div className="page-container page-section-content about-highlight">
           <div className="about-profile-image">
-            <Image
+            <MediaModalImage
+              buttonClassName="media-modal-image-button"
               src={siteAssets.about.portrait}
               alt="Serenity Forschen portrait"
               width={750}
@@ -130,13 +131,12 @@ export default function AboutPage() {
       <ContentSection id="hey-there" title="Hey there!" outerClassName="page-container" threeColumn>
         <p className="about-links-copy">
           To learn more about my background and skills, check out my{" "}
-          <a
+          <MediaModalLink
             href={siteDocuments.about.resume}
-            target="_blank"
-            rel="noreferrer"
+            modalTitle="Serenity Forschen resume"
           >
             resume
-          </a>
+          </MediaModalLink>
           , <a href="https://www.linkedin.com/in/serenityforschen/" target="_blank" rel="noreferrer">LinkedIn</a>{" "}
           profile, or <a href="https://github.com/sforschen" target="_blank" rel="noreferrer">GitHub</a>. They provide
           a great snapshot of my experiences and what I can offer.

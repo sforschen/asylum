@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import "./globals.css";
 import HeaderNav from "../components/HeaderNav";
+import MediaModalProvider from "../components/MediaModalProvider";
 import ScrollReveal from "../components/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -38,23 +39,25 @@ export default function RootLayout({
         </Script>
       </head>
       <body suppressHydrationWarning>
-        <HeaderNav />
-        <ScrollReveal />
+        <MediaModalProvider>
+          <HeaderNav />
+          <ScrollReveal />
 
-        {children}
+          {children}
 
-        <footer className="site-footer">
-          {/* Utility links live in the footer to keep the top nav focused. */}
-          <div className="site-footer-inner">
-            <p className="site-footer-copy">&copy; {new Date().getFullYear()} Serenity Forschen</p>
-            <div className="site-footer-links">
-              <Link href="/about">About</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/disclaimer">Disclaimer</Link>
-              <Link href="/privacy">Privacy</Link>
+          <footer className="site-footer">
+            {/* Utility links live in the footer to keep the top nav focused. */}
+            <div className="site-footer-inner">
+              <p className="site-footer-copy">&copy; {new Date().getFullYear()} Serenity Forschen</p>
+              <div className="site-footer-links">
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
+                <Link href="/disclaimer">Disclaimer</Link>
+                <Link href="/privacy">Privacy</Link>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        </MediaModalProvider>
       </body>
     </html>
   );

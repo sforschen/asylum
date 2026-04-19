@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
-import Image, { type StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
+
+import MediaModalImage from "./MediaModalImage";
 
 type Props = {
   title: string;
@@ -17,7 +19,13 @@ export default function KnowledgeCard({ title, description, imgSrc, titleAs = "h
     <article className={`k-card k-card-copy${imgSrc ? " k-card-with-media" : ""}`}>
       <div className="k-media">
         {imgSrc ? (
-          <Image className="k-img" src={imgSrc} alt={title} sizes="(min-width: 768px) 33vw, 100vw" />
+          <MediaModalImage
+            buttonClassName="media-modal-image-button"
+            className="k-img"
+            src={imgSrc}
+            alt={title}
+            sizes="(min-width: 768px) 33vw, 100vw"
+          />
         ) : null}
       </div>
       <div className="k-body k-copy-body">

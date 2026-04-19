@@ -276,6 +276,25 @@ a.button.secondary:hover, button.secondary:hover {
   color: var(--clr-white)
 }
 
+button.media-modal-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: 0;
+  text-align: unset;
+  white-space: normal;
+  overflow: visible;
+}
+
+button.media-modal-image-button:hover,
+button.media-modal-image-button:focus {
+  background: transparent;
+}
+
 main img {
   max-width: 100%;
   width: auto;
@@ -595,6 +614,7 @@ main .section a:hover {
 /* Shared site header and footer */
 .site-header {
   position: relative;
+  z-index: 20;
   margin-top: var(--header-accent-height);
   padding: var(--header-padding-y) 0;
   background-color: var(--clr-blue);
@@ -613,6 +633,8 @@ main .section a:hover {
 
 .site-nav,
 header .site-nav {
+  position: relative;
+  z-index: 21;
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: 0;
@@ -967,6 +989,10 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   display: block;
 }
 
+.cards-card-image.media-modal-image-button {
+  cursor: zoom-in;
+}
+
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -1054,6 +1080,10 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 
 .gallery-card-image {
   line-height: 0;
+}
+
+.gallery-card-image.media-modal-image-button {
+  cursor: zoom-in;
 }
 
 .gallery-card-image img {
@@ -1158,6 +1188,10 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 
 .k-media {
   line-height: 0;
+}
+
+.k-media > .media-modal-image-button {
+  cursor: zoom-in;
 }
 
 .k-img {
@@ -1589,6 +1623,187 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   font-weight: 700;
 }
 
+.hero-media-button {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-in;
+}
+
+.about-profile-image > .media-modal-image-button,
+.case-study-hero-media > .media-modal-image-button,
+.case-study-figure > .media-modal-image-button {
+  cursor: zoom-in;
+}
+
+.media-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spc-s);
+  background-color: rgb(1 9 12 / 0.86);
+}
+
+.media-modal-panel {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(96vw, 90rem);
+  max-height: min(94vh, 64rem);
+  border: var(--border-width-thin) solid rgb(255 254 250 / 0.2);
+  border-radius: var(--radius-card);
+  background-color: rgb(255 254 250 / 0.98);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.35);
+  overflow: hidden;
+}
+
+.media-modal-toolbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spc-s);
+  padding: var(--spc-s) var(--spc-m);
+  border-bottom: var(--border-width-thin) solid rgb(1 9 12 / 0.12);
+}
+
+.media-modal-title {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
+.media-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spc-xs);
+  align-items: center;
+}
+
+.media-modal-actions a,
+.media-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  min-width: 9.5rem;
+  padding: var(--spc-xs) var(--spc-m);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.media-modal-actions a {
+  border: var(--border-width-medium) solid var(--clr-green);
+  color: var(--clr-green);
+}
+
+.media-modal-action-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-modal-action-link.is-case-study {
+  border-color: var(--clr-orange);
+  background:
+    linear-gradient(135deg, var(--clr-orange), #ef6b3d);
+  color: var(--clr-white);
+  animation: modal-case-study-action-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.media-modal-action-link.is-case-study::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 0%, rgb(255 255 255 / 0.08) 42%, rgb(255 255 255 / 0.38) 50%, transparent 58%);
+  transform: translateX(-140%);
+  animation: modal-case-study-action-sheen 2.8s ease-in-out 500ms infinite;
+  pointer-events: none;
+}
+
+.media-modal-action-link.is-case-study:hover,
+.media-modal-action-link.is-case-study:focus-visible {
+  color: var(--clr-white);
+  background:
+    linear-gradient(135deg, #bf3f22, #d94928);
+  transform: translateY(-0.0625rem) scale(1.01);
+}
+
+.media-modal-close {
+  border: var(--border-width-medium) solid transparent;
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+}
+
+.media-modal-close:hover,
+.media-modal-close:focus {
+  background-color: var(--clr-blue);
+}
+
+.media-modal-content {
+  min-height: 0;
+  padding: var(--spc-s);
+  overflow: auto;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.95), rgb(239 248 252 / 0.78));
+}
+
+.media-modal-content-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.media-modal-content-image img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-card);
+}
+
+.media-modal-content-pdf iframe {
+  display: block;
+  width: 100%;
+  height: min(78vh, 56rem);
+  border: 0;
+  background-color: var(--clr-white);
+}
+
+@keyframes modal-case-study-action-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-case-study-action-sheen {
+  0%,
+  100% {
+    transform: translateX(-140%);
+  }
+
+  45%,
+  55% {
+    transform: translateX(140%);
+  }
+}
+
 /* Contact and about page specific helpers */
 .contact-details p {
   max-width: var(--max-copy-width);
@@ -1742,6 +1957,32 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 }
 
 @media (width <= 54.375rem) {
+  .media-modal-backdrop {
+    padding: var(--spc-xs);
+  }
+
+  .media-modal-panel {
+    width: 100%;
+    max-height: 96vh;
+  }
+
+  .media-modal-toolbar {
+    padding: var(--spc-xs) var(--spc-s);
+  }
+
+  .media-modal-actions {
+    width: 100%;
+  }
+
+  .media-modal-actions a,
+  .media-modal-close {
+    flex: 1 1 12rem;
+  }
+
+  .media-modal-content-pdf iframe {
+    height: 72vh;
+  }
+
   .case-study-content {
     --case-study-image-stack-gap: var(--spc-mobile-card);
   }

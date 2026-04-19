@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react";
-import Image from "next/image";
 
 import websiteHeader from "../content/website-header.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
+import MediaModalImage from "../components/MediaModalImage";
 
 export const metadata = {
   title: "Home",
@@ -85,7 +85,8 @@ export default function Home() {
         <div className="hero">
           <h1>Leadership for marketing, design, and technology systems</h1>
           <div className="hero-media">
-            <Image
+            <MediaModalImage
+              buttonClassName="hero-media-button media-modal-image-button"
               src={websiteHeader}
               alt="Creative and digital systems work"
               fill
