@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
 
+import CtaSection from "../../components/CtaSection";
 import ContentSection from "../../components/ContentSection";
 import GallerySection, { type GalleryItem } from "../../components/GallerySection";
 import { siteAssets } from "../../content/siteAssets";
-import { siteDocuments } from "../../content/siteDocuments";
 import KnowledgeCard from "../../components/KnowledgeCard";
 import MediaModalImage from "../../components/MediaModalImage";
-import MediaModalLink from "../../components/MediaModalLink";
 import PageIntro from "../../components/PageIntro";
 
 export const metadata = {
@@ -127,21 +126,11 @@ export default function AboutPage() {
         </div>
       </ContentSection>
 
-      {/* Closing links to resume and external profiles. */}
-      <ContentSection id="hey-there" title="Hey there!" outerClassName="page-container" threeColumn>
-        <p className="about-links-copy">
-          To learn more about my background and skills, check out my{" "}
-          <MediaModalLink
-            href={siteDocuments.about.resume}
-            modalTitle="Serenity Forschen resume"
-          >
-            resume
-          </MediaModalLink>
-          , <a href="https://www.linkedin.com/in/serenityforschen/" target="_blank" rel="noreferrer">LinkedIn</a>{" "}
-          profile, or <a href="https://github.com/sforschen" target="_blank" rel="noreferrer">GitHub</a>. They provide
-          a great snapshot of my experiences and what I can offer.
-        </p>
-      </ContentSection>
+      <CtaSection title="Want to learn more?" buttonLabel="Contact Me">
+        This site is already a strong snapshot of my background and work, but you can also visit my{" "}
+        <a href="https://www.linkedin.com/in/serenityforschen/" target="_blank" rel="noreferrer">LinkedIn</a>{" "}
+        profile or <a href="https://github.com/sforschen" target="_blank" rel="noreferrer">GitHub</a> to learn more.
+      </CtaSection>
     </main>
   );
 }
