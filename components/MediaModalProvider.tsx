@@ -10,6 +10,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import Image from "next/image";
 
 import type { MediaType } from "../lib/media";
 
@@ -121,7 +122,13 @@ export default function MediaModalProvider({ children }: { children: ReactNode }
               {activeItem.type === "pdf" ? (
                 <iframe src={activeItem.src} title={activeItem.title ?? "Document preview"} />
               ) : (
-                <img src={activeItem.src} alt={activeItem.title ?? ""} />
+                <Image
+                  src={activeItem.src}
+                  alt={activeItem.title ?? ""}
+                  fill
+                  unoptimized
+                  sizes="100vw"
+                />
               )}
             </div>
           </div>

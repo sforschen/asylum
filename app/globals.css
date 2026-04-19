@@ -1820,6 +1820,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 }
 
 .media-modal-content-image {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

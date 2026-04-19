@@ -16,7 +16,6 @@ export default function ParallaxImageSection({
   id,
   title,
   imageSrc,
-  imageAlt,
   children,
   panelAlign = "left",
 }: Props) {
