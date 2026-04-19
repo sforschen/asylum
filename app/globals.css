@@ -1174,6 +1174,11 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   gap: var(--spc-s);
 }
 
+.k-copy-body {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
 .k-title {
   margin: 0;
 }
@@ -1513,6 +1518,10 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   margin-top: var(--spc-l);
 }
 
+.case-study-content {
+  --case-study-image-stack-gap: var(--spc-m);
+}
+
 .case-study-list {
   padding-left: var(--spc-l);
 }
@@ -1530,13 +1539,15 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 .case-study-image-grid-masonry {
   display: block;
   column-count: 1;
-  column-gap: var(--spc-m);
+  column-gap: var(--case-study-image-stack-gap);
+  margin-bottom: calc(var(--case-study-image-stack-gap) * -1);
 }
 
 .case-study-image-grid-masonry-two-column {
   display: block;
   column-count: 1;
-  column-gap: var(--spc-m);
+  column-gap: var(--case-study-image-stack-gap);
+  margin-bottom: calc(var(--case-study-image-stack-gap) * -1);
 }
 
 .case-study-figure {
@@ -1548,7 +1559,7 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   page-break-inside: avoid;
   display: inline-block;
   width: 100%;
-  margin-bottom: var(--spc-m);
+  margin-bottom: var(--case-study-image-stack-gap);
 }
 
 .case-study-image-grid-masonry-two-column .case-study-figure {
@@ -1556,7 +1567,7 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   page-break-inside: avoid;
   display: inline-block;
   width: 100%;
-  margin-bottom: var(--spc-m);
+  margin-bottom: var(--case-study-image-stack-gap);
 }
 
 .case-study-image-grid-first-full > .case-study-figure:first-child {
@@ -1574,7 +1585,7 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 
 .case-study-figure figcaption {
   margin-top: var(--spc-xs);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
   font-weight: 700;
 }
 
@@ -1731,6 +1742,10 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
 }
 
 @media (width <= 54.375rem) {
+  .case-study-content {
+    --case-study-image-stack-gap: var(--spc-mobile-card);
+  }
+
   .page-container {
     padding-top: var(--spc-ms);
     padding-bottom: var(--spc-ms);
@@ -1795,14 +1810,6 @@ main .section.highlight-orange.cta-section > .page-container.page-section-conten
   .case-study-metrics,
   .case-study-image-grid {
     gap: var(--spc-mobile-card);
-  }
-
-  .case-study-image-grid-masonry {
-    column-gap: var(--spc-mobile-card);
-  }
-
-  .case-study-image-grid-masonry-two-column {
-    column-gap: var(--spc-mobile-card);
   }
 
   .cards-card-body,

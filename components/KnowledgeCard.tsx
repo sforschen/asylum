@@ -14,13 +14,13 @@ export default function KnowledgeCard({ title, description, imgSrc, titleAs = "h
   const isPlainText = typeof description === "string" || typeof description === "number";
 
   return (
-    <article className="k-card">
+    <article className={`k-card k-card-copy${imgSrc ? " k-card-with-media" : ""}`}>
       <div className="k-media">
         {imgSrc ? (
           <Image className="k-img" src={imgSrc} alt={title} sizes="(min-width: 768px) 33vw, 100vw" />
         ) : null}
       </div>
-      <div className="k-body">
+      <div className="k-body k-copy-body">
         <TitleTag className="k-title">{title}</TitleTag>
         {isPlainText ? <p className="k-text">{description}</p> : <div className="k-text">{description}</div>}
       </div>
