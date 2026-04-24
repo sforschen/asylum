@@ -1,8 +1,6 @@
-import type { CSSProperties } from "react";
-
 import CtaSection from "../../components/CtaSection";
-import ContentSection from "../../components/ContentSection";
 import ExperienceCardsSection, { type ExperienceItem } from "../../components/ExperienceCardsSection";
+import ExperienceTimelineSection, { type ExperienceTimelineItem } from "../../components/ExperienceTimelineSection";
 import { siteAssets } from "../../content/siteAssets";
 import { siteDocuments } from "../../content/siteDocuments";
 import PageIntro from "../../components/PageIntro";
@@ -216,74 +214,63 @@ const experienceItems: ExperienceItem[] = [
 
 const featuredExperience = experienceItems.slice(0, 3);
 const archivedExperience = experienceItems.slice(3);
-const experienceTimeline = [
+const experienceTimeline: ExperienceTimelineItem[] = [
   {
-    years: "Now",
     role: "You Are Here",
-    company: "Leading creative systems, web operations, and team support work",
+    company: "Leading the future of creativity and marketing",
     type: "Current Focus",
     highlight: "This marks the current point in the story: leadership, digital operations, creative execution, and practical systems thinking working together.",
     isCurrent: true,
   },
   {
-    years: "8/24-Current",
     role: "Creative Services Director",
     company: "XKIG",
     type: "Leadership",
     highlight: "Built marketing systems, DAM structure, and operational support for a growing multi-brand environment.",
   },
   {
-    years: "6/22-2/24",
     role: "Digital Content Marketing Manager",
     company: "Elixir",
     type: "Digital",
     highlight: "Led web, accessibility, and platform work, including a major site migration with near-perfect Lighthouse scores.",
   },
   {
-    years: "6/19-6/22",
     role: "Marketing Specialist II",
     company: "Optum",
     type: "Web + Campaigns",
     highlight: "Managed web launches, campaign execution, and process visibility across complex healthcare marketing work.",
   },
   {
-    years: "8/16-2/19",
     role: "Creative Director",
     company: "CPMI Solutions",
     type: "Creative Ops",
     highlight: "Directed production, client design work, and storefront/web projects in a fast-moving small team.",
   },
   {
-    years: "5/15-6/16",
     role: "Front End Web and Graphic Designer",
     company: "C.R. England",
     type: "Web Design",
     highlight: "Designed landing pages, emails, and campaign assets with a focus on testing and stronger response rates.",
   },
   {
-    years: "6/14-2/15",
     role: "Marketing Specialist",
     company: "Castle & Cooke Mortgage LLC",
     type: "Brand + Print",
     highlight: "Produced compliant branch marketing materials and broad supporting collateral across the business.",
   },
   {
-    years: "10/05-5/14",
     role: "Graphic Designer",
     company: "Helix Education",
     type: "Production Design",
     highlight: "Balanced high-volume client work, concept development, and training material creation with a strong on-time rate.",
   },
   {
-    years: "Education",
     role: "AAS in Visual Art & Design",
     company: "Salt Lake Community College",
     type: "Education",
     highlight: "Graphic Design emphasis with honors, forming the visual and production foundation behind the work that followed.",
   },
 ];
-const timelineColumnCount = Math.ceil(experienceTimeline.length / 2);
-const timelineItemCount = experienceTimeline.length;
 
 export default function ExperiencePage() {
   return (
@@ -310,52 +297,14 @@ export default function ExperiencePage() {
         cardsClassName="cards-featured"
       />
 
-      {/*
-      <section className="experience-timeline-section">
-        <div className="page-container experience-timeline-header">
-          <h2 id="career-timeline"><a href="#career-timeline">Career Timeline</a></h2>
-          <p className="experience-timeline-intro">
-            A quick visual scan of the path from design foundations into web, campaign, and leadership work.
-          </p>
-        </div>
-        <div className="experience-timeline-wrap">
-          <div
-            className="experience-timeline"
-            aria-label="Career timeline summary"
-            style={
-              {
-                "--timeline-columns": timelineColumnCount,
-                "--timeline-items": timelineItemCount,
-              } as CSSProperties
-            }
-          >
-            {experienceTimeline.map((item, index) => (
-              <article
-                key={`${item.company}-${item.role}`}
-                className={`experience-timeline-item${item.isCurrent ? " is-current" : ""}${index % 2 === 0 ? " is-top" : " is-bottom"}`}
-                style={{ "--timeline-column": index + 1 } as CSSProperties}
-              >
-                <div className="experience-timeline-summary">
-                  <p className="experience-timeline-years">{item.years}</p>
-                  <h3 className="experience-timeline-role">{item.role}</h3>
-                </div>
-                <div className="experience-timeline-detail">
-                  <p className="experience-timeline-type">{item.type}</p>
-                  <p className="experience-timeline-company">{item.company}</p>
-                  <p className="experience-timeline-highlight">{item.highlight}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
+      <ExperienceTimelineSection items={experienceTimeline} />
 
       {/* Older roles are condensed into the archive grid. */}
       <ExperienceCardsSection
         id="earlier-experience"
         title="Earlier Experience"
         items={archivedExperience}
+        sectionClassName="highlight-light-green"
         cardsClassName="cards-archive"
       />
 
