@@ -228,7 +228,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button:not(.media-modal-image-button) {
+a.button:any-link, button:not(.media-modal-image-button):not(.site-nav-toggle) {
   font-family: var(--body-font-family);
   line-height: 1;
   display: inline-block;
@@ -255,30 +255,30 @@ a.button:any-link, button:not(.media-modal-image-button) {
 }
 
 a.button:any-link *,
-button * {
+button:not(.site-nav-toggle) * {
   font-style: normal;
   font-weight: 700;
 }
 
-a.button:hover, a.button:focus, button:not(.media-modal-image-button):hover, button:not(.media-modal-image-button):focus  {
+a.button:hover, a.button:focus, button:not(.media-modal-image-button):not(.site-nav-toggle):hover, button:not(.media-modal-image-button):not(.site-nav-toggle):focus  {
   background-color: var(--clr-red);
   cursor: pointer;
   transform: translateY(-0.0625rem) scale(1.01);
 }
 
-button:not(.media-modal-image-button):disabled, button:not(.media-modal-image-button):disabled:hover {
+button:not(.media-modal-image-button):not(.site-nav-toggle):disabled, button:not(.media-modal-image-button):not(.site-nav-toggle):disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
   transform: none;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary, button.secondary:not(.site-nav-toggle) {
   background-color: unset;
   border: var(--border-width-medium) solid var(--clr-blue);
   color: var(--clr-blue)
 }
 
-a.button.secondary:hover, button.secondary:hover {
+a.button.secondary:hover, button.secondary:not(.site-nav-toggle):hover {
   background-color: var(--clr-blue);
   border: var(--border-width-medium) solid var(--clr-blue);
   color: var(--clr-white)
@@ -886,8 +886,8 @@ header .site-nav {
 
 a.button:hover,
 a.button:focus,
-button:hover,
-button:focus,
+button:not(.site-nav-toggle):hover,
+button:not(.site-nav-toggle):focus,
 .portfolio-section a.button:hover,
 .portfolio-section a.button:focus,
 .knowledge-section a.button:hover,
@@ -2398,7 +2398,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   }
 
   a.button:any-link,
-  button {
+  button:not(.site-nav-toggle) {
     white-space: normal;
   }
 
