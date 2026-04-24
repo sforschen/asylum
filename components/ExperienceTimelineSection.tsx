@@ -60,8 +60,8 @@ export default function ExperienceTimelineSection({ items }: ExperienceTimelineS
       return;
     }
 
-    let clearId: ReturnType<typeof window.setTimeout> | null = null;
-    const stepTimeoutIds: ReturnType<typeof window.setTimeout>[] = [];
+    let clearId: number | null = null;
+    const stepTimeoutIds: number[] = [];
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -137,9 +137,17 @@ export default function ExperienceTimelineSection({ items }: ExperienceTimelineS
       return ((exactAnchor.column - 0.5) / timelineItemCount) * 100;
     }
 
+    if (typeof year !== "number") {
+      return 0;
+    }
+
     for (let index = 0; index < timelineYearAnchors.length - 1; index += 1) {
       const newer = timelineYearAnchors[index];
       const older = timelineYearAnchors[index + 1];
+
+      if (typeof newer.year !== "number" || typeof older.year !== "number") {
+        continue;
+      }
 
       if (year < newer.year && year > older.year) {
         const progress = (newer.year - year) / (newer.year - older.year);
