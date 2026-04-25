@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-// Adds a lightweight in-view class to page sections as they enter the viewport.
+// Adds a lightweight in-view class to section content as each section enters the viewport.
 export default function ScrollReveal() {
   const pathname = usePathname();
 
@@ -11,18 +11,36 @@ export default function ScrollReveal() {
     document.documentElement.classList.add("has-scroll-reveal");
 
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section"))
-      .filter((section) => !section.classList.contains("hero-container"));
+      .filter((section) => (
+        !section.classList.contains("hero-container")
+        && !section.classList.contains("cta-section")
+      ));
 
     if (!sections.length) {
       document.documentElement.classList.remove("has-scroll-reveal");
       return;
     }
 
+    const sectionRevealPairs = sections
+      .map((section) => ({
+        section,
+        revealTargets: Array.from(section.children).filter((child): child is HTMLElement => (
+          child instanceof HTMLElement && !child.hasAttribute("aria-hidden")
+        )),
+      }))
+      .filter(({ revealTargets }) => revealTargets.length);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            const section = entry.target as HTMLElement;
+            const revealPair = sectionRevealPairs.find((pair) => pair.section === section);
+
+            revealPair?.revealTargets.forEach((target) => {
+              target.classList.add("is-visible");
+            });
+
             observer.unobserve(entry.target);
           }
         });
@@ -33,12 +51,14 @@ export default function ScrollReveal() {
       },
     );
 
-    sections.forEach((section) => {
-      section.classList.add("scroll-reveal");
+    sectionRevealPairs.forEach(({ revealTargets }) => {
+      revealTargets.forEach((target) => {
+        target.classList.add("scroll-reveal");
+      });
     });
 
     const frame = window.requestAnimationFrame(() => {
-      sections.forEach((section) => {
+      sectionRevealPairs.forEach(({ section }) => {
         observer.observe(section);
       });
     });
@@ -47,8 +67,10 @@ export default function ScrollReveal() {
       window.cancelAnimationFrame(frame);
       observer.disconnect();
       document.documentElement.classList.remove("has-scroll-reveal");
-      sections.forEach((section) => {
-        section.classList.remove("scroll-reveal", "is-visible");
+      sectionRevealPairs.forEach(({ revealTargets }) => {
+        revealTargets.forEach((target) => {
+          target.classList.remove("scroll-reveal", "is-visible");
+        });
       });
     };
   }, [pathname]);

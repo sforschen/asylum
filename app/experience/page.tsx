@@ -18,14 +18,25 @@ const experienceItems: ExperienceItem[] = [
     title: "Creative Services Director",
     company: "XKIG",
     locationAndDates: "Remote | 8/24-Current",
-    summary:
-      "Designing a robust marketing and creative technology ecosystem to drive growth and empower teams to do their best work. Identifying the right technology and migration plan to eliminate redundant software and keep costs in check.",
+    summary: (
+      <>
+        Led creative services and marketing department operations, people, and marketing technology to increase
+        throughput, consistency, and on-time delivery across a multi-brand organization.{" "}
+        <strong className="text-orange">
+          Built scalable systems that enable teams to collaborate effectively, execute efficiently, and produce
+          high-quality work.
+        </strong>
+      </>
+    ),
     bullets: [
-      "Created an operational excellence program with the VP of Marketing and Communications. Establishing a company-wide program, including training materials and sessions to encourage program adoption.",
-      "Built a project management system in Smartsheet, which is familiar to the team, easy to use, helps deliver projects on time, and keeps us organized.",
-      "Onboarded Brandfolder and built an asset management system that works with multiple brands and scales with company growth.",
-      "Led technology integration initiatives to ensure all software works together.",
-      "Executing various creative tasks, including print, social media, emails, presentations, and internal documents.",
+      "Led a cross-functional creative services team (Developer; Photo/Video Specialist), setting priorities, clarifying roles, and removing blockers to maintain the highest productivity in the department.",
+      "Ran department meetings and operating rhythms to align stakeholders, review pipeline status, and ensure accountable follow-through across initiatives.",
+      "Owned the project management and file management ecosystem, establishing standards for intake, tracking, and delivery to improve visibility, consistency, and speed.",
+      "Modernized operations with the team by onboarding WordPress, Brandfolder, HubSpot, and Staffbase; building a scalable, multi-brand asset management structure to improve governance, access, and reuse.",
+      "Led the launch of River City's new website, coordinating planning, development execution, and stakeholder alignment to deliver a successful go-live.",
+      "Co-created an Operational Excellence program with the VP of Marketing & Communications, developing training materials and facilitating company-wide sessions to drive adoption and performance.",
+      "Fostered a collaborative, high-trust team environment while maintaining clear structure, ensuring teams could do their best work without losing cohesion or standards.",
+      "Partnered with marketing leadership to translate business goals into actionable creative roadmaps across digital, print, email, presentations, and internal communications.",
     ],
     relatedCaseStudies: [
       {

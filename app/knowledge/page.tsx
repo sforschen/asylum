@@ -147,6 +147,27 @@ const aiHighlights = [
   },
 ];
 
+const selectedStrengths = [
+  {
+    title: "Digital Systems",
+    description:
+      "I connect websites, CMS workflows, asset libraries, accessibility practices, and reporting needs so teams can maintain digital work with less friction.",
+    tools: ["CMS governance", "Accessibility", "Analytics", "Asset management"],
+  },
+  {
+    title: "Creative Direction",
+    description:
+      "I shape practical visual systems for campaigns, web content, print pieces, and internal communications while keeping brand consistency and production needs in view.",
+    tools: ["Art direction", "Brand systems", "Adobe", "Figma"],
+  },
+  {
+    title: "Workflow Leadership",
+    description:
+      "I build the structure around the work: clear priorities, project visibility, documentation, and repeatable processes that help teams deliver consistently.",
+    tools: ["Project management", "Process design", "Documentation", "Team support"],
+  },
+];
+
 function AiHighlightCard({
   title,
   description,
@@ -165,6 +186,28 @@ function AiHighlightCard({
   );
 }
 
+function SelectedStrengthCard({
+  title,
+  description,
+  tools,
+}: {
+  title: string;
+  description: string;
+  tools: string[];
+}) {
+  return (
+    <article className="selected-strength-card">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <ul className="selected-strength-tools" aria-label={`${title} related skills`}>
+        {tools.map((tool) => (
+          <li key={tool}>{tool}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
 export default function KnowledgePage() {
   return (
     <main className="page-shell">
@@ -175,8 +218,7 @@ export default function KnowledgePage() {
         variant="knowledge"
         body={
           <p>
-            With a strong background in marketing, website and asset management, project management, and design, I bring a blend of creativity and technical expertise to every project. I am adept at website management, analytics, and critical thinking, and excel in art direction, process improvement, brand management, and social media and content marketing. I am more than proficient in HubSpot, Figma, Adobe Creative Suite, Microsoft Office, and various web and marketing platforms. My certifications from W3Schools.com, HubSpot Academy, and UnitedHealth Group demonstrate my dedication to continuous improvement and education.{" "}
-            <a href="/portfolio">Visit my portfolio to see these skills in action.</a>
+            With a strong background in marketing, website and asset management, project management, and design, I bring a blend of creativity and technical expertise to every project. I am adept at website management, analytics, and critical thinking, and excel in art direction, process improvement, brand management, and social media and content marketing.{" "}
           </p>
         }
         links={
@@ -228,6 +270,19 @@ export default function KnowledgePage() {
           proficiency in email marketing enhances communication strategies, creating lasting connections with clients
           and customers.
         </p>
+      </ContentSection>
+
+      <ContentSection
+        id="selected-strengths"
+        title="Selected Strengths"
+        outerClassName="section highlight-blue selected-strength-section"
+        innerClassName="page-container page-section-content knowledge-section"
+      >
+        <div className="selected-strength-grid">
+          {selectedStrengths.map((item) => (
+            <SelectedStrengthCard key={item.title} {...item} />
+          ))}
+        </div>
       </ContentSection>
 
       {/* Certifications are presented as a lightweight data table. */}

@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* High-level offer summary. */}
-      <section className="section highlight-light-green">
+      <section className="section highlight-blue home-build-section">
         <div className="page-container page-section-content">
           <h2 className="section-title">What I Build</h2>
           <div className="home-pillars">
