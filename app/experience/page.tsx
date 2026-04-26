@@ -40,6 +40,10 @@ const experienceItems: ExperienceItem[] = [
     ],
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("file-management-systems"),
+        label: "File Management Systems",
+      },
+      {
         href: getCaseStudyUrl("t-and-u-event-signage"),
         label: "Customer Event Signage",
       },
@@ -83,8 +87,12 @@ const experienceItems: ExperienceItem[] = [
     imageSrc: siteAssets.experience.elixir,
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("file-management-systems"),
+        label: "File Management Systems",
+      },
+      {
         href: getCaseStudyUrl("elixir-site"),
-        label: "Elixir Website Case Study",
+        label: "Elixir Website",
       },
     ],
     relatedAssets: [
@@ -134,12 +142,16 @@ const experienceItems: ExperienceItem[] = [
     ],
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("file-management-systems"),
+        label: "File Management Systems",
+      },
+      {
         href: getCaseStudyUrl("optum-site"),
-        label: "Optum Website Case Study",
+        label: "Optum Website",
       },
       {
         href: getCaseStudyUrl("optum-ce-campaign"),
-        label: "Optum CE Campaign Case Study",
+        label: "Optum CE Campaign",
       },
     ],
   },
@@ -202,6 +214,12 @@ const experienceItems: ExperienceItem[] = [
         <strong>Maintained a broad portfolio of customized assets</strong> delivered to vendors and over 30 branches.
       </>
     ),
+    relatedCaseStudies: [
+      {
+        href: getCaseStudyUrl("file-management-systems"),
+        label: "File Management Systems",
+      },
+    ],
     relatedAssets: [
       {
         href: siteDocuments.portfolio.castleCookeHomebuyersGuide,
@@ -290,10 +308,11 @@ export default function ExperiencePage() {
       <PageIntro
         title="Experience"
         titleId="experience"
+        kicker="Career history"
         variant="knowledge"
         body={
           <p>
-            A selection of recent leadership and digital marketing roles, followed by earlier experience across web,
+            Recent leadership and marketing roles, followed by earlier experience across web,
             creative, and production work.
           </p>
         }

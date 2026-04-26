@@ -6,6 +6,9 @@ export const siteDocuments = {
   about: {
     resume: getDocumentUrl("serenity-forschen-resume-june-2024.pdf"),
   },
+  caseStudies: {
+    fileManagementSystems: getDocumentUrl("File-Management-Systems.pdf"),
+  },
   portfolio: {
     angryWoodland: getDocumentUrl("portfolio-angry-woodland.pdf"),
     castleCookeHomebuyersGuide: getDocumentUrl("portfolio-castle-cooke-homebuyers-guide.pdf"),

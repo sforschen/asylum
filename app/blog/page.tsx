@@ -14,6 +14,7 @@ export default function BlogPage() {
       <PageIntro
         title="Case Studies"
         titleId="case-studies"
+        kicker="Project stories"
         variant="default"
         body={
           <p>

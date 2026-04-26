@@ -1,4 +1,5 @@
 import { elixirSiteCaseStudy } from "./posts/elixirSite";
+import { fileManagementSystemsCaseStudy } from "./posts/fileManagementSystems";
 import { optumCeCampaignCaseStudy } from "./posts/optumCeCampaign";
 import { optumSiteCaseStudy } from "./posts/optumSite";
 import { seriousSillyCaseStudy } from "./posts/seriousSilly";
@@ -6,6 +7,7 @@ import { tAndUEventSignageCaseStudy } from "./posts/tAndUEventSignage";
 import type { CaseStudyPost } from "./types";
 
 const caseStudies: CaseStudyPost[] = [
+  fileManagementSystemsCaseStudy,
   elixirSiteCaseStudy,
   optumCeCampaignCaseStudy,
   optumSiteCaseStudy,

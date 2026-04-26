@@ -1,3 +1,5 @@
+import { GatewayUserAccess } from "@carbon/icons-react";
+
 import CtaSection from "../../components/CtaSection";
 import ContentSection from "../../components/ContentSection";
 import ParallaxImageSection from "../../components/ParallaxImageSection";
@@ -17,20 +19,20 @@ export default function LeadershipPage() {
       <PageIntro
         title="Leadership"
         titleId="leadership"
+        kicker="Service Leadership in Action"
         variant="copy"
         body={
           <>
             <p>
               I enjoy leading teams in operations, marketing, creative projects, and website management initiatives.
-              It&apos;s especially rewarding for me to guide small, energetic teams to success together.
+              It&apos;s rewarding for me to guide small, energetic teams to success together.
             </p>
             <p>
               With over a decade of experience, I have consistently driven high-impact projects, including technology
               implementations, managing website migrations, and overseeing accessibility compliance across platforms. As
               a leader, I foster a collaborative environment, empowering each team member to take ownership of their
               work. By providing clear direction, offering support, and promoting open communication, I ensure that
-              team goals are met efficiently and effectively. Through hands-on leadership and a focus on strategic
-              planning, I lead my teams to deliver innovative solutions that align with company goals and consistently
+              team goals are met efficiently and effectively. I lead my teams to deliver innovative solutions that align with company goals and consistently
               exceed expectations.
             </p>
           </>
@@ -53,6 +55,29 @@ export default function LeadershipPage() {
           providing support and context so people can do their best work and take ownership.
         </p>
       </ParallaxImageSection>
+
+      <ContentSection
+        id="team-environment"
+        title="How I Support Teams"
+        outerClassName="section highlight-blue selected-strength-section"
+        innerClassName="page-container page-section-content"
+        threeColumn
+        aside={
+          <div className="leadership-support-icon" aria-hidden="true">
+            <GatewayUserAccess />
+          </div>
+        }
+      >
+        <p>
+          I care deeply about creating a team environment where people can contribute fully, ask questions early, and
+          stay connected to the purpose behind the work. Open communication and useful feedback are a big part of that.
+        </p>
+        <p>
+          I try to lead in a way that helps teams feel both supported and accountable: expectations are clear, people
+          have room to think, and progress stays visible. That balance helps teams stay energized and deliver
+          consistently.
+        </p>
+      </ContentSection>
 
       <ContentSection
         id="what-i-lead"
@@ -81,27 +106,10 @@ export default function LeadershipPage() {
       </ContentSection>
 
       <ContentSection
-        id="team-environment"
-        title="How I Support Teams"
-        outerClassName="section highlight-light-green"
-        innerClassName="page-container page-section-content"
-        threeColumn
-      >
-        <p>
-          I care deeply about creating a team environment where people can contribute fully, ask questions early, and
-          stay connected to the purpose behind the work. Open communication and useful feedback are a big part of that.
-        </p>
-        <p>
-          I try to lead in a way that helps teams feel both supported and accountable: expectations are clear, people
-          have room to think, and progress stays visible. That balance helps teams stay energized and deliver
-          consistently.
-        </p>
-      </ContentSection>
-
-      <ContentSection
         id="leadership-outcomes"
         title="Results That Matter"
-        outerClassName="page-container page-section-content"
+        outerClassName="section highlight-light-green"
+        innerClassName="page-container page-section-content"
         contentClassName="leadership-style-layout"
         threeColumn
         mainSpan={3}

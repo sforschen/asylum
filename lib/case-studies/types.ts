@@ -10,10 +10,17 @@ export type CaseStudySection = {
   title: string;
   paragraphs: string[];
   bullets?: string[];
+  bulletLayout?: "list" | "cards";
+  asideIcon?: "network-enterprise";
   images?: CaseStudyImage[];
   imagesLayout?: "grid" | "masonry" | "masonry-two-column" | "two-column-last-full";
   firstImageFullWidth?: boolean;
-  sectionClassName?: "highlight" | "highlight-light-green" | "highlight-white-center";
+  sectionClassName?:
+    | "highlight"
+    | "highlight-light-green"
+    | "highlight-blue"
+    | "highlight-blue selected-strength-section"
+    | "highlight-white-center";
 };
 
 export type CaseStudyPost = {
@@ -28,9 +35,15 @@ export type CaseStudyPost = {
   portfolioTitle: string;
   portfolioSectionId: string;
   externalSource?: string;
+  takeaways?: Array<{
+    href: string;
+    label: string;
+  }>;
   metrics?: Array<{
     label: string;
     value: string;
+    href?: string;
+    linkLabel?: string;
   }>;
   sections: CaseStudySection[];
 };

@@ -229,6 +229,7 @@ export default function PortfolioPage() {
       <PageIntro
         title="Portfolio"
         titleId="portfolio"
+        kicker="Selected works"
         variant="default"
         body={
           <>

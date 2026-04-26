@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FlowData, NetworkEnterprise, Renew, Rule, Search } from "@carbon/icons-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -9,6 +10,11 @@ type Props = {
   params: Promise<{
     slug: string;
   }>;
+};
+
+const bulletCardIcons = [FlowData, Search, Rule, Renew];
+const sectionAsideIcons = {
+  "network-enterprise": NetworkEnterprise,
 };
 
 export async function generateStaticParams() {
@@ -82,6 +88,13 @@ export default async function CaseStudyPage({ params }: Props) {
                   <div key={metric.label} className="case-study-metric">
                     <p className="case-study-metric-value">{metric.value}</p>
                     <p className="case-study-metric-label">{metric.label}</p>
+                    {metric.href ? (
+                      <p className="case-study-metric-link">
+                        <a href={metric.href} download>
+                          {metric.linkLabel ?? "Download PDF"}
+                        </a>
+                      </p>
+                    ) : null}
                   </div>
                 ))}
               </div>
@@ -95,17 +108,48 @@ export default async function CaseStudyPage({ params }: Props) {
             className={section.sectionClassName ? `section ${section.sectionClassName}` : "section"}
           >
             <div className="page-container page-section-content case-study-content">
-              <div className="case-study-section">
+              <div className={section.asideIcon ? "case-study-section case-study-section-with-aside" : "case-study-section"}>
+                <div className="case-study-section-main">
                 <h2>{section.title}</h2>
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.bullets ? (
-                  <ul className="case-study-list">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
+                  <ul className={section.bulletLayout === "cards" ? "case-study-bullet-cards" : "case-study-list"}>
+                    {section.bullets.map((bullet, index) => {
+                      const BulletIcon = bulletCardIcons[index % bulletCardIcons.length];
+
+                      return (
+                        <li key={bullet}>
+                          {section.bulletLayout === "cards" ? (
+                            <span className="case-study-bullet-card-icon" aria-hidden="true">
+                              <BulletIcon />
+                            </span>
+                          ) : null}
+                          <span>{bullet}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
+                ) : null}
+                {section.title === "Takeaway" && post.takeaways?.length ? (
+                  <div className="case-study-takeaway-actions">
+                    {post.takeaways.map((takeaway) => (
+                      <a key={takeaway.href} className="button" href={takeaway.href} download>
+                        {takeaway.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+                </div>
+                {section.asideIcon ? (
+                  <div className="case-study-section-aside-icon" aria-hidden="true">
+                    {(() => {
+                      const AsideIcon = sectionAsideIcons[section.asideIcon];
+
+                      return <AsideIcon />;
+                    })()}
+                  </div>
                 ) : null}
               </div>
 

@@ -3,7 +3,7 @@ import { siteAssets } from "../../../content/siteAssets";
 
 export const optumCeCampaignCaseStudy: CaseStudyPost = {
   slug: "optum-ce-campaign",
-  title: "Building a repeatable campaign system for Optum Continuing Education",
+  title: "Building a consistent campaign system for Optum Continuing Education",
   category: "Campaign Systems and Content",
   publishedAt: "2021-06-15",
   readTime: "5 min read",
@@ -182,7 +182,7 @@ export const optumCeCampaignCaseStudy: CaseStudyPost = {
     {
       title: "Outcome",
       paragraphs: [
-        "The strongest result was not a single asset, but the campaign system itself. A repeatable structure made it easier to plan, produce, and launch each course promotion throughout the year.",
+        "The strongest result was not a single asset, but the campaign system itself. A consistent structure made it easier to plan, produce, and launch each course promotion throughout the year.",
         "Consistent communication and design helped increase webinar attendance by 30% in one year while making the program easier for repeat users to recognize and engage with.",
       ],
       sectionClassName: "highlight-light-green",

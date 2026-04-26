@@ -1,7 +1,7 @@
 :root {
   /* Shared design tokens used across the whole app. */
   /* colors */
-  --link-color: var(--clr-purple);
+  --link-color: var(--clr-light-blue);
   --link-hover-color: var(--clr-orange);
   --background-color: var(--clr-white);
   --light-color: var(--clr-lighter-blue);
@@ -24,7 +24,6 @@
   --section-pattern-accent: rgb(28 118 196 / 0.24);
   --section-pattern-line: rgb(11 11 11 / 0.1);
   --section-pattern-mask: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
-  --section-pattern-mask-reverse: linear-gradient(270deg, transparent 0, rgb(0 0 0 / 0.9) 28%, rgb(0 0 0 / 1) 100%);
   --cta-pattern-accent: rgb(255 255 255 / 0.4);
   --cta-pattern-line: rgb(255 255 255 / 0.36);
   --nav-focus-outline-color: rgb(255 255 255 / 0.35);
@@ -43,7 +42,6 @@
   --text-size-xl: 1.56rem;
   --text-size-2xl: 1.95rem;
   --text-size-3xl: 2.44rem;
-  --text-size-4xl: 3.05rem;
   --text-size-5xl: 3.81rem;
 
   /* body sizes */
@@ -356,7 +354,7 @@ main .section.highlight-red {
 }
 
 main .section.highlight-blue {
-  background-color: var(--clr-blue);
+  background-color: var(--clr-purple);
 }
 
 main .section.highlight-black {
@@ -424,6 +422,7 @@ main .hero-container {
 
 /* Shared page containers and intro/header layouts */
 p:last-child,
+ul:last-child,
 ol:last-child {
   margin-bottom: 0;
 }
@@ -645,7 +644,7 @@ main .section a:hover {
   z-index: 20;
   overflow: hidden;
   padding: calc(var(--header-padding-y) + var(--header-accent-height)) 0 var(--header-padding-y);
-  background-color: rgb(5 17 35 / 0.96);
+  background-color: var(--clr-blue);
   backdrop-filter: blur(0.75rem);
   border-bottom: var(--border-width-thin) solid var(--clr-black);
   transition:
@@ -685,7 +684,7 @@ main .section a:hover {
 .site-header.is-scrolled {
   padding-top: var(--spc-s);
   padding-bottom: var(--spc-s);
-  background-color: rgb(5 17 35 / 0.92);
+  background-color: var(--clr-blue);
   box-shadow: 0 0.625rem 1.5rem rgb(1 9 12 / 0.16);
 }
 
@@ -1797,8 +1796,24 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   color: var(--clr-white);
 }
 
+.selected-strength-section p,
+.selected-strength-section li {
+  color: var(--clr-white);
+}
+
 .page-shell .selected-strength-section h2 a {
   color: var(--clr-white) !important;
+}
+
+.leadership-support-icon {
+  display: flex;
+  justify-content: center;
+  color: var(--clr-white);
+}
+
+.leadership-support-icon svg {
+  width: clamp(7rem, 20vw, 12rem);
+  height: clamp(7rem, 20vw, 12rem);
 }
 
 .selected-strength-section > .page-container.page-section-content::after {
@@ -1835,6 +1850,11 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .selected-strength-card h3 {
   margin-bottom: var(--spc-s);
+}
+
+.selected-strength-card p,
+.selected-strength-card li {
+  color: var(--clr-black);
 }
 
 .selected-strength-tools {
@@ -1895,6 +1915,11 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .case-study-card-meta {
   align-items: center;
+  color: var(--clr-pink);
+}
+
+.case-study-hero-meta {
+  color: var(--clr-pink);
 }
 
 .case-study-card-meta span,
@@ -1906,7 +1931,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .case-study-hero-meta span + span::before {
   content: "|";
-  color: var(--clr-orange);
+  color: var(--clr-pink);
 }
 
 .case-study-card-read-time {
@@ -1940,7 +1965,6 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .case-study-hero-media img {
   display: block;
   width: 100%;
-  max-width: var(--case-study-image-max-width);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: var(--border-width-thin) solid var(--surface-stroke-color);
@@ -1950,6 +1974,10 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .case-study-hero-media {
   display: flex;
   justify-content: center;
+}
+
+.case-study-hero-media > .media-modal-image-button {
+  width: min(100%, var(--case-study-image-max-width));
 }
 
 .case-study-metrics {
@@ -1975,8 +2003,46 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   margin-bottom: 0;
 }
 
+.case-study-metric-link {
+  margin-top: var(--spc-s);
+  margin-bottom: 0;
+}
+
+.case-study-metric-link a {
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
 .case-study-section + .case-study-section {
   margin-top: var(--spc-l);
+}
+
+.case-study-section-with-aside {
+  display: grid;
+  gap: var(--spc-m);
+  align-items: center;
+}
+
+.case-study-section-main {
+  min-width: 0;
+}
+
+.case-study-section-aside-icon {
+  display: flex;
+  justify-content: center;
+  color: var(--clr-white);
+}
+
+.case-study-section-aside-icon svg {
+  width: clamp(7rem, 20vw, 12rem);
+  height: clamp(7rem, 20vw, 12rem);
+}
+
+.case-study-takeaway-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spc-s);
+  margin-top: var(--spc-m);
 }
 
 .case-study-content {
@@ -1989,6 +2055,41 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .case-study-list li + li {
   margin-top: 0.25rem;
+}
+
+main .section.highlight-blue .case-study-content h2,
+main .section.highlight-blue .case-study-content p,
+main .section.highlight-blue .case-study-content li {
+  color: var(--clr-white);
+}
+
+.case-study-bullet-cards {
+  display: grid;
+  gap: var(--spc-s);
+  margin: var(--spc-m) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-bullet-cards li {
+  display: grid;
+  gap: var(--spc-s);
+  padding: var(--spc-m);
+  border: var(--border-width-thin) solid var(--surface-stroke-color);
+  border-radius: var(--radius-card);
+  background-color: var(--surface-tint-color);
+}
+
+.case-study-bullet-card-icon {
+  display: inline-flex;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--clr-pink);
+}
+
+.case-study-bullet-card-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .case-study-image-grid {
@@ -2265,6 +2366,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   border-radius: 50%;
 }
 
+.page-kicker,
 .contact-kicker {
   max-width: 42rem;
   margin-bottom: var(--spc-xs);
@@ -2378,7 +2480,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .parallax-section-media {
   position: absolute;
-  inset: -8% 0;
+  inset: -30% 0;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2461,7 +2563,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   }
 
   .parallax-section-media {
-    inset: -4% 0;
+    inset: -18% 0;
     transform: translate3d(0, calc(var(--parallax-offset) * 0.55), 0) scale(1.04);
   }
 }
@@ -2726,6 +2828,22 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
     grid-column: 2 / span 2;
   }
 
+  .case-study-bullet-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-study-section-with-aside {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-study-section-with-aside .case-study-section-main {
+    grid-column: 1 / span 2;
+  }
+
+  .case-study-section-aside-icon {
+    grid-column: 3;
+  }
+
   .three-column-copy {
     grid-template-columns: repeat(var(--three-column-columns, 3), minmax(0, 1fr));
     align-items: start;
@@ -2849,7 +2967,15 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   }
 
   .case-study-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.85fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-study-hero-copy {
+    grid-column: 1 / span 2;
+  }
+
+  .case-study-hero-media {
+    grid-column: 3;
   }
 
   .case-study-image-grid-multi {

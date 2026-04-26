@@ -4,6 +4,7 @@ import ThreeColumnCopy from "./ThreeColumnCopy";
 type Props = {
   title: string;
   titleId: string;
+  kicker?: string;
   body: ReactNode;
   links?: ReactNode;
   aside?: ReactNode;
@@ -23,6 +24,7 @@ const variantClassName: Record<NonNullable<Props["variant"]>, string> = {
 export default function PageIntro({
   title,
   titleId,
+  kicker,
   body,
   links,
   aside,
@@ -40,6 +42,7 @@ export default function PageIntro({
         headingAs="h1"
         body={
           <>
+            {kicker ? <p className="page-kicker">{kicker}</p> : null}
             {body}
             {links}
           </>

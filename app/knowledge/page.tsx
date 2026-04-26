@@ -84,6 +84,7 @@ const skillGroups: SkillGroup[] = [
     title: "Adobe",
     items: [
       { name: "Acrobat", percent: 93 },
+      { name: "Express", percent: 70 },
       { name: "Experience Manager", percent: 70 },
       { name: "Illustrator", percent: 65 },
       { name: "Indesign", percent: 95 },
@@ -98,6 +99,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Excel", percent: 85 },
       { name: "Loop", percent: 90 },
       { name: "Outlook", percent: 90 },
+      { name: "Power Automate", percent: 55 },
       { name: "Powerpoint", percent: 85 },
       { name: "Project", percent: 70 },
       { name: "SharePoint", percent: 75 },
@@ -215,6 +217,7 @@ export default function KnowledgePage() {
       <PageIntro
         title="Knowledge"
         titleId="knowledge"
+        kicker="Capabilities and tools"
         variant="knowledge"
         body={
           <p>

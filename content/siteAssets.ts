@@ -64,6 +64,7 @@ import optumSiteHero from "./site-assets/case-study-optum-hero.jpg";
 import optumSiteBefore from "./site-assets/case-study-optum-before.png";
 import optumSiteAfter from "./site-assets/case-study-optum-after.png";
 import optumSiteRebrand from "./site-assets/case-study-optum-rebrand.png";
+import fileManagementSystemsHero from "./site-assets/garmin-b-DDkyGrfvp40-unsplash.jpg";
 import seriousSillyHero from "./site-assets/case-study-serious-silly-hero.png";
 import seriousSillyStripOne from "./site-assets/case-study-serious-silly-strip-one.png";
 import seriousSillyStripTwo from "./site-assets/case-study-serious-silly-strip-two.png";
@@ -125,6 +126,7 @@ export const siteAssets: {
   },
   caseStudies: {
     elixirSiteBody,
+    fileManagementSystemsHero,
     optumCeEducationPage,
     optumCeEventConsole,
     optumCeHomepageCarousel,
