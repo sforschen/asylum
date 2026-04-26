@@ -1419,6 +1419,10 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   margin: var(--spc-m);
 }
 
+.portfolio-page .gallery-card-body h3 {
+  font-size: var(--heading-font-size-xs);
+}
+
 .table {
   width: 100%;
   overflow-x: auto;

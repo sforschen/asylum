@@ -224,7 +224,7 @@ const portfolioSections: PortfolioSection[] = [
 
 export default function PortfolioPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell portfolio-page">
       {/* Intro and jump links for the portfolio gallery sections. */}
       <PageIntro
         title="Portfolio"
