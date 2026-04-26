@@ -4,7 +4,7 @@ import { siteAssets } from "../../../content/siteAssets";
 export const optumCeCampaignCaseStudy: CaseStudyPost = {
   slug: "optum-ce-campaign",
   title: "Building a consistent campaign system for Optum Continuing Education",
-  category: "Campaign Systems and Content",
+  category: "Campaign Systems & Content",
   publishedAt: "2021-06-15",
   readTime: "5 min read",
   summary:

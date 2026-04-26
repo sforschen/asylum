@@ -23,7 +23,7 @@ type PortfolioSection = {
 const portfolioSections: PortfolioSection[] = [
   {
     id: "web-design-and-management",
-    title: "Web Design and Management",
+    title: "Web Design & Management",
     intro:
       "This section highlights website strategy, design direction, publishing workflows, and the practical systems that help teams keep digital experiences current. The work spans redesigns, migrations, authoring support, and content structures built to scale.",
     sectionClassName: "highlight",

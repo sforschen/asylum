@@ -183,7 +183,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
-    title: "Front End Web and Graphic Designer",
+    title: "Front End Web & Graphic Designer",
     company: "C.R. England",
     locationAndDates: "Salt Lake City | 5/15-6/16",
     summary: (
@@ -246,7 +246,7 @@ const archivedExperience = experienceItems.slice(3);
 const experienceTimeline: ExperienceTimelineItem[] = [
   {
     role: "You Are Here",
-    company: "Leading the future of creativity and marketing",
+    company: "Leading the future of creativity & marketing",
     type: "Current Focus",
     highlight: "This marks the current point in the story: leadership, digital operations, creative execution, and practical systems thinking working together.",
     isCurrent: true,
@@ -276,7 +276,7 @@ const experienceTimeline: ExperienceTimelineItem[] = [
     highlight: "Directed production, client design work, and storefront/web projects in a fast-moving small team.",
   },
   {
-    role: "Front End Web and Graphic Designer",
+    role: "Front End Web & Graphic Designer",
     company: "C.R. England",
     type: "Web Design",
     highlight: "Designed landing pages, emails, and campaign assets with a focus on testing and stronger response rates.",

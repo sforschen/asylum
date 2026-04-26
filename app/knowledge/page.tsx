@@ -217,7 +217,7 @@ export default function KnowledgePage() {
       <PageIntro
         title="Knowledge"
         titleId="knowledge"
-        kicker="Capabilities and tools"
+        kicker="Capabilities & tools"
         variant="knowledge"
         body={
           <p>

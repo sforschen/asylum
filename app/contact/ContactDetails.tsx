@@ -21,7 +21,7 @@ export default function ContactDetails() {
 
   return (
     <div className="contact-details">
-      <p className="contact-kicker">Open to conversations, questions, and good stories.</p>
+      <p className="contact-kicker">Open to conversations, questions, &amp; good stories.</p>
       <p className="contact-intro">
         If you would like to connect, talk through a project, or compare notes on digital work, these are the best
         ways to reach me.

@@ -3,8 +3,8 @@ import { siteAssets } from "../../../content/siteAssets";
 
 export const elixirSiteCaseStudy: CaseStudyPost = {
   slug: "elixir-site",
-  title: "Rebuilding Elixir's Website for speed, accessibility, and easier publishing",
-  category: "Web Design and Management",
+  title: "Rebuilding Elixir's Website for speed, accessibility, & easier publishing",
+  category: "Web Design & Management",
   publishedAt: "2023-01-15",
   readTime: "4 min read",
   summary:

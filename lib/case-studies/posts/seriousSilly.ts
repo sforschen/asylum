@@ -16,7 +16,7 @@ export const seriousSillyCaseStudy: CaseStudyPost = {
   externalSource: "https://www.youneedserenity.com/portfolio/serious-silly",
   metrics: [
     { label: "Format", value: "Print concept series" },
-    { label: "Tone", value: "Playful and bold" },
+    { label: "Tone", value: "Playful & bold" },
     { label: "Strength", value: "Memorable creative" },
   ],
   sections: [

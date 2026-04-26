@@ -42,7 +42,7 @@ const homePillars: HomePillar[] = [
     ctaLabel: "View Experience",
   },
   {
-    title: "Design and tech systems that last",
+    title: "Design & tech systems that last",
     description:
       "I connect content, creative, platforms, and process so websites, DAMs, project management, and reporting can evolve without constant rework.",
     icon: (
@@ -83,7 +83,7 @@ export default function Home() {
       {/* Visual header image for the home page. */}
       <section className="hero-container">
         <div className="hero">
-          <h1>Leadership for marketing, design, and technology systems</h1>
+          <h1>Leadership for marketing, design, &amp; technology systems</h1>
           <div className="hero-media">
             <MediaModalImage
               buttonClassName="hero-media-button media-modal-image-button"

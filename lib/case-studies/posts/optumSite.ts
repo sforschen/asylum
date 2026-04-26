@@ -4,7 +4,7 @@ import { siteAssets } from "../../../content/siteAssets";
 export const optumSiteCaseStudy: CaseStudyPost = {
   slug: "optum-site",
   title: "Launching a new Optum website on an accelerated migration timeline",
-  category: "Web Design and Management",
+  category: "Web Design & Management",
   publishedAt: "2022-06-15",
   readTime: "3 min read",
   summary:
