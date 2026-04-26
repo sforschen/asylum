@@ -35,14 +35,23 @@
   --fixed-font-family: "lexend", sans-serif;
 
   /* type scale */
-  --text-size-xs: 0.64rem;
-  --text-size-sm: 0.8rem;
-  --text-size-md: 1rem;
-  --text-size-lg: 1.25rem;
-  --text-size-xl: 1.56rem;
-  --text-size-2xl: 1.95rem;
-  --text-size-3xl: 2.44rem;
-  --text-size-5xl: 3.81rem;
+  --text-size-small-print: 0.56rem;
+  --text-size-caption: 0.75rem;
+  --text-size-body: 1rem;
+  --text-size-h5: 1.33rem;
+  --text-size-h4: 1.78rem;
+  --text-size-h3: 2.37rem;
+  --text-size-h2: 3.16rem;
+  --text-size-h1: 4.21rem;
+
+  --text-size-xs: var(--text-size-small-print);
+  --text-size-sm: var(--text-size-caption);
+  --text-size-md: var(--text-size-body);
+  --text-size-lg: var(--text-size-h5);
+  --text-size-xl: var(--text-size-h4);
+  --text-size-2xl: var(--text-size-h3);
+  --text-size-3xl: var(--text-size-h2);
+  --text-size-5xl: var(--text-size-h1);
 
   /* body sizes */
   --body-font-size-l: var(--text-size-lg);
@@ -111,6 +120,10 @@
 }
 
 /* Base element styling */
+html {
+  font-size: 18px;
+}
+
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
@@ -151,12 +164,12 @@ h2 {
   margin-bottom: var(--spc-m);
 }
 h3 {
-  font-size: var(--heading-font-size-s);
+  font-size: var(--heading-font-size-m);
   line-height: 1.2;
 }
-h4 { font-size: var(--heading-font-size-xs) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h4 { font-size: var(--heading-font-size-s) }
+h5 { font-size: var(--heading-font-size-xs) }
+h6 { font-size: var(--body-font-size-m) }
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0;
@@ -164,11 +177,11 @@ p, dl, ol, ul, pre, blockquote {
 }
 
 p {
-  font-size: var(--text-size-lg);
+  font-size: var(--body-font-size-m);
 }
 
 li {
-  font-size: var(--text-size-lg);
+  font-size: var(--body-font-size-m);
 }
 
 ul {
@@ -619,7 +632,6 @@ main .section a:hover {
 
 .page-title {
   margin: 0.75rem 0 var(--spc-m);
-  font-size: var(--text-size-5xl);
   font-weight: 700;
   line-height: 1.15;
 }
@@ -1112,7 +1124,6 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .experience-link-group h4 {
   margin-bottom: var(--spc-xs);
   color: var(--clr-blue);
-  font-size: var(--body-font-size-s);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1598,7 +1609,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .home-intro-lead {
   margin-top: calc(var(--spc-s) * -1);
   margin-bottom: var(--spc-m);
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-m);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -2416,7 +2427,6 @@ main .section.highlight-blue .case-study-content li {
 
 .contact-method-card h2 {
   margin-bottom: var(--spc-xs);
-  font-size: var(--heading-font-size-xs);
 }
 
 .contact-method-card p {
@@ -2541,6 +2551,14 @@ main .section.highlight-blue .case-study-content li {
 
 /* Responsive adjustments */
 @media (width <= 49.5rem) {
+  :root {
+    --heading-font-size-xxl: calc(var(--text-size-5xl) * 0.6);
+    --heading-font-size-l: calc(var(--text-size-3xl) * 0.6);
+    --heading-font-size-m: calc(var(--text-size-2xl) * 0.6);
+    --heading-font-size-s: calc(var(--text-size-xl) * 0.6);
+    --heading-font-size-xs: calc(var(--text-size-lg) * 0.6);
+  }
+
   .hero-media img {
     display: none;
   }
@@ -2556,6 +2574,12 @@ main .section.highlight-blue .case-study-content li {
   .cards-card-image::before,
   .overlay-text {
     display: none;
+  }
+
+  .has-scroll-reveal .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .parallax-section {
@@ -2716,10 +2740,6 @@ main .section.highlight-blue .case-study-content li {
     padding: var(--spc-ms);
     margin-left: var(--spc-ms);
     margin-right: var(--spc-ms);
-  }
-
-  .page-title {
-    font-size: clamp(var(--text-size-3xl), 9vw, var(--text-size-5xl));
   }
 
   a.button:any-link,
