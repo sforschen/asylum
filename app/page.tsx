@@ -169,7 +169,7 @@ export default function Home() {
 
       <CaseStudyFeed
         title="Latest Case Studies"
-        intro="Selected portfolio pieces now live as posts, so visitors can scan recent work right from the home page."
+        intro="A closer look at selected projects, the thinking behind them, and the work to bring them to life."
         limit={2}
         showViewAll
       />
