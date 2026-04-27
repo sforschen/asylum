@@ -4,7 +4,7 @@ import { siteDocuments } from "../../../content/siteDocuments";
 
 export const fileManagementSystemsCaseStudy: CaseStudyPost = {
   slug: "file-management-systems",
-  title: "Building file management systems people can actually use",
+  title: "Building file & asset management systems people actually use",
   category: "Operations & Digital Systems",
   publishedAt: "2024-02-15",
   readTime: "4 min read",
