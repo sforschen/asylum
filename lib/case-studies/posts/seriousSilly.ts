@@ -3,7 +3,7 @@ import { siteAssets } from "../../../content/siteAssets";
 
 export const seriousSillyCaseStudy: CaseStudyPost = {
   slug: "serious-silly",
-  title: "Building a playful bumper sticker series with a clear point of view",
+  title: "Building a playful but serious bumper sticker series",
   category: "Print & Misc",
   publishedAt: "2024-03-01",
   readTime: "2 min read",
