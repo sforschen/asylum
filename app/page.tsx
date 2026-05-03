@@ -102,9 +102,9 @@ export default function Home() {
       {/* Core positioning statement and quick CTAs. */}
       <section className="page-container page-intro home-intro">
         <div className="page-intro-copy home-intro-copy">
-          <h1 className="page-title">Leadership for exceptional marketing teams</h1>
-          <p className="home-intro-lead">
-            Driven by complex design systems, advanced tech stacks, and the dedicated teams that power them, we build the operational foundations for content, creative, websites, and digital platforms. This enables organizations to scale efficiently, reduce chaos, and achieve stronger outcomes.
+          <h1>Leadership for Exceptional Marketing Teams</h1>
+          <p className="page-kicker">
+            Complex systems, tech stacks, and dedicated teams building scalable, efficient foundations.
           </p>
           <p>
             My work sits at the intersection of business development, marketing operations, design systems, website management, and technical implementation. That includes migrations, accessibility, asset management, content governance, vendor coordination, and the processes that help teams consistently deliver strong work.

@@ -630,12 +630,6 @@ main .section a:hover {
   max-width: var(--max-copy-width);
 }
 
-.page-title {
-  margin: 0.75rem 0 var(--spc-m);
-  font-weight: 700;
-  line-height: 1.15;
-}
-
 .knowledge-jump-links,
 .portfolio-jump-links {
   margin-bottom: 0;
@@ -1604,18 +1598,6 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   gap: var(--spc-l);
   padding-top: var(--default-content-gap);
   padding-bottom: var(--default-content-gap);
-}
-
-.home-intro .page-title {
-  text-transform: uppercase;
-}
-
-.home-intro-lead {
-  margin-top: calc(var(--spc-s) * -1);
-  margin-bottom: var(--spc-m);
-  font-size: var(--body-font-size-m);
-  font-weight: 700;
-  line-height: 1.35;
 }
 
 .home-actions {
