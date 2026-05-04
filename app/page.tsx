@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react";
 
-import websiteHeader from "../content/website-header.png";
+import websiteHeader from "../content/site-assets/header-site.png";
 import CaseStudyFeed from "../components/CaseStudyFeed";
 import MediaModalImage from "../components/MediaModalImage";
 

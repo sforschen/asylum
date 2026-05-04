@@ -80,7 +80,7 @@
   --spc-mobile-card: .75rem;
 
   --hero-max-width: 120rem;
-  --hero-height: 26.25rem;
+  --hero-height: 120px;
   --hero-title-max-width: 60rem;
   --case-study-image-max-width: 25rem;
   --cta-max-width: 53.333rem;
@@ -383,23 +383,32 @@ main .section.highlight-white-center > div > p > picture > img {
   margin: auto;
 }
 
-main .hero-container > div {
-  max-width: var(--hero-max-width);
-}
-  
 main .hero-container {
   padding: 0;
-  display: flex;
-  justify-content: center;
 }
 
 /* hero section */
 .hero {
   position: relative;
-  width: min(100%, var(--hero-max-width));
+  width: 100%;
   height: var(--hero-height);
-  margin: 0 auto;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, var(--section-pattern-accent), transparent 0 42%),
+    linear-gradient(180deg, var(--section-pattern-line) 0, var(--section-pattern-line) 1px, transparent 1px, transparent 100%),
+    linear-gradient(90deg, var(--section-pattern-line) 0, var(--section-pattern-line) 1px, transparent 1px, transparent 100%);
+  background-size:
+    100% 100%,
+    100% 1.15rem,
+    1.15rem 100%;
+  background-position:
+    right center,
+    right center,
+    right center;
+  background-attachment:
+    scroll,
+    fixed,
+    fixed;
 }
 
 .hero h1 {
@@ -413,20 +422,34 @@ main .hero-container {
 
 .hero-media {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 0;
-  left: 50%;
+  left: 0;
   display: block;
-  width: min(100%, var(--hero-max-width));
-  transform: translateX(-50%);
+  width: 100%;
   box-sizing: border-box;
   height: var(--hero-height);
   max-height: var(--hero-height);
   overflow: hidden;
 }
 
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      0deg,
+      rgb(0 0 0 / 0.3) 0%,
+      rgb(0 0 0 / 0) 100%
+    );
+}
+
 .hero-media img {
   display: block;
+  filter: grayscale(1);
   margin: auto;
 }
 
@@ -710,7 +733,8 @@ header .site-nav {
   z-index: 21;
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding: 0;
+  box-sizing: border-box;
+  padding: 0 var(--spc-ms);
   height: auto;
   color: var(--clr-white);
   display: flex;
@@ -2701,8 +2725,6 @@ main .section.highlight-blue .case-study-content li {
     padding-right: var(--spc-ms);
   }
 
-  .site-nav,
-  header .site-nav,
   .site-footer-inner {
     padding-left: var(--spc-ms);
     padding-right: var(--spc-ms);
