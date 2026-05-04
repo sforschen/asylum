@@ -13,23 +13,26 @@ type Props = {
 export default function CaseStudyFeed({ title = "From the case study archive", intro, limit, showViewAll = false }: Props) {
   const posts = getCaseStudies();
   const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
+  const hasHeader = Boolean(title || intro || showViewAll);
 
   return (
     <section className="section highlight-light-green">
       <div className="page-container page-section-content">
-        <div className="case-study-feed-header">
-          <div>
-            <h2 className="section-title">{title}</h2>
-            {intro ? <p className="case-study-feed-intro">{intro}</p> : null}
+        {hasHeader ? (
+          <div className="case-study-feed-header">
+            <div>
+              {title ? <h2 className="section-title">{title}</h2> : null}
+              {intro ? <p className="case-study-feed-intro">{intro}</p> : null}
+            </div>
+            {showViewAll ? (
+              <p className="case-study-feed-action">
+                <Link className="button secondary" href="/blog">
+                  View All Posts
+                </Link>
+              </p>
+            ) : null}
           </div>
-          {showViewAll ? (
-            <p className="case-study-feed-action">
-              <Link className="button secondary" href="/blog">
-                View All Posts
-              </Link>
-            </p>
-          ) : null}
-        </div>
+        ) : null}
 
         <div className="case-study-feed-grid">
           {visiblePosts.map((post, index) => (
