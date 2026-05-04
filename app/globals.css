@@ -2284,12 +2284,6 @@ main .section.highlight-blue .case-study-content li {
   font-weight: 700;
 }
 
-.hero-media-button {
-  position: absolute;
-  inset: 0;
-  cursor: zoom-in;
-}
-
 .about-profile-image > .media-modal-image-button,
 .case-study-hero-media > .media-modal-image-button,
 .case-study-figure > .media-modal-image-button {
