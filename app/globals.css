@@ -672,7 +672,7 @@ main .section a:hover {
   top: 0;
   z-index: 20;
   overflow: hidden;
-  padding: calc(var(--header-padding-y) + var(--header-accent-height)) 0 var(--header-padding-y);
+  padding: calc(var(--header-padding-y) + var(--header-accent-height)) var(--spc-ms) var(--header-padding-y);
   background-color: var(--clr-blue);
   backdrop-filter: blur(0.75rem);
   border-bottom: var(--border-width-thin) solid var(--clr-black);
@@ -734,7 +734,7 @@ header .site-nav {
   max-width: var(--max-content-width);
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 var(--spc-ms);
+  padding: 0;
   height: auto;
   color: var(--clr-white);
   display: flex;
@@ -2719,6 +2719,7 @@ main .section.highlight-blue .case-study-content li {
     padding-right: var(--spc-ms);
   }
 
+  .site-nav,
   .site-footer-inner {
     padding-left: var(--spc-ms);
     padding-right: var(--spc-ms);
