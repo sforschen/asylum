@@ -131,8 +131,7 @@ const experienceItems: ExperienceItem[] = [
     locationAndDates: "Remote | 6/19-6/22",
     summary: (
       <>
-        Critically thought through digital and print projects for various healthcare topics and audiences, and launched
-        them.{" "}
+        Developed and launched digital and print projects for various healthcare topics and audiences.{" "}
         <strong>
           Managed the migration to a new website platform (AEM) and designed and launched the company&apos;s new website
           in three months.

@@ -321,7 +321,7 @@ export default function PortfolioPage() {
         />
       ))}
 
-      <CtaSection title="Excited about what you have seen?">
+      <CtaSection title="Like what you see?">
         If you would like to connect, ask a question, or talk about working together, I would love to hear from you.
       </CtaSection>
     </main>

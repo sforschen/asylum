@@ -42,7 +42,7 @@ const aboutGalleryItems: GalleryItem[] = [
 const randomInfo: AboutInfoCard[] = [
   {
     title: "Hyperfocus Music",
-    body: "Albums: Fear Inoculum by Tool or Another Brick in the Wall by Pink Floyd. I also love to dive into classic rock like Led Zeppelin, Heart, or Supertramp.",
+    body: "Albums: Fear Inoculum by Tool or The Wall by Pink Floyd. I also love to dive into classic rock like Led Zeppelin, Heart, or Supertramp.",
   },
   {
     title: "Preferred Work Schedule",

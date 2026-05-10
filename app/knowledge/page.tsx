@@ -330,7 +330,7 @@ export default function KnowledgePage() {
       <ContentSection id="skills" title="Skills" outerClassName="page-container knowledge-section" threeColumn>
         <p>
           I am a highly tech-savvy professional with a proven track record in analytical thinking and critical
-          problem-solving. I have adept process development, project management, strategy, and research skills.
+          problem-solving. I have strong process development, project management, strategy, and research skills.
         </p>
         <p>
           I adapt quickly to existing tech stacks while staying genuinely interested in emerging tools and platforms.
