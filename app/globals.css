@@ -2010,7 +2010,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 
 .case-study-card {
   display: grid;
-  grid-template-columns: 6.125rem minmax(0, 1fr);
+  grid-template-columns: clamp(4.5rem, 18vw, 6.125rem) minmax(0, 1fr);
   align-items: stretch;
   border: var(--border-width-thin) solid var(--surface-stroke-color);
   border-radius: var(--radius-card);
@@ -2967,7 +2967,7 @@ main .section.highlight-blue .case-study-content li {
   }
 
   .case-study-card {
-    grid-template-columns: 6.125rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.5rem) minmax(0, 1fr);
     padding: 0;
   }
 
