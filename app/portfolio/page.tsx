@@ -8,7 +8,7 @@ import { getCaseStudyUrl } from "../../lib/case-studies";
 export const metadata = {
   title: "Portfolio",
   description:
-    "Browse portfolio work from Serenity Forschen across web design and management, social media, print, branding, and personal art.",
+    "Browse portfolio work from Serenity Forschen across web design and management, branding, social media, and personal art.",
 };
 
 // Gallery data mirrors the sections on the live portfolio site.
@@ -61,50 +61,18 @@ const portfolioSections: PortfolioSection[] = [
     ],
   },
   {
-    id: "social-media",
-    title: "Social Media",
-    intro:
-      "These pieces show how I shape social content that supports campaigns, announcements, and brand storytelling across channels. The work balances visual clarity, audience engagement, and messaging that is concise enough to perform well in fast-moving feeds.",
-    items: [
-      {
-        title: "Safety Month Post",
-        imageSrc: siteAssets.social.safetyMonthPostThumb,
-        links: [{ href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU", label: "View on LinkedIn" }],
-      },
-      {
-        title: "Video Post",
-        imageSrc: siteAssets.social.socialVideoPostOneThumb,
-        links: [{ href: "https://www.linkedin.com/feed/update/urn:li:activity:7062426632422076416?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
-      },
-      {
-        title: "Holiday Post",
-        imageSrc: siteAssets.social.holidayPostThumb,
-        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_happy-holidays-from-the-elixir-team-we-are-activity-7142891357659934720-4IuP?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
-      },
-      {
-        title: "Video Post",
-        imageSrc: siteAssets.social.socialVideoPostTwoThumb,
-        links: [{ href: "https://www.linkedin.com/posts/serenityforschen_defeatdiabetes-elixirpbm-activity-7053744684485005312-fSyj?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
-      },
-      {
-        title: "Event announcement",
-        imageSrc: siteAssets.social.eventAnnouncementThumb,
-        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_elixirpbm-activity-7087111883664625665-7zAi?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
-      },
-      {
-        title: "Blog Post",
-        imageSrc: siteAssets.social.blogPostThumb,
-        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_flu-season-is-right-around-the-corner-read-activity-7101971724866371584-VgWY?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
-      },
-    ],
-  },
-  {
-    id: "print--misc",
-    title: "Print & Misc",
+    id: "branding",
+    title: "Branding",
     intro:
       "This collection brings together print design, branded collateral, event materials, and one-off creative pieces with a strong point of view. It reflects the kind of work that helps brands feel tangible, memorable, and human beyond the screen.",
     sectionClassName: "highlight-light-green",
     items: [
+      {
+        title: "Confidential Performance Communications",
+        imageSrc: siteAssets.caseStudies.confidentialPerformanceCommunicationsHero,
+        imageAlt: "Person working at a laptop, representing a confidential automated communication workflow",
+        links: [{ href: getCaseStudyUrl("confidential-performance-communications"), label: "Read Case Study" }],
+      },
       {
         title: "Event Mug Design",
         imageSrc: siteAssets.portfolio.eventMugDesignThumb,
@@ -154,6 +122,44 @@ const portfolioSections: PortfolioSection[] = [
         title: "Logo Design & Signage",
         imageSrc: siteAssets.portfolio.logoDesignSignageThumb,
         links: [{ href: siteDocuments.portfolio.logoDesignSignage, label: "View Image", emphasis: "strong" }],
+      },
+    ],
+  },
+  {
+    id: "social-media",
+    title: "Social Media",
+    intro:
+      "These pieces show how I shape social content that supports campaigns, announcements, and brand storytelling across channels. The work balances visual clarity, audience engagement, and messaging that is concise enough to perform well in fast-moving feeds.",
+    items: [
+      {
+        title: "Safety Month Post",
+        imageSrc: siteAssets.social.safetyMonthPostThumb,
+        links: [{ href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU", label: "View on LinkedIn" }],
+      },
+      {
+        title: "Video Post",
+        imageSrc: siteAssets.social.socialVideoPostOneThumb,
+        links: [{ href: "https://www.linkedin.com/feed/update/urn:li:activity:7062426632422076416?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
+      },
+      {
+        title: "Holiday Post",
+        imageSrc: siteAssets.social.holidayPostThumb,
+        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_happy-holidays-from-the-elixir-team-we-are-activity-7142891357659934720-4IuP?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
+      },
+      {
+        title: "Video Post",
+        imageSrc: siteAssets.social.socialVideoPostTwoThumb,
+        links: [{ href: "https://www.linkedin.com/posts/serenityforschen_defeatdiabetes-elixirpbm-activity-7053744684485005312-fSyj?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
+      },
+      {
+        title: "Event announcement",
+        imageSrc: siteAssets.social.eventAnnouncementThumb,
+        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_elixirpbm-activity-7087111883664625665-7zAi?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
+      },
+      {
+        title: "Blog Post",
+        imageSrc: siteAssets.social.blogPostThumb,
+        links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_flu-season-is-right-around-the-corner-read-activity-7101971724866371584-VgWY?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
     ],
   },
@@ -235,7 +241,7 @@ export default function PortfolioPage() {
           <>
             <p>
               Where creativity meets business needs and growth: This curated collection showcases my expertise in web
-              design and management, social media, print, and branding.
+              design and management, branding, and social media.
             </p>
             <p>
               Much of the work shown here was created as part of my employment with current and former employers. Please see
@@ -245,8 +251,8 @@ export default function PortfolioPage() {
         }
         links={
           <p className="portfolio-jump-links">
-            <a href="#web-design-and-management">Web Design &amp; Management</a> | <a href="#social-media">Social Media</a>{" "}
-            | <a href="#print--misc">Print &amp; Misc</a> | <a href="#art">Art</a>
+            <a href="#web-design-and-management">Web Design &amp; Management</a> | <a href="#branding">Branding</a>{" "}
+            | <a href="#social-media">Social Media</a> | <a href="#art">Art</a>
           </p>
         }
       />

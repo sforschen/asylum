@@ -4,7 +4,7 @@ import { siteAssets } from "../../../content/siteAssets";
 export const seriousSillyCaseStudy: CaseStudyPost = {
   slug: "serious-silly",
   title: "Building a playful but serious bumper sticker series",
-  category: "Print & Misc",
+  category: "Branding",
   publishedAt: "2024-03-01",
   readTime: "2 min read",
   summary:
@@ -12,7 +12,7 @@ export const seriousSillyCaseStudy: CaseStudyPost = {
   imageSrc: siteAssets.caseStudies.seriousSillyHero,
   imageAlt: "Seriously Silly bumper sticker hero image from the original case study",
   portfolioTitle: "Punny Bumper Stickers",
-  portfolioSectionId: "print--misc",
+  portfolioSectionId: "branding",
   externalSource: "https://www.youneedserenity.com/portfolio/serious-silly",
   metrics: [
     { label: "Format", value: "Print concept series" },

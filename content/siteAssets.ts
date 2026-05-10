@@ -73,6 +73,7 @@ import seriousSillyReceptionTwo from "./site-assets/case-study-serious-silly-rec
 import tAndUEntranceBanner from "./site-assets/case-study-t-and-u-entrance-banner.jpg";
 import tAndUDrinkSign from "./site-assets/case-study-t-and-u-drink-sign.jpg";
 import tAndUCigarSign from "./site-assets/case-study-t-and-u-cigar-sign.jpg";
+import confidentialPerformanceCommunicationsHero from "./site-assets/pexels-cottonbro-7439136.jpg";
 
 type Asset = StaticImageData;
 
@@ -125,6 +126,7 @@ export const siteAssets: {
     winterHummingbirdThumb,
   },
   caseStudies: {
+    confidentialPerformanceCommunicationsHero,
     elixirSiteBody,
     fileManagementSystemsHero,
     optumCeEducationPage,

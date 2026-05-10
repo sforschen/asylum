@@ -4,7 +4,7 @@ import { siteAssets } from "../../../content/siteAssets";
 export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   slug: "t-and-u-event-signage",
   title: "Designing event signage that extended the brand beyond the booth",
-  category: "Print & Misc",
+  category: "Branding",
   publishedAt: "2023-09-12",
   readTime: "2 min read",
   summary:
@@ -12,7 +12,7 @@ export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   imageSrc: siteAssets.caseStudies.tAndUEntranceBanner,
   imageAlt: "Trees and Utilities entrance banner from the original case study",
   portfolioTitle: "Customer Event Signage",
-  portfolioSectionId: "print--misc",
+  portfolioSectionId: "branding",
   externalSource: "https://www.youneedserenity.com/portfolio/t-and-u-event-signage",
   metrics: [
     { label: "Format", value: "Large-scale signage" },
