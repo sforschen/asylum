@@ -13,6 +13,7 @@ export const seriousSillyCaseStudy: CaseStudyPost = {
   imageAlt: "Seriously Silly bumper sticker hero image from the original case study",
   portfolioTitle: "Punny Bumper Stickers",
   portfolioSectionId: "branding",
+  relatedExperience: [{ href: "/experience#xkig", label: "XKIG" }],
   externalSource: "https://www.youneedserenity.com/portfolio/serious-silly",
   metrics: [
     { label: "Format", value: "Print concept series" },

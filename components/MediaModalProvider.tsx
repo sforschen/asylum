@@ -20,6 +20,8 @@ type MediaModalItem = {
   type: MediaType;
   actionHref?: string;
   actionLabel?: string;
+  experienceHref?: string;
+  experienceLabel?: string;
 };
 
 type MediaModalContextValue = {
@@ -28,6 +30,20 @@ type MediaModalContextValue = {
 };
 
 const MediaModalContext = createContext<MediaModalContextValue | null>(null);
+
+function getModalActionClassName(href: string, label: string) {
+  const actionClassNames = ["media-modal-action-link"];
+
+  if (label.toLowerCase().includes("case study")) {
+    actionClassNames.push("is-case-study");
+  }
+
+  if (href.startsWith("/experience")) {
+    actionClassNames.push("is-experience");
+  }
+
+  return actionClassNames.join(" ");
+}
 
 export function useMediaModal() {
   const context = useContext(MediaModalContext);
@@ -101,12 +117,20 @@ export default function MediaModalProvider({ children }: { children: ReactNode }
               <div className="media-modal-actions">
                 {activeItem.actionHref && activeItem.actionLabel ? (
                   <a
-                    className={`media-modal-action-link${activeItem.actionLabel.toLowerCase().includes("case study") ? " is-case-study" : ""}`}
+                    className={getModalActionClassName(activeItem.actionHref, activeItem.actionLabel)}
                     href={activeItem.actionHref}
                     target={activeItem.actionHref.startsWith("http") ? "_blank" : undefined}
                     rel={activeItem.actionHref.startsWith("http") ? "noreferrer" : undefined}
                   >
                     {activeItem.actionLabel}
+                  </a>
+                ) : null}
+                {activeItem.experienceHref && activeItem.experienceLabel ? (
+                  <a
+                    className={getModalActionClassName(activeItem.experienceHref, activeItem.experienceLabel)}
+                    href={activeItem.experienceHref}
+                  >
+                    {activeItem.experienceLabel}
                   </a>
                 ) : null}
                 <a href={activeItem.src} target="_blank" rel="noreferrer">

@@ -3,7 +3,7 @@ import { siteAssets } from "../../../content/siteAssets";
 
 export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
   slug: "confidential-performance-communications",
-  title: "Automated & confidential preformance notification process",
+  title: "Automated & confidential performance notification process",
   category: "Automation & Confidential Communications",
   publishedAt: "2024-04-01",
   readTime: "4 min read",
@@ -13,6 +13,7 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
   imageAlt: "Person working at a laptop, representing a confidential automated communication workflow",
   portfolioTitle: "Confidential Performance Communications",
   portfolioSectionId: "branding",
+  relatedExperience: [{ href: "/experience#xkig", label: "XKIG" }],
   metrics: [
     { label: "Leadership", value: "Cross-functional project leadership" },
     { label: "Confidentiality", value: "Confidential communication handling" },

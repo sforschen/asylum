@@ -13,6 +13,7 @@ export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   imageAlt: "Trees and Utilities entrance banner from the original case study",
   portfolioTitle: "Customer Event Signage",
   portfolioSectionId: "branding",
+  relatedExperience: [{ href: "/experience#xkig", label: "XKIG" }],
   externalSource: "https://www.youneedserenity.com/portfolio/t-and-u-event-signage",
   metrics: [
     { label: "Format", value: "Large-scale signage" },

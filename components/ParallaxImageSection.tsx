@@ -1,7 +1,7 @@
- "use client";
+"use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import type { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 type Props = {
   id: string;
@@ -21,7 +21,6 @@ export default function ParallaxImageSection({
 }: Props) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const mediaRef = useRef<HTMLDivElement | null>(null);
-  const backgroundImage = `url(${typeof imageSrc === "string" ? imageSrc : imageSrc.src})`;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -66,9 +65,17 @@ export default function ParallaxImageSection({
       <div
         ref={mediaRef}
         className="parallax-section-media"
-        style={{ backgroundImage }}
         aria-hidden="true"
-      />
+      >
+        <Image
+          className="parallax-section-image"
+          src={imageSrc}
+          alt=""
+          fill
+          sizes="100vw"
+          priority={false}
+        />
+      </div>
       <div
         className={`page-container page-section-content parallax-section-content${panelAlign === "right" ? " is-right" : ""}`}
       >

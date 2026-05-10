@@ -13,6 +13,7 @@ export const optumCeCampaignCaseStudy: CaseStudyPost = {
   imageAlt: "Optum Continuing Education social campaign preview",
   portfolioTitle: "Optum Continuing Education Campaign",
   portfolioSectionId: "web-design-and-management",
+  relatedExperience: [{ href: "/experience#optum", label: "Optum" }],
   metrics: [
     { label: "Attendance growth", value: "+30%" },
     { label: "Campaign cadence", value: "30 days to post-event" },

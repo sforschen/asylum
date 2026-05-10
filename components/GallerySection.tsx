@@ -18,6 +18,8 @@ export type GalleryItem = {
   imageSrc: string | StaticImageData;
   imageAlt?: string;
   links: GalleryItemLink[];
+  experienceHref?: string;
+  experienceLabel?: string;
   note?: {
     text: string;
     href: string;
@@ -34,7 +36,22 @@ type Props = {
   eagerFirstImage?: boolean;
 };
 
-function GalleryLink({ href, label, emphasis }: GalleryItemLink) {
+const experienceCompanyLabels: Record<string, string> = {
+  "/experience#castle-cooke": "Castle & Cooke",
+  "/experience#cpmi-solutions": "CPMI Solutions",
+  "/experience#cr-england": "C.R. England",
+  "/experience#elixir": "Elixir",
+  "/experience#optum": "Optum",
+  "/experience#xkig": "XKIG",
+};
+
+function GalleryLink({
+  href,
+  label,
+  emphasis,
+  experienceHref,
+  experienceLabel,
+}: GalleryItemLink & Pick<GalleryItem, "experienceHref" | "experienceLabel">) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
   const isExternal = href.startsWith("http");
   const mediaType = getMediaTypeFromUrl(href);
@@ -42,7 +59,13 @@ function GalleryLink({ href, label, emphasis }: GalleryItemLink) {
   return (
     <p>
       {mediaType ? (
-        <MediaModalLink className="button" href={href} modalTitle={label}>
+        <MediaModalLink
+          className="button"
+          href={href}
+          modalTitle={label}
+          modalExperienceHref={experienceHref}
+          modalExperienceLabel={experienceLabel}
+        >
           {content}
         </MediaModalLink>
       ) : isExternal ? (
@@ -83,6 +106,8 @@ export default function GallerySection({ id, title, intro, items, sectionClassNa
                 modalType={modalLink ? getMediaTypeFromUrl(modalLink.href) ?? "image" : "image"}
                 modalActionHref={modalActionLink?.href}
                 modalActionLabel={modalActionLink?.label}
+                modalExperienceHref={item.experienceHref}
+                modalExperienceLabel={item.experienceLabel}
                 src={item.imageSrc}
                 alt={item.imageAlt ?? item.title}
                 width={1200}
@@ -103,8 +128,21 @@ export default function GallerySection({ id, title, intro, items, sectionClassNa
                   </p>
                 ) : null}
                 {item.links.map((link) => (
-                  <GalleryLink key={link.href} {...link} />
+                  <GalleryLink
+                    key={link.href}
+                    {...link}
+                    experienceHref={item.experienceHref}
+                    experienceLabel={item.experienceLabel}
+                  />
                 ))}
+                {item.experienceHref && item.experienceLabel ? (
+                  <p className="gallery-card-related-experience">
+                    Related experience:{" "}
+                    <Link href={item.experienceHref}>
+                      {experienceCompanyLabels[item.experienceHref] ?? item.experienceLabel}
+                    </Link>
+                  </p>
+                ) : null}
               </div>
             </li>
             );

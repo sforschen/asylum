@@ -87,7 +87,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Express", percent: 70 },
       { name: "Experience Manager", percent: 70 },
       { name: "Illustrator", percent: 65 },
-      { name: "Indesign", percent: 95 },
+      { name: "InDesign", percent: 95 },
       { name: "Photoshop", percent: 60 },
       { name: "Workfront", percent: 60 },
     ],

@@ -15,6 +15,7 @@ export const metadata = {
 // Full experience inventory, later split into featured and archive sections.
 const experienceItems: ExperienceItem[] = [
   {
+    id: "xkig",
     title: "Creative Services Director",
     company: "XKIG",
     locationAndDates: "Remote | 8/24-Current",
@@ -68,6 +69,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "elixir",
     title: "Digital Content Marketing Manager",
     company: "Elixir",
     locationAndDates: "Remote | 6/22-2/24",
@@ -123,6 +125,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "optum",
     title: "Marketing Specialist II",
     company: "Optum",
     locationAndDates: "Remote | 6/19-6/22",
@@ -160,6 +163,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "cpmi-solutions",
     title: "Creative Director",
     company: "CPMI Solutions",
     locationAndDates: "Salt Lake City | 8/16-2/19",
@@ -187,6 +191,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "cr-england",
     title: "Front End Web & Graphic Designer",
     company: "C.R. England",
     locationAndDates: "Salt Lake City | 5/15-6/16",
@@ -209,6 +214,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "castle-cooke",
     title: "Marketing Specialist",
     company: "Castle & Cooke Mortgage LLC",
     locationAndDates: "Salt Lake City | 6/14-2/15",
@@ -232,6 +238,7 @@ const experienceItems: ExperienceItem[] = [
     ],
   },
   {
+    id: "helix-education",
     title: "Graphic Designer",
     company: "Helix Education",
     locationAndDates: "Salt Lake City | 10/05-5/14",

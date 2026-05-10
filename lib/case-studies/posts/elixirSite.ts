@@ -13,6 +13,7 @@ export const elixirSiteCaseStudy: CaseStudyPost = {
   imageAlt: "Elixir website redesign preview",
   portfolioTitle: "Elixir's Website",
   portfolioSectionId: "web-design-and-management",
+  relatedExperience: [{ href: "/experience#elixir", label: "Elixir" }],
   externalSource: "https://www.youneedserenity.com/portfolio/elixir-site",
   metrics: [
     { label: "Platform launch", value: "Under 5 months" },

@@ -10,6 +10,7 @@ import MediaModalLink from "./MediaModalLink";
 import { getMediaTypeFromUrl } from "../lib/media";
 
 export type ExperienceItem = {
+  id?: string;
   title: string;
   company: string;
   locationAndDates: string;
@@ -82,7 +83,7 @@ function ExperienceLinkGroup({ title, links }: { title: string; links: Experienc
 
 function ExperienceCard({ item }: { item: ExperienceItem }) {
   return (
-    <li>
+    <li id={item.id}>
       {item.imageSrc ? (
         <MediaModalImage
           buttonClassName="cards-card-image media-modal-image-button"

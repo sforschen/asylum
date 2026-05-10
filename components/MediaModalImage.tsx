@@ -15,6 +15,8 @@ type Props = Omit<ImageProps, "alt" | "src"> & {
   modalType?: MediaType;
   modalActionHref?: string;
   modalActionLabel?: string;
+  modalExperienceHref?: string;
+  modalExperienceLabel?: string;
   children?: ReactNode;
 };
 
@@ -35,6 +37,8 @@ export default function MediaModalImage({
   modalType = "image",
   modalActionHref,
   modalActionLabel,
+  modalExperienceHref,
+  modalExperienceLabel,
   children,
   ...imageProps
 }: Props) {
@@ -52,6 +56,8 @@ export default function MediaModalImage({
           type: modalType,
           actionHref: modalActionHref,
           actionLabel: modalActionLabel,
+          experienceHref: modalExperienceHref,
+          experienceLabel: modalExperienceLabel,
         })
       }
       aria-label={`Open ${alt} in a large modal`}

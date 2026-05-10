@@ -10,6 +10,8 @@ type Props = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   children: ReactNode;
   mediaType?: MediaType;
   modalTitle?: string;
+  modalExperienceHref?: string;
+  modalExperienceLabel?: string;
 };
 
 export default function MediaModalLink({
@@ -17,6 +19,8 @@ export default function MediaModalLink({
   children,
   mediaType,
   modalTitle,
+  modalExperienceHref,
+  modalExperienceLabel,
   onClick,
   ...anchorProps
 }: Props) {
@@ -39,6 +43,8 @@ export default function MediaModalLink({
           src: href,
           title: modalTitle,
           type: resolvedType,
+          experienceHref: modalExperienceHref,
+          experienceLabel: modalExperienceLabel,
         });
       }}
     >

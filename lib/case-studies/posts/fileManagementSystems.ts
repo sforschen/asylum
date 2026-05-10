@@ -14,6 +14,12 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
   imageAlt: "Workspace with a Garmin device and organized desk materials",
   portfolioTitle: "File Management Systems",
   portfolioSectionId: "web-design-and-management",
+  relatedExperience: [
+    { href: "/experience#xkig", label: "XKIG" },
+    { href: "/experience#elixir", label: "Elixir" },
+    { href: "/experience#optum", label: "Optum" },
+    { href: "/experience#castle-cooke", label: "Castle & Cooke" },
+  ],
   takeaways: [
     {
       href: siteDocuments.caseStudies.fileManagementSystems,

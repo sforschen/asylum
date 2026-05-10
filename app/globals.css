@@ -1131,6 +1131,10 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   margin-top: 0.25rem;
 }
 
+.cards > ul > li[id] {
+  scroll-margin-top: var(--spc-xl);
+}
+
 .experience-link-group {
   margin-top: var(--spc-s);
   padding: var(--spc-s);
@@ -1433,12 +1437,27 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   display: block;
 }
 
+.portfolio-page .gallery-card-image img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 .gallery-card-body {
   margin: var(--spc-m);
 }
 
 .portfolio-page .gallery-card-body h3 {
   font-size: var(--heading-font-size-xs);
+}
+
+.gallery-card-related-experience {
+  margin-top: var(--spc-xs);
+  margin-bottom: 0;
+  font-size: var(--body-font-size-s);
+}
+
+.gallery-card-related-experience a {
+  font-weight: 700;
 }
 
 .table {
@@ -2085,6 +2104,16 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   margin-top: var(--spc-m);
 }
 
+.case-study-related-experience {
+  margin-top: var(--spc-s);
+  margin-bottom: 0;
+  font-size: var(--body-font-size-s);
+}
+
+.case-study-related-experience a {
+  font-weight: 700;
+}
+
 .case-study-hero {
   display: grid;
   gap: var(--spc-l);
@@ -2393,8 +2422,21 @@ main .section.highlight-blue .case-study-content li {
   transform: translateY(-0.0625rem) scale(1.01);
 }
 
-.media-modal-actions a:not(.is-case-study):hover,
-.media-modal-actions a:not(.is-case-study):focus-visible {
+.media-modal-action-link.is-experience {
+  border-color: var(--clr-green);
+  background-color: var(--clr-light-green);
+  color: var(--clr-blue);
+}
+
+.media-modal-action-link.is-experience:hover,
+.media-modal-action-link.is-experience:focus-visible {
+  border-color: var(--clr-green);
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+}
+
+.media-modal-actions a:not(.is-case-study, .is-experience):hover,
+.media-modal-actions a:not(.is-case-study, .is-experience):focus-visible {
   border-color: var(--clr-red);
   background-color: var(--clr-white);
   color: var(--clr-purple);
@@ -2608,11 +2650,14 @@ main .section.highlight-blue .case-study-content li {
 .parallax-section-media {
   position: absolute;
   inset: -30% 0;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   transform: translate3d(0, var(--parallax-offset), 0) scale(1.08);
   will-change: transform;
+}
+
+.parallax-section-image {
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
 }
 
 .parallax-section::before {

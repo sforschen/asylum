@@ -13,6 +13,7 @@ export const optumSiteCaseStudy: CaseStudyPost = {
   imageAlt: "Optum website planning image from the original case study",
   portfolioTitle: "Optum Website",
   portfolioSectionId: "web-design-and-management",
+  relatedExperience: [{ href: "/experience#optum", label: "Optum" }],
   externalSource: "https://www.youneedserenity.com/portfolio/optum-site",
   metrics: [
     { label: "Launch timeline", value: "3 months" },

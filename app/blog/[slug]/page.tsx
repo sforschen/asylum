@@ -66,6 +66,17 @@ export default async function CaseStudyPage({ params }: Props) {
                 More Case Studies
               </Link>
             </div>
+            {post.relatedExperience?.length ? (
+              <p className="case-study-related-experience">
+                Related experience:{" "}
+                {post.relatedExperience.map((experience, index) => (
+                  <span key={experience.href}>
+                    <Link href={experience.href}>{experience.label}</Link>
+                    {index < post.relatedExperience!.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </p>
+            ) : null}
           </div>
 
           <div className="case-study-hero-media">

@@ -35,6 +35,10 @@ export type CaseStudyPost = {
   portfolioTitle: string;
   portfolioSectionId: string;
   externalSource?: string;
+  relatedExperience?: Array<{
+    href: string;
+    label: string;
+  }>;
   takeaways?: Array<{
     href: string;
     label: string;

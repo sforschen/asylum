@@ -20,6 +20,17 @@ type PortfolioSection = {
   items: GalleryItem[];
 };
 
+const experienceLinks = {
+  castleCooke: "/experience#castle-cooke",
+  cpmi: "/experience#cpmi-solutions",
+  crEngland: "/experience#cr-england",
+  elixir: "/experience#elixir",
+  optum: "/experience#optum",
+  xkig: "/experience#xkig",
+};
+
+const experienceLabel = "View Related Experience";
+
 const portfolioSections: PortfolioSection[] = [
   {
     id: "web-design-and-management",
@@ -29,33 +40,45 @@ const portfolioSections: PortfolioSection[] = [
     sectionClassName: "highlight",
     items: [
       {
-        title: "Elixir's Website",
+        title: "Website Migration & Redesign",
         imageSrc: siteAssets.portfolio.elixirWebsiteThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: getCaseStudyUrl("elixir-site"), label: "Read Case Study" }],
       },
       {
-        title: "Optum Website",
+        title: "Website Migration & Launch",
         imageSrc: siteAssets.portfolio.optumWebsiteThumb,
+        experienceHref: experienceLinks.optum,
+        experienceLabel,
         links: [{ href: getCaseStudyUrl("optum-site"), label: "Read Case Study" }],
       },
       {
-        title: "Optum Continuing Education Campaign",
+        title: "Continuing Education Campaign",
         imageSrc: siteAssets.portfolio.optumCeThumbnail,
+        experienceHref: experienceLinks.optum,
+        experienceLabel,
         links: [{ href: getCaseStudyUrl("optum-ce-campaign"), label: "Read Case Study" }],
       },
       {
-        title: "CPMI Solutions Website",
+        title: "Custom Solutions Website",
         imageSrc: siteAssets.portfolio.cpmiSolutionsWebsiteThumb,
+        experienceHref: experienceLinks.cpmi,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.cpmiSolutionsWebsite, label: "View Image" }],
       },
       {
-        title: "C.R. England Page",
+        title: "Landing Page Design",
         imageSrc: siteAssets.portfolio.crEnglandPageThumb,
+        experienceHref: experienceLinks.crEngland,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.crEnglandPage, label: "View Image" }],
       },
       {
-        title: "C.R. England Recruiting",
+        title: "Recruiting Campaign Page",
         imageSrc: siteAssets.portfolio.crEnglandRecruitingThumb,
+        experienceHref: experienceLinks.crEngland,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.crEnglandRecruiting, label: "View Image" }],
       },
     ],
@@ -65,17 +88,20 @@ const portfolioSections: PortfolioSection[] = [
     title: "Branding",
     intro:
       "This collection brings together print design, branded collateral, event materials, and one-off creative pieces with a strong point of view. It reflects the kind of work that helps brands feel tangible, memorable, and human beyond the screen.",
-    sectionClassName: "highlight-light-green",
     items: [
       {
         title: "Confidential Performance Communications",
         imageSrc: siteAssets.caseStudies.confidentialPerformanceCommunicationsHero,
         imageAlt: "Person working at a laptop, representing a confidential automated communication workflow",
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
         links: [{ href: getCaseStudyUrl("confidential-performance-communications"), label: "Read Case Study" }],
       },
       {
         title: "Event Mug Design",
         imageSrc: siteAssets.portfolio.eventMugDesignThumb,
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
         note: {
           text: "Photography courtesy of Deandre Redmon",
           href: "https://www.instagram.com/drevisualsphotography",
@@ -86,6 +112,8 @@ const portfolioSections: PortfolioSection[] = [
       {
         title: "Customer Event Signage",
         imageSrc: siteAssets.portfolio.customerEventSignageThumb,
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
         note: {
           text: "Photography courtesy of Deandre Redmon",
           href: "https://www.instagram.com/drevisualsphotography",
@@ -96,6 +124,8 @@ const portfolioSections: PortfolioSection[] = [
       {
         title: "Punny Bumper Stickers",
         imageSrc: siteAssets.portfolio.punnyBumperStickersThumb,
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
         note: {
           text: "Photography courtesy of Deandre Redmon",
           href: "https://www.instagram.com/drevisualsphotography",
@@ -104,23 +134,31 @@ const portfolioSections: PortfolioSection[] = [
         links: [{ href: getCaseStudyUrl("serious-silly"), label: "Read Case Study" }],
       },
       {
-        title: "Castle & Cooke Brochure",
+        title: "Homebuyers Guide Brochure",
         imageSrc: siteAssets.portfolio.castleCookeBrochureThumb,
+        experienceHref: experienceLinks.castleCooke,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.castleCookeHomebuyersGuide, label: "View Brochure" }],
       },
       {
-        title: "CPMI Brochure",
+        title: "Capabilities Brochure",
         imageSrc: siteAssets.portfolio.cpmiBrochureThumb,
+        experienceHref: experienceLinks.cpmi,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.cpmiBrochure, label: "View Brochure" }],
       },
       {
         title: "Logo Design on Hat",
         imageSrc: siteAssets.portfolio.logoDesignOnHatThumb,
+        experienceHref: experienceLinks.cpmi,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.logoDesignOnHat, label: "View Image", emphasis: "strong" }],
       },
       {
         title: "Logo Design & Signage",
         imageSrc: siteAssets.portfolio.logoDesignSignageThumb,
+        experienceHref: experienceLinks.cpmi,
+        experienceLabel,
         links: [{ href: siteDocuments.portfolio.logoDesignSignage, label: "View Image", emphasis: "strong" }],
       },
     ],
@@ -130,35 +168,48 @@ const portfolioSections: PortfolioSection[] = [
     title: "Social Media",
     intro:
       "These pieces show how I shape social content that supports campaigns, announcements, and brand storytelling across channels. The work balances visual clarity, audience engagement, and messaging that is concise enough to perform well in fast-moving feeds.",
+    sectionClassName: "highlight-light-green",
     items: [
       {
-        title: "Safety Month Post",
+        title: "Safety Month Social Post",
         imageSrc: siteAssets.social.safetyMonthPostThumb,
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/posts/kendallvegetation_nationalsafetymonth-staysafe-kendallsafety-activity-7336519759825436672-Od33?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADjjKoBrLu0hYpMutgsETO7iPh4dsJBBeU", label: "View on LinkedIn" }],
       },
       {
-        title: "Video Post",
+        title: "Campaign Video Post",
         imageSrc: siteAssets.social.socialVideoPostOneThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/feed/update/urn:li:activity:7062426632422076416?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
       {
-        title: "Holiday Post",
+        title: "Holiday Social Post",
         imageSrc: siteAssets.social.holidayPostThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_happy-holidays-from-the-elixir-team-we-are-activity-7142891357659934720-4IuP?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
       {
-        title: "Video Post",
+        title: "Diabetes Awareness Video Post",
         imageSrc: siteAssets.social.socialVideoPostTwoThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/posts/serenityforschen_defeatdiabetes-elixirpbm-activity-7053744684485005312-fSyj?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
       {
-        title: "Event announcement",
+        title: "Event Announcement Social Post",
         imageSrc: siteAssets.social.eventAnnouncementThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_elixirpbm-activity-7087111883664625665-7zAi?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
       {
-        title: "Blog Post",
+        title: "Flu Season Blog Promotion",
         imageSrc: siteAssets.social.blogPostThumb,
+        experienceHref: experienceLinks.elixir,
+        experienceLabel,
         links: [{ href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_flu-season-is-right-around-the-corner-read-activity-7101971724866371584-VgWY?utm_source=share&utm_medium=member_desktop", label: "View on LinkedIn" }],
       },
     ],
