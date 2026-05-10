@@ -1425,6 +1425,10 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 }
 
 .gallery-card-image {
+  width: 100%;
+  border-top: var(--border-width-thin) solid var(--clr-black);
+  border-bottom: var(--border-width-thin) solid var(--clr-black);
+  box-shadow: 0 0 1rem rgb(1 9 12 / 0.18);
   line-height: 0;
 }
 
@@ -1442,18 +1446,84 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   object-fit: cover;
 }
 
-.gallery-card-body {
-  margin: var(--spc-m);
+.gallery-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--heading-font-size-xs) * 2.24);
+  margin: var(--spc-ms) var(--spc-s) var(--spc-s);
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.12;
+  text-align: center;
 }
 
-.portfolio-page .gallery-card-body h3 {
-  font-size: var(--heading-font-size-xs);
+.gallery-card-media {
+  position: relative;
+}
+
+.gallery-card-body {
+  display: grid;
+  gap: var(--spc-xs);
+  margin: var(--spc-s);
+  text-align: center;
+}
+
+.gallery-card-body > * {
+  margin-bottom: 0;
+}
+
+.gallery-card-note {
+  position: absolute;
+  right: 0;
+  bottom: var(--border-width-thin);
+  left: 0;
+  z-index: 2;
+  padding: 0.3rem var(--spc-s);
+  background-color: rgb(1 9 12 / 0.78);
+  color: var(--clr-white);
+  font-size: var(--body-font-size-s);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.gallery-card-note a {
+  color: var(--clr-white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: var(--underline-height);
+  text-underline-offset: 0.15em;
+}
+
+.gallery-card-note a:hover,
+.gallery-card-note a:focus-visible {
+  color: var(--clr-light-orange);
+}
+
+.gallery-card-actions {
+  display: grid;
+  gap: var(--spc-xs);
+}
+
+.gallery-card-actions p {
+  margin-bottom: 0;
+}
+
+.gallery-card-actions a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .gallery-card-related-experience {
-  margin-top: var(--spc-xs);
-  margin-bottom: 0;
   font-size: var(--body-font-size-s);
+  text-align: center;
 }
 
 .gallery-card-related-experience a {

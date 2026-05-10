@@ -99,42 +99,46 @@ export default function GallerySection({ id, title, intro, items, sectionClassNa
 
             return (
             <li key={`${id}-${item.title}-${index}`}>
-              <MediaModalImage
-                buttonClassName="gallery-card-image media-modal-image-button"
-                modalSrc={modalLink?.href}
-                modalTitle={item.imageAlt ?? item.title}
-                modalType={modalLink ? getMediaTypeFromUrl(modalLink.href) ?? "image" : "image"}
-                modalActionHref={modalActionLink?.href}
-                modalActionLabel={modalActionLink?.label}
-                modalExperienceHref={item.experienceHref}
-                modalExperienceLabel={item.experienceLabel}
-                src={item.imageSrc}
-                alt={item.imageAlt ?? item.title}
-                width={1200}
-                height={1200}
-                loading={eagerFirstImage && index === 0 ? "eager" : undefined}
-                sizes="(min-width: 960px) 33vw, (min-width: 792px) 50vw, 100vw"
-              />
-              <div className="gallery-card-body">
-                <h3>
-                  <strong>{item.title}</strong>
-                </h3>
+              <h3 className="gallery-card-title">
+                <strong>{item.title}</strong>
+              </h3>
+              <div className="gallery-card-media">
+                <MediaModalImage
+                  buttonClassName="gallery-card-image media-modal-image-button"
+                  modalSrc={modalLink?.href}
+                  modalTitle={item.imageAlt ?? item.title}
+                  modalType={modalLink ? getMediaTypeFromUrl(modalLink.href) ?? "image" : "image"}
+                  modalActionHref={modalActionLink?.href}
+                  modalActionLabel={modalActionLink?.label}
+                  modalExperienceHref={item.experienceHref}
+                  modalExperienceLabel={item.experienceLabel}
+                  src={item.imageSrc}
+                  alt={item.imageAlt ?? item.title}
+                  width={1200}
+                  height={1200}
+                  loading={eagerFirstImage && index === 0 ? "eager" : undefined}
+                  sizes="(min-width: 960px) 33vw, (min-width: 792px) 50vw, 100vw"
+                />
                 {item.note ? (
-                  <p>
+                  <p className="gallery-card-note">
                     {item.note.text}{" "}
                     <a href={item.note.href} target="_blank" rel="noreferrer">
                       {item.note.label}
                     </a>
                   </p>
                 ) : null}
-                {item.links.map((link) => (
-                  <GalleryLink
-                    key={link.href}
-                    {...link}
-                    experienceHref={item.experienceHref}
-                    experienceLabel={item.experienceLabel}
-                  />
-                ))}
+              </div>
+              <div className="gallery-card-body">
+                <div className="gallery-card-actions">
+                  {item.links.map((link) => (
+                    <GalleryLink
+                      key={link.href}
+                      {...link}
+                      experienceHref={item.experienceHref}
+                      experienceLabel={item.experienceLabel}
+                    />
+                  ))}
+                </div>
                 {item.experienceHref && item.experienceLabel ? (
                   <p className="gallery-card-related-experience">
                     Related experience:{" "}
