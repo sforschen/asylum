@@ -91,6 +91,8 @@
   --header-padding-y: var(--spc-ms);
   --nav-control-size: var(--spc-l);
   --nav-control-icon-width: var(--spc-ms);
+  --nav-mobile-control-size: 2.45rem;
+  --nav-mobile-control-icon-width: 1.05rem;
   --meta-gap: 0.75rem;
 
   --border-width-thin: 0.0625rem;
@@ -1450,9 +1452,10 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(var(--heading-font-size-xs) * 2.24);
+  --gallery-card-title-size: clamp(1.05rem, 1rem + 0.6vw, var(--heading-font-size-xs));
+  min-height: calc(var(--gallery-card-title-size) * 2.24);
   margin: var(--spc-ms) var(--spc-s) var(--spc-s);
-  font-size: var(--heading-font-size-xs);
+  font-size: var(--gallery-card-title-size);
   line-height: 1.12;
   text-align: center;
 }
@@ -2996,16 +2999,45 @@ main .section.highlight-blue .case-study-content li {
 
   .site-nav-toggle {
     display: inline-flex !important;
+    flex-basis: var(--nav-mobile-control-size);
+    min-width: var(--nav-mobile-control-size);
+    min-height: var(--nav-mobile-control-size);
+    width: var(--nav-mobile-control-size);
+    height: var(--nav-mobile-control-size);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 0.08);
+  }
+
+  .site-nav-toggle span {
+    width: var(--nav-mobile-control-icon-width);
+    height: 0.1875rem;
+  }
+
+  .site-nav-toggle span:first-child {
+    top: 0.82rem;
+  }
+
+  .site-nav-toggle span:last-child {
+    top: 1.34rem;
+  }
+
+  .site-nav-toggle.is-open span:first-child,
+  .site-nav-toggle.is-open span:last-child {
+    top: 1.08rem;
   }
 
   .site-nav-links {
     display: none;
     flex-direction: column;
-    gap: 0;
+    gap: var(--spc-xs);
     width: 100%;
     margin-top: 0;
-    padding: var(--spc-s) 0 var(--spc-s);
+    padding: var(--spc-s) 0 0;
     border-top: var(--border-width-thin) solid var(--nav-divider-color);
+  }
+
+  .site-header.is-scrolled .site-nav-links {
+    gap: var(--spc-xs);
   }
 
   .site-nav-links.is-open {
@@ -3014,8 +3046,30 @@ main .section.highlight-blue .case-study-content li {
 
   .site-nav-links a {
     width: 100%;
-    padding: var(--spc-s) 0;
-    text-align: center;
+    box-sizing: border-box;
+    padding: 0.78rem var(--spc-s);
+    border: var(--border-width-thin) solid rgb(255 255 255 / 0.16);
+    border-radius: var(--radius-control);
+    background-color: rgb(255 255 255 / 0.06);
+    text-align: left;
+    font-weight: 700;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .site-nav-links a::after {
+    content: none;
+  }
+
+  .site-nav-links a:hover,
+  .site-nav-links a:focus-visible {
+    border-color: rgb(255 255 255 / 0.34);
+    background-color: rgb(255 255 255 / 0.12);
+    color: var(--clr-white);
+    transform: translateX(0.18rem);
   }
 
   .site-footer-inner {
