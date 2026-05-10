@@ -40,6 +40,10 @@ const experienceItems: ExperienceItem[] = [
     ],
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("confidential-performance-communications"),
+        label: "Confidential Performance Communications",
+      },
+      {
         href: getCaseStudyUrl("file-management-systems"),
         label: "File Management Systems",
       },
