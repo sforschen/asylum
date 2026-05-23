@@ -1026,6 +1026,7 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   background-color: var(--clr-white);
   border: var(--border-width-thin) solid var(--surface-stroke-color);
   border-radius: var(--radius-card);
+  box-sizing: border-box;
   padding: var(--cta-padding);
   max-width: var(--cta-max-width);
   margin-left: auto;
@@ -2748,6 +2749,7 @@ main .section.highlight-blue .case-study-content li {
   top: 0;
   z-index: 2;
   width: 100%;
+  box-sizing: border-box;
   min-height: clamp(17rem, 36svh, 22rem);
   padding-top: calc(var(--default-content-gap) * 2);
   padding-bottom: calc(var(--default-content-gap) * 2);
@@ -2838,8 +2840,7 @@ main .section.highlight-blue .case-study-content li {
     padding-right: var(--spc-ms);
   }
 
-  .site-nav,
-  .site-footer-inner {
+  .site-nav {
     padding-left: var(--spc-ms);
     padding-right: var(--spc-ms);
   }
@@ -3110,6 +3111,19 @@ main .section.highlight-blue .case-study-content li {
 
   .site-nav-links {
     display: flex;
+  }
+}
+
+@media (48rem <= width <= 61rem) {
+  .cta-section {
+    padding: var(--cta-padding) !important;
+  }
+
+  .cta-section .page-section-content {
+    width: 100%;
+    padding: var(--cta-padding);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
