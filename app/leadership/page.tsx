@@ -19,7 +19,7 @@ export default function LeadershipPage() {
       <PageIntro
         title="Leadership"
         titleId="leadership"
-        kicker="Service Leadership in Action"
+        kicker="Servant Leadership in Action"
         variant="copy"
         body={
           <>
