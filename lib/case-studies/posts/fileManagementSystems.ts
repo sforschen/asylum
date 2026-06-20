@@ -11,7 +11,7 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
   summary:
     "A practical framework for auditing storage, training teams, and designing file systems that support how content really moves across an organization.",
   imageSrc: siteAssets.caseStudies.fileManagementSystemsHero,
-  imageAlt: "Workspace with a Garmin device and organized desk materials",
+  imageAlt: "Workspace with organized materials",
   portfolioTitle: "File Management Systems",
   portfolioSectionId: "web-design-and-management",
   relatedExperience: [
