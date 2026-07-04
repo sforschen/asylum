@@ -22,6 +22,11 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
   ],
   takeaways: [
     {
+      href: "/resources/file-management-system",
+      label: "Open the File & Asset Management Resource",
+      download: false,
+    },
+    {
       href: siteDocuments.caseStudies.fileManagementSystems,
       label: "Download File Management Systems PDF",
     },
@@ -34,6 +39,13 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
       value: "Step-by-step instructions",
       href: siteDocuments.caseStudies.fileManagementSystems,
       linkLabel: "Download the PDF",
+    },
+    {
+      label: "Online Resource",
+      value: "Fillable folder builder",
+      href: "/resources/file-management-system",
+      linkLabel: "Open the builder",
+      download: false,
     },
   ],
   sections: [

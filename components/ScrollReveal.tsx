@@ -8,6 +8,11 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname === "/resources/file-management-system") {
+      document.documentElement.classList.remove("has-scroll-reveal");
+      return;
+    }
+
     document.documentElement.classList.add("has-scroll-reveal");
 
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section"))

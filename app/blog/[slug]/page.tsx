@@ -101,7 +101,7 @@ export default async function CaseStudyPage({ params }: Props) {
                     <p className="case-study-metric-label">{metric.label}</p>
                     {metric.href ? (
                       <p className="case-study-metric-link">
-                        <a href={metric.href} download>
+                        <a href={metric.href} download={metric.download === false ? undefined : true}>
                           {metric.linkLabel ?? "Download PDF"}
                         </a>
                       </p>
@@ -146,7 +146,12 @@ export default async function CaseStudyPage({ params }: Props) {
                 {section.title === "Takeaway" && post.takeaways?.length ? (
                   <div className="case-study-takeaway-actions">
                     {post.takeaways.map((takeaway) => (
-                      <a key={takeaway.href} className="button" href={takeaway.href} download>
+                      <a
+                        key={takeaway.href}
+                        className={takeaway.download === false ? "button secondary" : "button"}
+                        href={takeaway.href}
+                        download={takeaway.download === false ? undefined : true}
+                      >
                         {takeaway.label}
                       </a>
                     ))}

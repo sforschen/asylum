@@ -42,12 +42,14 @@ export type CaseStudyPost = {
   takeaways?: Array<{
     href: string;
     label: string;
+    download?: boolean;
   }>;
   metrics?: Array<{
     label: string;
     value: string;
     href?: string;
     linkLabel?: string;
+    download?: boolean;
   }>;
   sections: CaseStudySection[];
 };

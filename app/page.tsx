@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { FeaturePicker, SkillLevelAdvanced, Webhook } from "@carbon/icons-react";
 import Image from "next/image";
 
+import resourceFeatureImage from "../content/site-assets/alexander-grey-tn57JI3CewI-unsplash.jpg";
 import websiteHeader from "../content/site-assets/header-site-optimized.jpg";
 import CaseStudyFeed from "../components/CaseStudyFeed";
 
@@ -18,6 +19,17 @@ type HomePillar = {
   icon: ReactNode;
   href: string;
   ctaLabel: string;
+};
+
+type HomeFeature = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+  highlights: string[];
 };
 
 const homePillars: HomePillar[] = [
@@ -52,6 +64,22 @@ const homePillars: HomePillar[] = [
     ctaLabel: "See Knowledge",
   },
 ];
+
+const featuredHomeResource: HomeFeature = {
+  eyebrow: "Featured resource",
+  title: "Build a basic file & folder system",
+  description:
+    "A fillable tool for turning messy shared drives, asset libraries, and naming habits into a practical starter system with downloadable guides.",
+  href: "/resources/file-management-system",
+  ctaLabel: "Open the Resource",
+  secondaryHref: "/blog/file-management-systems",
+  secondaryLabel: "Read the Case Study",
+  highlights: [
+    "Create a folder map from selected workstreams, departments, products, services, or custom sections.",
+    "Build naming conventions, asset library folders, and reusable asset abbreviations.",
+    "Download an AI prompt, Word or TXT guide, asset index CSV, and setup script.",
+  ],
+};
 
 function HomePillarCard({ title, description, icon, href, ctaLabel }: HomePillar) {
   return (
@@ -115,13 +143,43 @@ export default function Home() {
               View Portfolio
             </a>
           </div>
+
+          <div className="home-stat-grid" aria-label="Highlights">
+            <Stat value="10+ Years" label="Leading creative, web, and marketing work across teams and platforms." />
+            <Stat value="Multi-Brand" label="Building governance, asset systems, and workflows that support scale." />
+            <Stat value="High-Performing" label="Leading teams with clear direction, practical systems, and stronger delivery." />
+          </div>
         </div>
 
-        <div className="home-stat-grid" aria-label="Highlights">
-          <Stat value="10+ Years" label="Leading creative, web, and marketing work across teams and platforms." />
-          <Stat value="Multi-Brand" label="Building governance, asset systems, and workflows that support scale." />
-          <Stat value="High-Performing" label="Leading teams with clear direction, practical systems, and stronger delivery." />
-        </div>
+        <aside className="home-feature-sidebar" aria-labelledby="home-feature-title">
+          <div className="home-feature-image">
+            <Image
+              src={resourceFeatureImage}
+              alt="A stack of colorful folders and papers"
+              fill
+              sizes="(max-width: 56.25rem) 100vw, 24rem"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="home-feature-sidebar-header">
+            <p>{featuredHomeResource.eyebrow}</p>
+            <h2 id="home-feature-title">{featuredHomeResource.title}</h2>
+          </div>
+          <p>{featuredHomeResource.description}</p>
+          <ul className="home-feature-list">
+            {featuredHomeResource.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+          <div className="home-feature-actions">
+            <a className="button on-dark" href={featuredHomeResource.href}>
+              {featuredHomeResource.ctaLabel}
+            </a>
+            <a className="button secondary" href={featuredHomeResource.secondaryHref}>
+              {featuredHomeResource.secondaryLabel}
+            </a>
+          </div>
+        </aside>
       </section>
 
       {/* High-level offer summary. */}
@@ -133,35 +191,6 @@ export default function Home() {
               <HomePillarCard key={pillar.title} {...pillar} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Leadership narrative paired with a quick focus-area list. */}
-      <section className="page-container home-leadership-callout">
-        <div className="home-callout-copy">
-          <h2 className="section-title">Leadership That Keeps Work Moving</h2>
-          <p>
-            I enjoy leading teams in operations, marketing, creative projects, and website management initiatives. It
-            is especially rewarding to guide small, energetic teams through high-impact work together.
-          </p>
-          <p>
-            My approach is all about being supportive, hands-on, and a little bit playful—clear direction, open communication, and practical processes. With the right tools and plenty of encouragement, I help teams take ownership and deliver their best work with confidence.
-          </p>
-        </div>
-
-        <div className="home-callout-card">
-          <h3>Core focus areas</h3>
-          <ul className="home-focus-list">
-            <li>Website migrations and CMS governance</li>
-            <li>Marketing operations and project management systems</li>
-            <li>Accessibility, content standards, and team enablement</li>
-            <li>Creative production across web, print, social, and internal communications</li>
-          </ul>
-          <p>
-            <a className="button" href="/leadership">
-              Read More About Leadership
-            </a>
-          </p>
         </div>
       </section>
 
