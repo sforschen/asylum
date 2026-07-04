@@ -71,7 +71,7 @@ export default function ExperienceTimelineSection({ items }: ExperienceTimelineS
 
         hasPreviewedRef.current = true;
         setSettledPreviewIndex(null);
-        const orderedIndices = items.map((_, index) => index).reverse();
+        const orderedIndices = Array.from({ length: timelineItemCount }, (_, index) => index).reverse();
         const stepDurations = orderedIndices.map((_, index) => Math.min(520, 180 + (index * 40)));
         let elapsed = 0;
 
@@ -118,7 +118,7 @@ export default function ExperienceTimelineSection({ items }: ExperienceTimelineS
         window.clearTimeout(timeoutId);
       });
     };
-  }, [isDesktop, items.length]);
+  }, [isDesktop, timelineItemCount]);
 
   if (!isDesktop) {
     return null;
@@ -203,7 +203,7 @@ export default function ExperienceTimelineSection({ items }: ExperienceTimelineS
               onFocus={clearPreviewState}
             >
               <div className="experience-timeline-summary">
-                  <h3 className="experience-timeline-role">{item.role}</h3>
+                <h3 className="experience-timeline-role">{item.role}</h3>
               </div>
               <div className="experience-timeline-detail">
                 <p className="experience-timeline-type">{item.type}</p>

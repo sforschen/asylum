@@ -7,6 +7,7 @@ import {
   useEffect,
   useId,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -58,12 +59,22 @@ export function useMediaModal() {
 export default function MediaModalProvider({ children }: { children: ReactNode }) {
   const [activeItem, setActiveItem] = useState<MediaModalItem | null>(null);
   const titleId = useId();
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const previouslyFocusedElementRef = useRef<HTMLElement | null>(null);
 
   const closeMedia = useCallback(() => {
     setActiveItem(null);
+    window.requestAnimationFrame(() => {
+      previouslyFocusedElementRef.current?.focus();
+      previouslyFocusedElementRef.current = null;
+    });
   }, []);
 
   const openMedia = useCallback((item: MediaModalItem) => {
+    const activeElement = document.activeElement;
+
+    previouslyFocusedElementRef.current = activeElement instanceof HTMLElement ? activeElement : null;
     setActiveItem(item);
   }, []);
 
@@ -78,12 +89,47 @@ export default function MediaModalProvider({ children }: { children: ReactNode }
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeMedia();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const dialog = dialogRef.current;
+
+      if (!dialog) {
+        return;
+      }
+
+      const focusableElements = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
+
+      if (!focusableElements.length) {
+        event.preventDefault();
+        return;
+      }
+
+      const firstFocusableElement = focusableElements[0];
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstFocusableElement) {
+        event.preventDefault();
+        lastFocusableElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+        event.preventDefault();
+        firstFocusableElement.focus();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
+    const frame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
 
     return () => {
+      window.cancelAnimationFrame(frame);
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -104,6 +150,7 @@ export default function MediaModalProvider({ children }: { children: ReactNode }
       {activeItem ? (
         <div className="media-modal-backdrop" onClick={closeMedia}>
           <div
+            ref={dialogRef}
             className="media-modal-panel"
             role="dialog"
             aria-modal="true"
@@ -136,7 +183,7 @@ export default function MediaModalProvider({ children }: { children: ReactNode }
                 <a href={activeItem.src} target="_blank" rel="noreferrer">
                   Open in new tab
                 </a>
-                <button type="button" className="media-modal-close" onClick={closeMedia}>
+                <button ref={closeButtonRef} type="button" className="media-modal-close" onClick={closeMedia}>
                   Close
                 </button>
               </div>

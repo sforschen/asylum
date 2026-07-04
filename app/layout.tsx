@@ -40,10 +40,15 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <MediaModalProvider>
+          <a className="skip-link" href="#main-content">
+            Skip to main content
+          </a>
           <HeaderNav />
           <ScrollReveal />
 
-          {children}
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
 
           <footer className="site-footer">
             {/* Utility links live in the footer to keep the top nav focused. */}

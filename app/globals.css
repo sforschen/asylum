@@ -342,6 +342,30 @@ main img {
   height: auto;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 1100;
+  top: var(--spc-xs);
+  left: var(--spc-xs);
+  padding: var(--spc-xs) var(--spc-s);
+  border: var(--border-width-medium) solid var(--clr-white);
+  border-radius: var(--radius-control);
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  font-weight: 700;
+  transform: translateY(calc(-100% - var(--spc-s)));
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  color: var(--clr-white);
+  transform: translateY(0);
+}
+
+#main-content:focus {
+  outline: none;
+}
+
 /* sections */
 
 main .section {

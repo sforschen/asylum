@@ -1,6 +1,6 @@
 "use client";
 
-import type { DragEvent } from "react";
+import type { DragEvent, KeyboardEvent } from "react";
 import { useMemo, useState } from "react";
 import {
   Add,
@@ -1163,6 +1163,10 @@ export default function FileManagementResourceBuilder() {
   }
 
   function reorderDragList(list: DragList, fromIndex: number, toIndex: number) {
+    if (fromIndex === toIndex) {
+      return;
+    }
+
     setState((current) => {
       if (list === "folderSections") {
         return {
@@ -1190,6 +1194,42 @@ export default function FileManagementResourceBuilder() {
         namingParts: reorderList(current.namingParts, fromIndex, toIndex),
       };
     });
+  }
+
+  function getDragListLength(list: DragList) {
+    if (list === "folderSections") {
+      return state.folderSections.length;
+    }
+
+    if (list === "assetLibraryFolders") {
+      return state.assetLibraryFolders.length;
+    }
+
+    if (list === "assetTypes") {
+      return state.assetTypes.length;
+    }
+
+    return state.namingParts.length;
+  }
+
+  function handleReorderKeyDown(event: KeyboardEvent<HTMLButtonElement>, list: DragList, index: number) {
+    const listLength = getDragListLength(list);
+    const keyMoves: Record<string, number> = {
+      ArrowLeft: index - 1,
+      ArrowUp: index - 1,
+      ArrowRight: index + 1,
+      ArrowDown: index + 1,
+      Home: 0,
+      End: listLength - 1,
+    };
+    const nextIndex = keyMoves[event.key];
+
+    if (nextIndex === undefined || nextIndex < 0 || nextIndex >= listLength || nextIndex === index) {
+      return;
+    }
+
+    event.preventDefault();
+    reorderDragList(list, index, nextIndex);
   }
 
   function startDrag(event: DragEvent<HTMLButtonElement>, list: DragList, index: number) {
@@ -1754,12 +1794,13 @@ export default function FileManagementResourceBuilder() {
                 >
                   <div className="resource-folder-section-header">
                     <button
-                      aria-label={`Reorder ${getFolderSectionTitle(section)}`}
+                      aria-label={`Reorder ${getFolderSectionTitle(section)}. Use arrow keys to move.`}
                       className="resource-drag-handle resource-folder-section-drag-handle"
                       draggable
                       type="button"
                       onDragEnd={endDrag}
                       onDragStart={(event) => startDrag(event, "folderSections", index)}
+                      onKeyDown={(event) => handleReorderKeyDown(event, "folderSections", index)}
                     >
                       <DragVertical aria-hidden="true" />
                     </button>
@@ -1846,12 +1887,13 @@ export default function FileManagementResourceBuilder() {
                       onDrop={(event) => dropItem(event, "assetLibraryFolders", index)}
                     >
                       <button
-                        aria-label={`Reorder ${folder || `library folder ${index + 1}`}`}
+                        aria-label={`Reorder ${folder || `library folder ${index + 1}`}. Use arrow keys to move.`}
                         className="resource-drag-handle"
                         draggable
                         type="button"
                         onDragEnd={endDrag}
                         onDragStart={(event) => startDrag(event, "assetLibraryFolders", index)}
+                        onKeyDown={(event) => handleReorderKeyDown(event, "assetLibraryFolders", index)}
                       >
                         <DragVertical aria-hidden="true" />
                       </button>
@@ -1898,12 +1940,13 @@ export default function FileManagementResourceBuilder() {
                       onDrop={(event) => dropItem(event, "assetTypes", index)}
                     >
                       <button
-                        aria-label={`Reorder ${getAssetTypeLabel(assetType)}`}
+                        aria-label={`Reorder ${getAssetTypeLabel(assetType)}. Use arrow keys to move.`}
                         className="resource-drag-handle"
                         draggable
                         type="button"
                         onDragEnd={endDrag}
                         onDragStart={(event) => startDrag(event, "assetTypes", index)}
+                        onKeyDown={(event) => handleReorderKeyDown(event, "assetTypes", index)}
                       >
                         <DragVertical aria-hidden="true" />
                       </button>
@@ -1972,12 +2015,13 @@ export default function FileManagementResourceBuilder() {
                       onDrop={(event) => dropItem(event, "namingParts", index)}
                     >
                       <button
-                        aria-label={`Reorder ${part.label || `part ${index + 1}`}`}
+                        aria-label={`Reorder ${part.label || `part ${index + 1}`}. Use arrow keys to move.`}
                         className="resource-drag-handle"
                         draggable
                         type="button"
                         onDragEnd={endDrag}
                         onDragStart={(event) => startDrag(event, "namingParts", index)}
+                        onKeyDown={(event) => handleReorderKeyDown(event, "namingParts", index)}
                       >
                         <DragVertical aria-hidden="true" />
                       </button>
