@@ -70,7 +70,7 @@
   --max-content-width: 80rem;      
   --max-content-width-wide: 74rem;
   --max-copy-width: 48rem;
-  --default-content-gap: 3rem;
+  --default-content-gap: 6rem;
   --spc-xl: var(--default-content-gap);
   --spc-l: 3rem; 
   --spc-m: 2rem; 
@@ -80,11 +80,11 @@
   --spc-mobile-card: .75rem;
 
   --hero-max-width: 120rem;
-  --hero-height: 120px;
+  --hero-height: 240px;
   --hero-title-max-width: 60rem;
   --case-study-image-max-width: 25rem;
   --cta-max-width: 53.333rem;
-  --cta-padding: var(--spc-l);
+  --cta-padding: var(--default-content-gap);
   --icon-size: 3rem;
   --scroll-reveal-offset: 2rem;
   --header-accent-height: 0.75rem;
@@ -2886,8 +2886,8 @@ main .section.highlight-blue .case-study-content li {
   }
 
   .page-container {
-    padding-top: var(--spc-ms);
-    padding-bottom: var(--spc-ms);
+    padding-top: var(--spc-l);
+    padding-bottom: var(--spc-l);
   }
 
   .page-section-content,
@@ -2899,8 +2899,8 @@ main .section.highlight-blue .case-study-content li {
   .home-leadership-callout,
   .portfolio-section,
   .knowledge-section {
-    padding-top: var(--spc-ms);
-    padding-bottom: var(--spc-ms);
+    padding-top: var(--spc-l);
+    padding-bottom: var(--spc-l);
   }
 
   main .section::after,
@@ -2973,12 +2973,12 @@ main .section.highlight-blue .case-study-content li {
   }
 
   .cta-section {
-    padding-top: var(--spc-ms) !important;
-    padding-bottom: var(--spc-ms) !important;
+    padding-top: var(--spc-l) !important;
+    padding-bottom: var(--spc-l) !important;
   }
 
   .cta-section .page-section-content {
-    padding: var(--spc-ms);
+    padding: var(--spc-l);
     margin-left: var(--spc-ms);
     margin-right: var(--spc-ms);
   }
