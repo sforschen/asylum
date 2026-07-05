@@ -85,10 +85,13 @@ export default function LeadershipPage() {
         outerClassName="page-container page-section-content"
         contentClassName="leadership-what-i-lead-layout"
         threeColumn
+        columns={2}
+        mainSpan={1}
+        sideSpan={1}
         aside={
-          <div className="home-callout-card">
+          <div className="leadership-focus-card">
             <h3>Focus areas</h3>
-            <ul className="home-focus-list">
+            <ul>
               <li>Website migrations, platform changes, and digital governance</li>
               <li>Creative operations, project management systems, and workflow design</li>
               <li>Accessibility improvements across web, print, and content practices</li>
@@ -103,6 +106,12 @@ export default function LeadershipPage() {
           needs someone who can connect strategy, execution, and team coordination. You can see examples of that work
           in my <a href="/portfolio">portfolio</a>.
         </p>
+        <ul className="selected-strength-tools" aria-label="Leadership focus tags">
+          <li>Marketing operations</li>
+          <li>Website governance</li>
+          <li>Accessibility</li>
+          <li>Cross-functional delivery</li>
+        </ul>
       </ContentSection>
 
       <ContentSection

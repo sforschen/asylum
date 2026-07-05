@@ -2038,6 +2038,21 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
   height: clamp(7rem, 20vw, 12rem);
 }
 
+.leadership-focus-card {
+  padding: var(--spc-m);
+  border: var(--border-width-thin) solid var(--surface-stroke-color);
+  background-color: var(--surface-tint-color);
+  border-radius: var(--radius-card);
+}
+
+.leadership-focus-card h3 {
+  margin-top: 0;
+}
+
+.leadership-focus-card ul {
+  margin-bottom: 0;
+}
+
 .selected-strength-section > .page-container.page-section-content::after {
   content: "";
   position: absolute;
@@ -4061,7 +4076,7 @@ button.resource-icon-button.secondary:not(.site-nav-toggle):disabled {
   }
 
   .leadership-what-i-lead-layout .three-column-copy-side {
-    grid-column: 2 / span 2;
+    grid-column: 2;
   }
 
   .leadership-style-layout .three-column-copy-main > p {
