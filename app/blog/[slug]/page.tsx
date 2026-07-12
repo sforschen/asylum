@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { FlowData, NetworkEnterprise, Renew, Rule, Search } from "@carbon/icons-react";
+import {
+  ColorPalette,
+  Document,
+  DocumentProcessor,
+  DropPhotoFilled,
+  FlowData,
+  NetworkEnterprise,
+  Renew,
+  Rule,
+  Search,
+  Strawberry,
+  TaskStar,
+} from "@carbon/icons-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import MediaModalImage from "@/components/MediaModalImage";
+import ParallaxImageSection from "@/components/ParallaxImageSection";
 import { getCaseStudies, getCaseStudy } from "@/lib/case-studies";
 
 type Props = {
@@ -58,14 +71,6 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
             <h1 id={post.slug}>{post.title}</h1>
             <p className="page-lead">{post.summary}</p>
-            <div className="case-study-hero-actions">
-              <Link className="button" href="/portfolio">
-                Back to Portfolio
-              </Link>
-              <Link className="button secondary" href="/blog">
-                More Case Studies
-              </Link>
-            </div>
             {post.relatedExperience?.length ? (
               <p className="case-study-related-experience">
                 Related experience:{" "}
@@ -77,23 +82,15 @@ export default async function CaseStudyPage({ params }: Props) {
                 ))}
               </p>
             ) : null}
-          </div>
-
-          <div className="case-study-hero-media">
-            <MediaModalImage
-              buttonClassName="media-modal-image-button"
-              src={post.imageSrc}
-              alt={post.imageAlt}
-              width={1600}
-              height={1200}
-              sizes="(min-width: 900px) 40vw, 100vw"
-            />
-          </div>
-        </section>
-
-        {post.metrics?.length ? (
-          <section className="section highlight-light-green">
-            <div className="page-container page-section-content">
+            <div className="case-study-hero-actions">
+              <Link className="button" href="/portfolio">
+                Back to Portfolio
+              </Link>
+              <Link className="button secondary" href="/blog">
+                More Case Studies
+              </Link>
+            </div>
+            {post.metrics?.length ? (
               <div className="case-study-metrics">
                 {post.metrics.map((metric) => (
                   <div key={metric.label} className="case-study-metric">
@@ -109,88 +106,150 @@ export default async function CaseStudyPage({ params }: Props) {
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
-        ) : null}
+            ) : null}
+          </div>
 
-        {post.sections.map((section) => (
-          <section
-            key={section.title}
-            className={section.sectionClassName ? `section ${section.sectionClassName}` : "section"}
-          >
-            <div className="page-container page-section-content case-study-content">
-              <div className={section.asideIcon ? "case-study-section case-study-section-with-aside" : "case-study-section"}>
-                <div className="case-study-section-main">
-                <h2>{section.title}</h2>
+          <div className="case-study-hero-media">
+            <MediaModalImage
+              buttonClassName="media-modal-image-button"
+              src={post.imageSrc}
+              alt={post.imageAlt}
+              width={1600}
+              height={1200}
+              sizes="(min-width: 900px) 40vw, 100vw"
+            />
+          </div>
+        </section>
+
+        {post.sections.map((section) => {
+          const isBrandStandardsResults = post.slug === "practical-brand-standards" && section.title === "Results";
+
+          if (isBrandStandardsResults) {
+            return (
+              <ParallaxImageSection
+                key={section.title}
+                id="brand-standards-results"
+                title={section.title}
+                imageSrc={post.imageSrc}
+                imageAlt={post.imageAlt}
+                panelAlign="right"
+              >
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.bullets ? (
-                  <ul className={section.bulletLayout === "cards" ? "case-study-bullet-cards" : "case-study-list"}>
-                    {section.bullets.map((bullet, index) => {
-                      const BulletIcon = bulletCardIcons[index % bulletCardIcons.length];
-
-                      return (
-                        <li key={bullet}>
-                          {section.bulletLayout === "cards" ? (
-                            <span className="case-study-bullet-card-icon" aria-hidden="true">
-                              <BulletIcon />
-                            </span>
-                          ) : null}
-                          <span>{bullet}</span>
-                        </li>
-                      );
-                    })}
+                  <ul className="case-study-list">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
                   </ul>
                 ) : null}
-                {section.title === "Takeaway" && post.takeaways?.length ? (
-                  <div className="case-study-takeaway-actions">
-                    {post.takeaways.map((takeaway) => (
-                      <a
-                        key={takeaway.href}
-                        className={takeaway.download === false ? "button secondary" : "button"}
-                        href={takeaway.href}
-                        download={takeaway.download === false ? undefined : true}
-                      >
-                        {takeaway.label}
-                      </a>
+              </ParallaxImageSection>
+            );
+          }
+
+          return (
+            <section
+              key={section.title}
+              className={section.sectionClassName ? `section ${section.sectionClassName}` : "section"}
+            >
+              <div className="page-container page-section-content case-study-content">
+                <div className={section.asideIcon ? "case-study-section case-study-section-with-aside" : "case-study-section"}>
+                  <div className="case-study-section-main">
+                  <h2>{section.title}</h2>
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  {section.bullets ? (
+                    <ul className={section.bulletLayout === "cards" ? "case-study-bullet-cards" : "case-study-list"}>
+                      {section.bullets.map((bullet, index) => {
+                        const [bulletLead, ...bulletDetails] = bullet
+                          .split("\n")
+                          .map((line) => line.trim())
+                          .filter(Boolean);
+                        const BulletIcon = bulletLead.startsWith("Logo usage")
+                          ? Strawberry
+                          : bulletLead.startsWith("Color direction")
+                            ? ColorPalette
+                            : bulletLead.startsWith("Typography guidance")
+                              ? Document
+                              : bulletLead.startsWith("Layout principles")
+                                ? DocumentProcessor
+                                : bulletLead.startsWith("Imagery and icon direction")
+                                  ? DropPhotoFilled
+                                  : bulletLead.startsWith("Examples")
+                                    ? TaskStar
+                                    : bulletCardIcons[index % bulletCardIcons.length];
+
+                        return (
+                          <li key={bullet}>
+                            {section.bulletLayout === "cards" ? (
+                              <span className="case-study-bullet-card-icon" aria-hidden="true">
+                                <BulletIcon />
+                              </span>
+                            ) : null}
+                            <span>{bulletLead}</span>
+                            {bulletDetails.length ? (
+                              <ul className="case-study-bullet-card-details">
+                                {bulletDetails.map((detail) => (
+                                  <li key={detail}>{detail}</li>
+                                ))}
+                              </ul>
+                            ) : null}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : null}
+                  {section.title === "Takeaway" && post.takeaways?.length ? (
+                    <div className="case-study-takeaway-actions">
+                      {post.takeaways.map((takeaway) => (
+                        <a
+                          key={takeaway.href}
+                          className={takeaway.download === false ? "button secondary" : "button"}
+                          href={takeaway.href}
+                          download={takeaway.download === false ? undefined : true}
+                        >
+                          {takeaway.label}
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
+                  </div>
+                  {section.asideIcon ? (
+                    <div className="case-study-section-aside-icon" aria-hidden="true">
+                      {(() => {
+                        const AsideIcon = sectionAsideIcons[section.asideIcon];
+
+                        return <AsideIcon />;
+                      })()}
+                    </div>
+                  ) : null}
+                </div>
+
+                {section.images?.length ? (
+                  <div
+                    className={`case-study-image-grid case-study-image-grid-${section.images.length > 1 ? "multi" : "single"}${section.imagesLayout === "masonry" ? " case-study-image-grid-masonry" : ""}${section.imagesLayout === "masonry-two-column" ? " case-study-image-grid-masonry-two-column" : ""}${section.imagesLayout === "two-column-last-full" ? " case-study-image-grid-two-column-last-full" : ""}${section.firstImageFullWidth ? " case-study-image-grid-first-full" : ""}`}
+                  >
+                    {section.images.map((image, index) => (
+                      <figure key={`${image.alt}-${index}`} className="case-study-figure">
+                        <MediaModalImage
+                          buttonClassName="media-modal-image-button"
+                          src={image.src}
+                          alt={image.alt}
+                          width={2000}
+                          height={1600}
+                          sizes="(min-width: 900px) 80vw, 100vw"
+                        />
+                        {image.caption ? <figcaption>{image.caption}</figcaption> : null}
+                      </figure>
                     ))}
                   </div>
                 ) : null}
-                </div>
-                {section.asideIcon ? (
-                  <div className="case-study-section-aside-icon" aria-hidden="true">
-                    {(() => {
-                      const AsideIcon = sectionAsideIcons[section.asideIcon];
-
-                      return <AsideIcon />;
-                    })()}
-                  </div>
-                ) : null}
               </div>
-
-              {section.images?.length ? (
-                <div
-                  className={`case-study-image-grid case-study-image-grid-${section.images.length > 1 ? "multi" : "single"}${section.imagesLayout === "masonry" ? " case-study-image-grid-masonry" : ""}${section.imagesLayout === "masonry-two-column" ? " case-study-image-grid-masonry-two-column" : ""}${section.imagesLayout === "two-column-last-full" ? " case-study-image-grid-two-column-last-full" : ""}${section.firstImageFullWidth ? " case-study-image-grid-first-full" : ""}`}
-                >
-                  {section.images.map((image, index) => (
-                    <figure key={`${image.alt}-${index}`} className="case-study-figure">
-                      <MediaModalImage
-                        buttonClassName="media-modal-image-button"
-                        src={image.src}
-                        alt={image.alt}
-                        width={2000}
-                        height={1600}
-                        sizes="(min-width: 900px) 80vw, 100vw"
-                      />
-                      {image.caption ? <figcaption>{image.caption}</figcaption> : null}
-                    </figure>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          </section>
-        ))}
+            </section>
+          );
+        })}
 
       </article>
     </main>

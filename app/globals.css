@@ -2342,25 +2342,31 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .case-study-metrics {
   display: grid;
   gap: var(--spc-s);
+  margin-top: var(--spc-m);
+  padding-top: var(--spc-s);
+  border-top: var(--border-width-thin) solid rgb(1 9 12 / 0.14);
 }
 
 .case-study-metric {
-  padding: var(--spc-m);
-  border: var(--border-width-thin) solid var(--surface-stroke-color);
-  border-radius: var(--radius-card);
-  background-color: var(--surface-tint-color);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .case-study-metric-value {
-  margin-bottom: var(--spc-xs);
+  margin: 0;
   color: var(--clr-black);
-  font-size: var(--heading-font-size-m);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.1;
 }
 
 .case-study-metric-label {
+  margin-top: var(--spc-xs);
   margin-bottom: 0;
+  color: rgb(1 9 12 / 0.72);
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
 }
 
 .case-study-metric-link {
@@ -2438,6 +2444,22 @@ main .section.highlight-blue .case-study-content li {
   border: var(--border-width-thin) solid var(--surface-stroke-color);
   border-radius: var(--radius-card);
   background-color: var(--surface-tint-color);
+}
+
+.case-study-bullet-card-details {
+  display: grid;
+  gap: var(--spc-2xs);
+  margin: 0;
+  padding-left: var(--spc-m);
+}
+
+.case-study-bullet-card-details li {
+  display: list-item;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  list-style: disc;
 }
 
 .case-study-bullet-card-icon {
@@ -3718,8 +3740,7 @@ button.resource-icon-button.secondary:not(.site-nav-toggle):disabled {
   .home-pillar,
   .case-study-card-copy,
   .ai-highlight-card,
-  .case-study-card,
-  .case-study-metric {
+  .case-study-card {
     padding: var(--spc-mobile-card);
   }
 

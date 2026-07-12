@@ -33,7 +33,6 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
   ],
   metrics: [
     { label: "Focus", value: "Files + assets" },
-    { label: "Scale", value: "Teams to enterprise" },
     {
       label: "Discovery PDF",
       value: "Step-by-step instructions",

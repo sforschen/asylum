@@ -32,6 +32,7 @@ import castleCookeBrochureThumb from "./site-assets/portfolio-castle-cooke-broch
 import cpmiBrochureThumb from "./site-assets/portfolio-cpmi-brochure-thumb.jpg";
 import logoDesignOnHatThumb from "./site-assets/portfolio-logo-design-on-hat-thumb.jpg";
 import logoDesignSignageThumb from "./site-assets/portfolio-logo-design-signage-thumb.jpg";
+import xkigBrandStandardsManual from "./site-assets/XKIG-Brand-Standards-Manual.png";
 import spaceOwlThumb from "./site-assets/portfolio-space-owl-thumb.jpg";
 import fireOwlThumb from "./site-assets/portfolio-fire-owl-thumb.jpg";
 import pinkOwlThumb from "./site-assets/portfolio-pink-owl-thumb.jpg";
@@ -124,6 +125,7 @@ export const siteAssets: {
     spaceOwlThumb,
     weirdCraneThumb,
     winterHummingbirdThumb,
+    xkigBrandStandardsManual,
   },
   caseStudies: {
     confidentialPerformanceCommunicationsHero,
@@ -156,6 +158,7 @@ export const siteAssets: {
     tAndUCigarSign,
     tAndUDrinkSign,
     tAndUEntranceBanner,
+    xkigBrandStandardsManual,
   },
   social: {
     blogPostThumb,

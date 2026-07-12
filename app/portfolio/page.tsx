@@ -90,6 +90,14 @@ const portfolioSections: PortfolioSection[] = [
       "This collection brings together print design, branded collateral, event materials, and one-off creative pieces with a strong point of view. It reflects the kind of work that helps brands feel tangible, memorable, and human beyond the screen.",
     items: [
       {
+        title: "Practical Brand Standards",
+        imageSrc: siteAssets.portfolio.xkigBrandStandardsManual,
+        imageAlt: "XKIG brand standards manual cover and sample brand elements",
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
+        links: [{ href: getCaseStudyUrl("practical-brand-standards"), label: "Read Case Study" }],
+      },
+      {
         title: "Confidential Performance Communications",
         imageSrc: siteAssets.caseStudies.confidentialPerformanceCommunicationsHero,
         imageAlt: "Person working at a laptop, representing a confidential automated communication workflow",
