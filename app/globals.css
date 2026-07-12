@@ -430,6 +430,7 @@ main .hero-container {
   width: 100%;
   height: var(--hero-height);
   overflow: hidden;
+  box-shadow: 0 0.625rem 1.5rem rgb(1 9 12 / 0.16);
   background:
     radial-gradient(circle at 78% 18%, var(--section-pattern-accent), transparent 0 42%),
     linear-gradient(180deg, var(--section-pattern-line) 0, var(--section-pattern-line) 1px, transparent 1px, transparent 100%),
@@ -486,7 +487,6 @@ main .hero-container {
 
 .hero-media img {
   display: block;
-  filter: grayscale(1);
   margin: auto;
 }
 
@@ -2097,20 +2097,21 @@ main .section.highlight-red.cta-section > .page-container.page-section-content::
 .selected-strength-tools {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spc-xs);
-  margin: var(--spc-m) 0 0;
+  gap: 0.4rem;
+  margin: var(--spc-s) 0 0;
   padding: 0;
   list-style: none;
 }
 
 .selected-strength-tools li {
-  padding: 0.35rem 0.7rem;
-  border: var(--border-width-thin) solid rgb(5 17 35 / 0.18);
-  border-radius: var(--spc-xl);
-  background-color: var(--clr-lighter-blue);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(5 17 35 / 0.08);
   color: var(--clr-blue);
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
+  font-size: var(--text-size-caption);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 .case-study-feed-header {
