@@ -41,6 +41,10 @@ const experienceItems: ExperienceItem[] = [
     ],
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("practical-brand-standards"),
+        label: "Practical Brand Standards",
+      },
+      {
         href: getCaseStudyUrl("confidential-performance-communications"),
         label: "Confidential Performance Communications",
       },
