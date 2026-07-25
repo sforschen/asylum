@@ -67,7 +67,7 @@ const experienceItems: ExperienceItem[] = [
         label: "Safety Month Post",
       },
       {
-        href: siteDocuments.portfolio.eventMugDesign,
+        href: siteAssets.portfolio.eventMugDesignFull.src,
         label: "Event Mug Design",
       },
     ],
@@ -119,7 +119,7 @@ const experienceItems: ExperienceItem[] = [
         label: "Defeat Diabetes Video Post",
       },
       {
-        href: "https://www.linkedin.com/posts/elixir-craftedrxsolutions_elixirpbm-activity-7087111883664625665-7zAi?utm_source=share&utm_medium=member_desktop",
+        href: siteAssets.social.eventAnnouncementThumb.src,
         label: "Event Announcement",
       },
       {

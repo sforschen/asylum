@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import type { StaticImageData } from "next/image";
+import { ArrowRight, ImageCopy, ImageSearch } from "@carbon/icons-react";
 import Link from "next/link";
 
 import ContentSection from "./ContentSection";
@@ -48,36 +49,63 @@ function ExperienceLink({ href, label, emphasis }: ExperienceLinkItem) {
   const content = emphasis === "strong" ? <strong>{label}</strong> : label;
   const isExternal = href.startsWith("http");
   const mediaType = getMediaTypeFromUrl(href);
+  const linkContent = (
+    <>
+      <span>{content}</span>
+      <ArrowRight aria-hidden="true" />
+    </>
+  );
 
   return (
-    <p className="experience-link-item">
+    <li className="experience-link-item">
       {mediaType ? (
         <MediaModalLink href={href} modalTitle={label}>
-          {content}
+          {linkContent}
         </MediaModalLink>
       ) : isExternal ? (
         <a href={href} target="_blank" rel="noreferrer">
-          {content}
+          {linkContent}
         </a>
       ) : (
         <Link href={href}>
-          {content}
+          {linkContent}
         </Link>
       )}
-    </p>
+    </li>
   );
 }
 
-function ExperienceLinkGroup({ title, links }: { title: string; links: ExperienceLinkItem[] }) {
+function ExperienceLinkGroup({
+  title,
+  links,
+  type,
+}: {
+  title: string;
+  links: ExperienceLinkItem[];
+  type: "case-studies" | "assets";
+}) {
+  const GroupIcon = type === "case-studies" ? ImageSearch : ImageCopy;
+  const itemLabel = type === "case-studies" ? "case study" : "asset";
+
   return (
-    <div className="experience-link-group">
-      <h4>{title}</h4>
-      <div className="experience-link-list">
+    <section className={`experience-link-group experience-link-group-${type}`}>
+      <div className="experience-link-group-header">
+        <span className="experience-link-group-icon" aria-hidden="true">
+          <GroupIcon />
+        </span>
+        <div>
+          <h4>{title}</h4>
+          <p>
+            {links.length} {itemLabel}{links.length === 1 ? "" : "s"}
+          </p>
+        </div>
+      </div>
+      <ul className="experience-link-list">
         {links.map((link) => (
           <ExperienceLink key={`${title}-${link.href}`} {...link} />
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }
 
@@ -113,11 +141,19 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
             ))}
           </ul>
         ) : null}
-        {item.relatedCaseStudies?.length ? (
-          <ExperienceLinkGroup title="Related Case Studies" links={item.relatedCaseStudies} />
-        ) : null}
-        {item.relatedAssets?.length ? (
-          <ExperienceLinkGroup title="Related Assets" links={item.relatedAssets} />
+        {item.relatedCaseStudies?.length || item.relatedAssets?.length ? (
+          <div className="experience-link-groups">
+            {item.relatedCaseStudies?.length ? (
+              <ExperienceLinkGroup
+                title="Related Case Studies"
+                links={item.relatedCaseStudies}
+                type="case-studies"
+              />
+            ) : null}
+            {item.relatedAssets?.length ? (
+              <ExperienceLinkGroup title="Related Assets" links={item.relatedAssets} type="assets" />
+            ) : null}
+          </div>
         ) : null}
       </div>
     </li>

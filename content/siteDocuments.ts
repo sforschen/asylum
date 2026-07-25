@@ -18,7 +18,6 @@ export const siteDocuments = {
     crEnglandPage: getDocumentUrl("portfolio-cr-england-page.pdf"),
     crEnglandRecruiting: getDocumentUrl("portfolio-cr-england-recruiting.pdf"),
     crane: getDocumentUrl("portfolio-crane.pdf"),
-    eventMugDesign: getDocumentUrl("portfolio-event-mug-design.pdf"),
     fireOwl: getDocumentUrl("portfolio-fire-owl.pdf"),
     hummingbirdRufous: getDocumentUrl("portfolio-hummingbird-rufous.pdf"),
     logoDesignOnHat: getDocumentUrl("portfolio-logo-design-on-hat.pdf"),
