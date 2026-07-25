@@ -43,6 +43,7 @@ export type CaseStudyPost = {
     href: string;
     label: string;
     download?: boolean;
+    resource?: boolean;
   }>;
   metrics?: Array<{
     label: string;
@@ -50,6 +51,7 @@ export type CaseStudyPost = {
     href?: string;
     linkLabel?: string;
     download?: boolean;
+    resource?: boolean;
   }>;
   sections: CaseStudySection[];
 };

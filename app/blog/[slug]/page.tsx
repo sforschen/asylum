@@ -60,6 +60,8 @@ export default async function CaseStudyPage({ params }: Props) {
     notFound();
   }
 
+  const resourceMetric = post.metrics?.find((metric) => metric.resource && metric.href);
+
   return (
     <main className="page-shell">
       <article>
@@ -83,6 +85,11 @@ export default async function CaseStudyPage({ params }: Props) {
               </p>
             ) : null}
             <div className="case-study-hero-actions">
+              {resourceMetric?.href ? (
+                <Link className="button resource-button resource-button-small" href={resourceMetric.href}>
+                  {resourceMetric.linkLabel ?? "Open the resource"}
+                </Link>
+              ) : null}
               <Link className="button" href="/portfolio">
                 Back to Portfolio
               </Link>
@@ -96,9 +103,12 @@ export default async function CaseStudyPage({ params }: Props) {
                   <div key={metric.label} className="case-study-metric">
                     <p className="case-study-metric-value">{metric.value}</p>
                     <p className="case-study-metric-label">{metric.label}</p>
-                    {metric.href ? (
+                    {metric.href && !metric.resource ? (
                       <p className="case-study-metric-link">
-                        <a href={metric.href} download={metric.download === false ? undefined : true}>
+                        <a
+                          href={metric.href}
+                          download={metric.download === false ? undefined : true}
+                        >
                           {metric.linkLabel ?? "Download PDF"}
                         </a>
                       </p>
@@ -206,7 +216,13 @@ export default async function CaseStudyPage({ params }: Props) {
                       {post.takeaways.map((takeaway) => (
                         <a
                           key={takeaway.href}
-                          className={takeaway.download === false ? "button secondary" : "button"}
+                          className={
+                            takeaway.resource
+                              ? "button resource-button resource-button-small"
+                              : takeaway.download === false
+                                ? "button secondary"
+                                : "button"
+                          }
                           href={takeaway.href}
                           download={takeaway.download === false ? undefined : true}
                         >

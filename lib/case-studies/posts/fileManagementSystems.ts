@@ -25,6 +25,7 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
       href: "/resources/file-management-system",
       label: "Open the File & Asset Management Resource",
       download: false,
+      resource: true,
     },
     {
       href: siteDocuments.caseStudies.fileManagementSystems,
@@ -45,6 +46,7 @@ export const fileManagementSystemsCaseStudy: CaseStudyPost = {
       href: "/resources/file-management-system",
       linkLabel: "Open the builder",
       download: false,
+      resource: true,
     },
   ],
   sections: [

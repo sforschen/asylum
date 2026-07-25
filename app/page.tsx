@@ -172,7 +172,7 @@ export default function Home() {
             ))}
           </ul>
           <div className="home-feature-actions">
-            <a className="button on-dark" href={featuredHomeResource.href}>
+            <a className="button resource-button" href={featuredHomeResource.href}>
               {featuredHomeResource.ctaLabel}
             </a>
             <a className="button secondary" href={featuredHomeResource.secondaryHref}>
