@@ -3,11 +3,22 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItems = [
+  { href: "/blog", label: "Case Studies" },
+  { href: "/knowledge", label: "Knowledge" },
+  { href: "/experience", label: "Experience" },
+  { href: "/leadership", label: "Leadership" },
+  { href: "/portfolio", label: "Portfolio" },
+];
 
 // Client-side header nav so the mobile menu can expand and collapse.
 export default function HeaderNav() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,11 +60,16 @@ export default function HeaderNav() {
         </div>
 
         <div id="site-nav-links" className={`site-nav-links${isOpen ? " is-open" : ""}`}>
-          <Link href="/blog" onClick={() => setIsOpen(false)}>Case Studies</Link>
-          <Link href="/knowledge" onClick={() => setIsOpen(false)}>Knowledge</Link>
-          <Link href="/experience" onClick={() => setIsOpen(false)}>Experience</Link>
-          <Link href="/leadership" onClick={() => setIsOpen(false)}>Leadership</Link>
-          <Link href="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

@@ -42,7 +42,7 @@ export const xkigSustainabilityReportCaseStudy: CaseStudyPost = {
         },
       ],
       contentLayout: "image-left",
-      sectionClassName: "highlight",
+      sectionClassName: "highlight case-study-two-thirds-one-third",
     },
     {
       title: "The Process",

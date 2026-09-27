@@ -11,6 +11,7 @@ import {
   Search,
   Strawberry,
   TaskStar,
+  UserRole,
 } from "@carbon/icons-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,6 +29,7 @@ type Props = {
 const bulletCardIcons = [FlowData, Search, Rule, Renew];
 const sectionAsideIcons = {
   "network-enterprise": NetworkEnterprise,
+  "user-role": UserRole,
 };
 
 export async function generateStaticParams() {
@@ -72,7 +74,15 @@ export default async function CaseStudyPage({ params }: Props) {
               <span>{post.readTime}</span>
             </p>
             <h1 id={post.slug}>{post.title}</h1>
-            <p className="page-lead">{post.summary}</p>
+            {post.heroParagraphs?.length ? (
+              post.heroParagraphs.map((paragraph) => (
+                  <p key={paragraph} className="page-lead">
+                    {paragraph}
+                  </p>
+                ))
+            ) : (
+              <p className="page-lead">{post.summary}</p>
+            )}
             {post.relatedExperience?.length ? (
               <p className="case-study-related-experience">
                 Related experience:{" "}
@@ -169,7 +179,16 @@ export default async function CaseStudyPage({ params }: Props) {
                 {section.contentLayout === "image-left" ? (
                   <h2 className="case-study-content-heading">{section.title}</h2>
                 ) : null}
-                <div className={section.asideIcon ? "case-study-section case-study-section-with-aside" : "case-study-section"}>
+                <div
+                  className={[
+                    "case-study-section",
+                    section.asideIcon ? "case-study-section-with-aside" : "",
+                    section.asideIcon && section.asidePosition === "left" ? "case-study-section-aside-left" : "",
+                    section.bulletLayout === "cards" ? "case-study-section-with-cards" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
                   <div className="case-study-section-main">
                   {section.contentLayout !== "image-left" ? <h2>{section.title}</h2> : null}
                   {section.paragraphs.map((paragraph) => (
@@ -215,6 +234,18 @@ export default async function CaseStudyPage({ params }: Props) {
                         );
                       })}
                     </ul>
+                  ) : null}
+                  {section.subsections?.length ? (
+                    <div className="case-study-subsections">
+                      {section.subsections.map((subsection) => (
+                        <div key={subsection.title} className="case-study-subsection">
+                          <h3>{subsection.title}</h3>
+                          {subsection.paragraphs.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   ) : null}
                   {section.title === "Takeaway" && post.takeaways?.length ? (
                     <div className="case-study-takeaway-actions">

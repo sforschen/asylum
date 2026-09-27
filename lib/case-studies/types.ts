@@ -9,19 +9,19 @@ export type CaseStudyImage = {
 export type CaseStudySection = {
   title: string;
   paragraphs: string[];
+  subsections?: Array<{
+    title: string;
+    paragraphs: string[];
+  }>;
   bullets?: string[];
   bulletLayout?: "list" | "cards";
-  asideIcon?: "network-enterprise";
+  asideIcon?: "network-enterprise" | "user-role";
+  asidePosition?: "left" | "right";
   images?: CaseStudyImage[];
   imagesLayout?: "grid" | "masonry" | "masonry-two-column" | "two-column-last-full";
   contentLayout?: "image-left";
   firstImageFullWidth?: boolean;
-  sectionClassName?:
-    | "highlight"
-    | "highlight-light-green"
-    | "highlight-blue"
-    | "highlight-blue selected-strength-section"
-    | "highlight-white-center";
+  sectionClassName?: string;
 };
 
 export type CaseStudyPost = {
@@ -31,6 +31,7 @@ export type CaseStudyPost = {
   publishedAt: string;
   readTime: string;
   summary: string;
+  heroParagraphs?: string[];
   imageSrc: string | StaticImageData;
   imageAlt: string;
   portfolioTitle: string;

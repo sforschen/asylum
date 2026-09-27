@@ -22,7 +22,7 @@ export const tAndUEventSignageCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Challenge",
+      title: "The Challenge",
       paragraphs: [
         "Xylem and Kendall host an exclusive customer event during the annual Trees & Utilities conference to build relationships, understand customer needs, and create a more meaningful event experience.",
         "The event needed signage that felt polished, clear, and fully aligned with the atmosphere of the gathering.",

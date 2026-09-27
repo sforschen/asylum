@@ -9,6 +9,10 @@ export const practicalBrandStandardsCaseStudy: CaseStudyPost = {
   readTime: "3 min read",
   summary:
     "A case study on building consistent brand systems that protect visual identity while staying practical for the people creating everyday work.",
+  heroParagraphs: [
+    "Brand standards work best when they keep things consistent without making everyday tasks harder. A strong brand system should make it easy for people to make good choices quickly, whether they're designing a campaign, building a presentation, preparing event materials, publishing a web page, or creating internal communications.",
+    "Whether it's brand, web, print, campaign, or day-to-day work, I've noticed the same thing: guidelines only work when they're easy to use. The best standards turn visual identity into practical choices that teams can actually use within real deadlines.",
+  ],
   imageSrc: siteAssets.caseStudies.xkigBrandStandardsManual,
   imageAlt: "XKIG brand standards manual cover and sample brand elements",
   portfolioTitle: "Practical Brand Standards",
@@ -25,14 +29,6 @@ export const practicalBrandStandardsCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Overview",
-      paragraphs: [
-        "Brand standards work best when they keep things consistent without making everyday tasks harder. A strong brand system should make it easy for people to make good choices quickly, whether they're designing a campaign, building a presentation, preparing event materials, publishing a web page, or creating internal communications.",
-        "Whether it's brand, web, print, campaign, or day-to-day work, I've noticed the same thing: guidelines only work when they're easy to use. The best standards turn visual identity into practical choices that teams can actually use within real deadlines.",
-      ],
-      sectionClassName: "highlight",
-    },
-    {
       title: "The Challenge",
       paragraphs: [
         "A brand can have a beautiful identity and still feel inconsistent if the standards are too vague, too rigid, or too disconnected from how work is produced. Teams need direction, but they also need enough flexibility to solve real communication problems.",
@@ -45,6 +41,7 @@ export const practicalBrandStandardsCaseStudy: CaseStudyPost = {
         "Protect quality while leaving room for channel-specific requirements.",
         "Apply best practice guidelines for hierarchy, accessibility, spacing, contrast, typography, and readability.",
       ],
+      sectionClassName: "highlight",
     },
     {
       title: "What Practical Standards Include",
@@ -61,7 +58,6 @@ export const practicalBrandStandardsCaseStudy: CaseStudyPost = {
         "Examples that show approved use, common mistakes, and practical exceptions.",
       ],
       bulletLayout: "cards",
-      sectionClassName: "highlight-light-green",
     },
     {
       title: "How I Approach Consistency",

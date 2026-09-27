@@ -22,7 +22,7 @@ export const seriousSillyCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Challenge",
+      title: "The Challenge",
       paragraphs: [
         "How do you make your company memorable while maintaining the level of professionalism that is appropriate for your industry? This project explored the idea that professional does not have to mean strict or stuffy.",
         "The goal was to create something human, fun, and memorable enough to make even serious audiences smile.",

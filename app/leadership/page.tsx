@@ -121,7 +121,7 @@ export default function LeadershipPage() {
         innerClassName="page-container page-section-content"
         contentClassName="leadership-style-layout"
         threeColumn
-        mainSpan={3}
+        mainSpan={2}
       >
         <p>
           The outcomes I care most about are not just launches or completed projects, although those matter. I focus

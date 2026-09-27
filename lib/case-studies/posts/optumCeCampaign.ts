@@ -21,7 +21,7 @@ export const optumCeCampaignCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Challenge",
+      title: "The Challenge",
       paragraphs: [
         "Working with the Continuing Education Program manager, I created a campaign system to advertise each course throughout the year across social media, the website, and email.",
         "Each course needed fresh imagery and relevant details, but the larger system also needed to stay recognizable so repeat users could immediately identify Optum Continuing Education content.",

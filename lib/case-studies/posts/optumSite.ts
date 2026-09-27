@@ -22,7 +22,7 @@ export const optumSiteCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Challenge",
+      title: "The Challenge",
       paragraphs: [
         "I managed the migration to a new website platform, Adobe Experience Manager, and designed and launched the new site in three months.",
         "With careful page mapping and navigation planning, I reorganized the old site into a cleaner structure that better served both industry professionals and injured persons.",

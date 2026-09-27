@@ -117,6 +117,7 @@ export default function Home() {
               src={websiteHeader}
               alt="Creative and digital systems work"
               fill
+              loading="eager"
               quality={70}
               sizes="(max-width: 49.5rem) 1px, 100vw"
               style={{ objectFit: "cover" }}

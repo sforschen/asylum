@@ -22,7 +22,7 @@ export const elixirSiteCaseStudy: CaseStudyPost = {
   ],
   sections: [
     {
-      title: "Challenge",
+      title: "The Challenge",
       paragraphs: [
         "I managed the transfer of elixirsolutions.com to Adobe AEM Live in under five months and used the move as an opportunity to modernize the overall experience instead of simply recreating the old site.",
         "The goal was to bring the website up to modern standards, improve accessibility, and create a better user experience that went beyond the minimum definition of success.",

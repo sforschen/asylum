@@ -9,6 +9,10 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
   readTime: "4 min read",
   summary:
     "Designed a repeatable workflow for secure quarterly bonus communications using Adobe InDesign, Microsoft Power Automate, and Outlook.",
+  heroParagraphs: [
+    "A quarterly performance-based bonus communication process needed a more secure, consistent, and scalable way to notify eligible field leaders of their results. The process involved sensitive employee information, individualized payout details, supporting documentation, and coordination across multiple departments.",
+    "I helped design and implement a structured workflow that brought together leadership, HR, data, operations, and communications into one repeatable process. The final solution used Adobe InDesign, Microsoft Power Automate, and Outlook to generate, organize, validate, and deliver individualized confidential communications.",
+  ],
   imageSrc: siteAssets.caseStudies.confidentialPerformanceCommunicationsHero,
   imageAlt: "Person working at a laptop, representing a confidential automated communication workflow",
   portfolioTitle: "Confidential Performance Communications",
@@ -20,14 +24,6 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
     { label: "Handoff", value: "Training and operational handoff" },
   ],
   sections: [
-    {
-      title: "Overview",
-      paragraphs: [
-        "A quarterly performance-based bonus communication process needed a more secure, consistent, and scalable way to notify eligible field leaders of their results. The process involved sensitive employee information, individualized payout details, supporting documentation, and coordination across multiple departments.",
-        "I helped design and implement a structured workflow that brought together leadership, HR, data, operations, and communications into one repeatable process. The final solution used Adobe InDesign, Microsoft Power Automate, and Outlook to generate, organize, validate, and deliver individualized confidential communications.",
-      ],
-      sectionClassName: "highlight",
-    },
     {
       title: "The Challenge",
       paragraphs: [
@@ -42,6 +38,7 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
         "Reduce manual email preparation and the risk of error.",
         "Build documentation that allowed HR to own the process going forward.",
       ],
+      sectionClassName: "highlight",
     },
     {
       title: "My Role",
@@ -50,6 +47,8 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
         "The work combined project management, technical implementation, document design, internal communications, and cross-functional coordination.",
       ],
       sectionClassName: "highlight-light-green",
+      asideIcon: "user-role",
+      asidePosition: "left",
     },
     {
       title: "Technology Used",
@@ -81,22 +80,23 @@ export const confidentialPerformanceCommunicationsCaseStudy: CaseStudyPost = {
         "Automated Outlook email delivery with individualized attachments.",
         "A final training and handoff document for HR.",
       ],
+      subsections: [
+        {
+          title: "Cross-Functional Collaboration",
+          paragraphs: [
+            "This project required alignment across several departments and stakeholder groups. Leadership helped define the intent and importance of the bonus communication. Data partners supplied and refined the performance and payout information. HR helped confirm employee details and long-term ownership of the process. Communications supported the tone, clarity, and structure of the message itself.",
+            "By bringing these groups together, I helped create a process that was technically functional, operationally realistic, and appropriate for a confidential employee communication.",
+          ],
+        },
+        {
+          title: "Documentation and Handoff",
+          paragraphs: [
+            "A key part of the project was making sure the process did not depend on one person long term. I created a training document that outlined the required tools, source files, document preparation steps, validation process, testing recommendations, email workflow, and troubleshooting notes.",
+            "The handoff documentation gave HR a clear guide for running the process in future quarters, including how to prepare the data, generate and organize the PDF summaries, validate records, test the communication, and complete the send through the automated workflow.",
+          ],
+        },
+      ],
       sectionClassName: "highlight-white-center",
-    },
-    {
-      title: "Cross-Functional Collaboration",
-      paragraphs: [
-        "This project required alignment across several departments and stakeholder groups. Leadership helped define the intent and importance of the bonus communication. Data partners supplied and refined the performance and payout information. HR helped confirm employee details and long-term ownership of the process. Communications supported the tone, clarity, and structure of the message itself.",
-        "By bringing these groups together, I helped create a process that was technically functional, operationally realistic, and appropriate for a confidential employee communication.",
-      ],
-    },
-    {
-      title: "Documentation and Handoff",
-      paragraphs: [
-        "A key part of the project was making sure the process did not depend on one person long term. I created a training document that outlined the required tools, source files, document preparation steps, validation process, testing recommendations, email workflow, and troubleshooting notes.",
-        "The handoff documentation gave HR a clear guide for running the process in future quarters, including how to prepare the data, generate and organize the PDF summaries, validate records, test the communication, and complete the send through the automated workflow.",
-      ],
-      sectionClassName: "highlight-light-green",
     },
     {
       title: "Results",

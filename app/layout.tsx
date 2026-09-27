@@ -39,6 +39,14 @@ export default function RootLayout({
         </Script>
       </head>
       <body suppressHydrationWarning>
+        <svg className="site-icon-gradient-defs" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="site-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1c76c4" />
+              <stop offset="100%" stopColor="#36964b" />
+            </linearGradient>
+          </defs>
+        </svg>
         <MediaModalProvider>
           <a className="skip-link" href="#main-content">
             Skip to main content
