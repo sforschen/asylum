@@ -14,6 +14,7 @@ export type CaseStudySection = {
   asideIcon?: "network-enterprise";
   images?: CaseStudyImage[];
   imagesLayout?: "grid" | "masonry" | "masonry-two-column" | "two-column-last-full";
+  contentLayout?: "image-left";
   firstImageFullWidth?: boolean;
   sectionClassName?:
     | "highlight"

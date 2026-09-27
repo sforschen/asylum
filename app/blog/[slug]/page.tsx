@@ -163,10 +163,15 @@ export default async function CaseStudyPage({ params }: Props) {
               key={section.title}
               className={section.sectionClassName ? `section ${section.sectionClassName}` : "section"}
             >
-              <div className="page-container page-section-content case-study-content">
+              <div
+                className={`page-container page-section-content case-study-content${section.contentLayout === "image-left" ? " case-study-content-image-left" : ""}`}
+              >
+                {section.contentLayout === "image-left" ? (
+                  <h2 className="case-study-content-heading">{section.title}</h2>
+                ) : null}
                 <div className={section.asideIcon ? "case-study-section case-study-section-with-aside" : "case-study-section"}>
                   <div className="case-study-section-main">
-                  <h2>{section.title}</h2>
+                  {section.contentLayout !== "image-left" ? <h2>{section.title}</h2> : null}
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

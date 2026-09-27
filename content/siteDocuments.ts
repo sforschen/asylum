@@ -8,6 +8,7 @@ export const siteDocuments = {
   },
   caseStudies: {
     fileManagementSystems: getDocumentUrl("File-Management-Systems.pdf"),
+    xkigSustainabilityReport: getDocumentUrl("XKIG-2025-sustainability-report.pdf"),
   },
   portfolio: {
     angryWoodland: getDocumentUrl("portfolio-angry-woodland.pdf"),

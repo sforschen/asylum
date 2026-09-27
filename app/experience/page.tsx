@@ -41,6 +41,10 @@ const experienceItems: ExperienceItem[] = [
     ],
     relatedCaseStudies: [
       {
+        href: getCaseStudyUrl("xkig-sustainability-report"),
+        label: "XKIG Sustainability Report",
+      },
+      {
         href: getCaseStudyUrl("practical-brand-standards"),
         label: "Practical Brand Standards",
       },

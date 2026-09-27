@@ -90,6 +90,14 @@ const portfolioSections: PortfolioSection[] = [
       "This collection brings together print design, branded collateral, event materials, and one-off creative pieces with a strong point of view. It reflects the kind of work that helps brands feel tangible, memorable, and human beyond the screen.",
     items: [
       {
+        title: "XKIG Sustainability Report",
+        imageSrc: siteAssets.caseStudies.xkigSustainabilityReportWhoWeAre,
+        imageAlt: "Who We Are spread from XKIG’s 2025 sustainability report",
+        experienceHref: experienceLinks.xkig,
+        experienceLabel,
+        links: [{ href: getCaseStudyUrl("xkig-sustainability-report"), label: "Read Case Study" }],
+      },
+      {
         title: "Practical Brand Standards",
         imageSrc: siteAssets.portfolio.xkigBrandStandardsManual,
         imageAlt: "XKIG brand standards manual cover and sample brand elements",

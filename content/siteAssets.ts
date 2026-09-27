@@ -75,6 +75,13 @@ import tAndUEntranceBanner from "./site-assets/case-study-t-and-u-entrance-banne
 import tAndUDrinkSign from "./site-assets/case-study-t-and-u-drink-sign.jpg";
 import tAndUCigarSign from "./site-assets/case-study-t-and-u-cigar-sign.jpg";
 import confidentialPerformanceCommunicationsHero from "./site-assets/pexels-cottonbro-7439136.jpg";
+import xkigSustainabilityReportCover from "./site-assets/XKIG-2025-sustainability-report_Page_01.png";
+import xkigSustainabilityReportScope from "./site-assets/XKIG-2025-sustainability-report_Page_04.jpg";
+import xkigSustainabilityReportCeoLetter from "./site-assets/XKIG-2025-sustainability-report_Page_05.jpg";
+import xkigSustainabilityReportWhoWeAre from "./site-assets/XKIG-2025-sustainability-report_Page_07.jpg";
+import xkigSustainabilityReportDriverTraining from "./site-assets/XKIG-2025-sustainability-report_Page_15.jpg";
+import xkigSustainabilityReportDiversity from "./site-assets/XKIG-2025-sustainability-report_Page_20.jpg";
+import xkigSustainabilityReportCommunity from "./site-assets/XKIG-2025-sustainability-report_Page_23.jpg";
 
 type Asset = StaticImageData;
 
@@ -159,6 +166,13 @@ export const siteAssets: {
     tAndUDrinkSign,
     tAndUEntranceBanner,
     xkigBrandStandardsManual,
+    xkigSustainabilityReportCeoLetter,
+    xkigSustainabilityReportCommunity,
+    xkigSustainabilityReportCover,
+    xkigSustainabilityReportDiversity,
+    xkigSustainabilityReportDriverTraining,
+    xkigSustainabilityReportScope,
+    xkigSustainabilityReportWhoWeAre,
   },
   social: {
     blogPostThumb,

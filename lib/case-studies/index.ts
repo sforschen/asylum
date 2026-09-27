@@ -6,9 +6,11 @@ import { optumSiteCaseStudy } from "./posts/optumSite";
 import { practicalBrandStandardsCaseStudy } from "./posts/practicalBrandStandards";
 import { seriousSillyCaseStudy } from "./posts/seriousSilly";
 import { tAndUEventSignageCaseStudy } from "./posts/tAndUEventSignage";
+import { xkigSustainabilityReportCaseStudy } from "./posts/xkigSustainabilityReport";
 import type { CaseStudyPost } from "./types";
 
 const caseStudies: CaseStudyPost[] = [
+  xkigSustainabilityReportCaseStudy,
   practicalBrandStandardsCaseStudy,
   confidentialPerformanceCommunicationsCaseStudy,
   fileManagementSystemsCaseStudy,
