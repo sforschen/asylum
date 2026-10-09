@@ -82,6 +82,7 @@ import xkigSustainabilityReportWhoWeAre from "./site-assets/XKIG-2025-sustainabi
 import xkigSustainabilityReportDriverTraining from "./site-assets/XKIG-2025-sustainability-report_Page_15.jpg";
 import xkigSustainabilityReportDiversity from "./site-assets/XKIG-2025-sustainability-report_Page_20.jpg";
 import xkigSustainabilityReportCommunity from "./site-assets/XKIG-2025-sustainability-report_Page_23.jpg";
+import xkigSustainabilityReportSocial from "./site-assets/CSR-Social.jpg";
 
 type Asset = StaticImageData;
 
@@ -172,6 +173,7 @@ export const siteAssets: {
     xkigSustainabilityReportDiversity,
     xkigSustainabilityReportDriverTraining,
     xkigSustainabilityReportScope,
+    xkigSustainabilityReportSocial,
     xkigSustainabilityReportWhoWeAre,
   },
   social: {

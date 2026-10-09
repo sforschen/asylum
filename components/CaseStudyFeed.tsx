@@ -7,12 +7,21 @@ type Props = {
   title?: string;
   intro?: string;
   limit?: number;
+  listAfter?: number;
   showViewAll?: boolean;
 };
 
-export default function CaseStudyFeed({ title = "From the case study archive", intro, limit, showViewAll = false }: Props) {
+export default function CaseStudyFeed({
+  title = "From the case study archive",
+  intro,
+  limit,
+  listAfter,
+  showViewAll = false,
+}: Props) {
   const posts = getCaseStudies();
   const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
+  const cardPosts = typeof listAfter === "number" ? visiblePosts.slice(0, listAfter) : visiblePosts;
+  const listedPosts = typeof listAfter === "number" ? visiblePosts.slice(listAfter) : [];
   const hasHeader = Boolean(title || intro || showViewAll);
 
   return (
@@ -35,7 +44,7 @@ export default function CaseStudyFeed({ title = "From the case study archive", i
         ) : null}
 
         <div className="case-study-feed-grid">
-          {visiblePosts.map((post, index) => (
+          {cardPosts.map((post, index) => (
             <article key={post.slug} className="case-study-card">
               <div className="case-study-card-media">
                 <Image src={post.imageSrc} alt={post.imageAlt} fill sizes="98px" style={{ objectFit: "cover" }} />
@@ -57,6 +66,27 @@ export default function CaseStudyFeed({ title = "From the case study archive", i
             </article>
           ))}
         </div>
+
+        {listedPosts.length ? (
+          <div className="case-study-feed-archive">
+            <h2>More Case Studies</h2>
+            <ul className="case-study-feed-list">
+              {listedPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link className="case-study-feed-list-row" href={getCaseStudyUrl(post.slug)}>
+                    <div className="case-study-feed-list-copy">
+                      <p className="case-study-card-meta case-study-feed-list-meta">
+                        <span>{post.category}</span>
+                      </p>
+                      <h3>{post.title}</h3>
+                    </div>
+                    <span className="case-study-feed-list-action">Read Case Study</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </section>
   );

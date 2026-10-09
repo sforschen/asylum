@@ -82,7 +82,18 @@ export const xkigSustainabilityReportCaseStudy: CaseStudyPost = {
       title: "Outcome",
       paragraphs: [
         "The report received a lot of praise, and I am proud of the outcome. What makes that response especially meaningful is the process behind it. This project reminded me that strong design does not always begin with a clear vision. Sometimes it comes from continuing to work, evaluate, and improve until the solution takes shape.",
+        "The finished report was also shared on LinkedIn, extending the visual system into a concise social launch asset.",
       ],
+      images: [
+        {
+          src: siteAssets.caseStudies.xkigSustainabilityReportSocial,
+          alt: "Social post announcing XKIG’s 2025 sustainability report",
+          caption: "The social launch translated the report’s visual language into a shareable announcement.",
+          actionHref: "https://lnkd.in/p/ggJ27n3S",
+          actionLabel: "View the LinkedIn post",
+        },
+      ],
+      contentLayout: "image-right",
       sectionClassName: "highlight-light-green",
     },
   ],

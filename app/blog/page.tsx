@@ -24,7 +24,7 @@ export default function BlogPage() {
         }
       />
 
-      <CaseStudyFeed title="" />
+      <CaseStudyFeed title="" listAfter={4} />
 
       <CtaSection title="Want to talk about work like this?">
         If you would like to connect, ask a question, or talk about a project with similar needs, I would love to hear

@@ -4,6 +4,8 @@ export type CaseStudyImage = {
   src: string | StaticImageData;
   alt: string;
   caption?: string;
+  actionHref?: string;
+  actionLabel?: string;
 };
 
 export type CaseStudySection = {
@@ -19,7 +21,7 @@ export type CaseStudySection = {
   asidePosition?: "left" | "right";
   images?: CaseStudyImage[];
   imagesLayout?: "grid" | "masonry" | "masonry-two-column" | "two-column-last-full";
-  contentLayout?: "image-left";
+  contentLayout?: "image-left" | "image-right";
   firstImageFullWidth?: boolean;
   sectionClassName?: string;
 };

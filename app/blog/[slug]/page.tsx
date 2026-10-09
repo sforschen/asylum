@@ -174,7 +174,7 @@ export default async function CaseStudyPage({ params }: Props) {
               className={section.sectionClassName ? `section ${section.sectionClassName}` : "section"}
             >
               <div
-                className={`page-container page-section-content case-study-content${section.contentLayout === "image-left" ? " case-study-content-image-left" : ""}`}
+                className={`page-container page-section-content case-study-content${section.contentLayout === "image-left" ? " case-study-content-image-left" : ""}${section.contentLayout === "image-right" ? " case-study-content-image-right" : ""}`}
               >
                 {section.contentLayout === "image-left" ? (
                   <h2 className="case-study-content-heading">{section.title}</h2>
@@ -289,6 +289,8 @@ export default async function CaseStudyPage({ params }: Props) {
                           buttonClassName="media-modal-image-button"
                           src={image.src}
                           alt={image.alt}
+                          modalActionHref={image.actionHref}
+                          modalActionLabel={image.actionLabel}
                           width={2000}
                           height={1600}
                           sizes="(min-width: 900px) 80vw, 100vw"
