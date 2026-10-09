@@ -83,6 +83,11 @@ import xkigSustainabilityReportDriverTraining from "./site-assets/XKIG-2025-sust
 import xkigSustainabilityReportDiversity from "./site-assets/XKIG-2025-sustainability-report_Page_20.jpg";
 import xkigSustainabilityReportCommunity from "./site-assets/XKIG-2025-sustainability-report_Page_23.jpg";
 import xkigSustainabilityReportSocial from "./site-assets/CSR-Social.jpg";
+import xkigFavicon from "./site-assets/favicon-xkig.png";
+import xylemFavicon from "./site-assets/favicon-xylem.png";
+import kendallFavicon from "./site-assets/favicon-kendall.png";
+import riverCityFavicon from "./site-assets/favicon-river-city.png";
+import canopyFavicon from "./site-assets/favicon-canopy.png";
 
 type Asset = StaticImageData;
 
@@ -167,6 +172,7 @@ export const siteAssets: {
     tAndUDrinkSign,
     tAndUEntranceBanner,
     xkigBrandStandardsManual,
+    canopyFavicon,
     xkigSustainabilityReportCeoLetter,
     xkigSustainabilityReportCommunity,
     xkigSustainabilityReportCover,
@@ -175,6 +181,10 @@ export const siteAssets: {
     xkigSustainabilityReportScope,
     xkigSustainabilityReportSocial,
     xkigSustainabilityReportWhoWeAre,
+    kendallFavicon,
+    riverCityFavicon,
+    xkigFavicon,
+    xylemFavicon,
   },
   social: {
     blogPostThumb,

@@ -2646,6 +2646,49 @@ main .section.highlight-light-green .case-study-section-aside-icon {
   --case-study-image-stack-gap: var(--spc-m);
 }
 
+.case-study-link-list {
+  margin-top: var(--spc-m);
+}
+
+.case-study-link-list h3 {
+  margin-bottom: var(--spc-s);
+  font-size: var(--heading-font-size-xs);
+}
+
+.case-study-link-list ul {
+  display: grid;
+  gap: var(--spc-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-link-list a {
+  display: flex;
+  align-items: center;
+  gap: var(--spc-xs);
+  padding: 0.7rem var(--spc-s);
+  border: var(--border-width-thin) solid rgb(28 118 196 / 0.28);
+  border-radius: var(--radius-control);
+  background-color: rgb(255 254 250 / 0.72);
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.case-study-link-list a:hover,
+.case-study-link-list a:focus-visible {
+  border-color: var(--clr-light-blue);
+  background-color: var(--clr-white);
+  transform: translateX(0.2rem);
+}
+
+.case-study-link-list-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
 .case-study-list {
   padding-left: var(--spc-l);
 }

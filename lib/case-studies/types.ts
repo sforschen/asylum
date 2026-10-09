@@ -11,6 +11,12 @@ export type CaseStudyImage = {
 export type CaseStudySection = {
   title: string;
   paragraphs: string[];
+  linksTitle?: string;
+  links?: Array<{
+    href: string;
+    label: string;
+    iconSrc: string | StaticImageData;
+  }>;
   subsections?: Array<{
     title: string;
     paragraphs: string[];

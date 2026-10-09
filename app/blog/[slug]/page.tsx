@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import CaseStudyLinkList from "@/components/CaseStudyLinkList";
 import MediaModalImage from "@/components/MediaModalImage";
 import ParallaxImageSection from "@/components/ParallaxImageSection";
 import { getCaseStudies, getCaseStudy } from "@/lib/case-studies";
@@ -194,6 +195,9 @@ export default async function CaseStudyPage({ params }: Props) {
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
+                  {section.links?.length ? (
+                    <CaseStudyLinkList title={section.linksTitle} links={section.links} />
+                  ) : null}
                   {section.bullets ? (
                     <ul className={section.bulletLayout === "cards" ? "case-study-bullet-cards" : "case-study-list"}>
                       {section.bullets.map((bullet, index) => {

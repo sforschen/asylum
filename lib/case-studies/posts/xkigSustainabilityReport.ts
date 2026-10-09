@@ -82,7 +82,36 @@ export const xkigSustainabilityReportCaseStudy: CaseStudyPost = {
       title: "Outcome",
       paragraphs: [
         "The report received a lot of praise, and I am proud of the outcome. What makes that response especially meaningful is the process behind it. This project reminded me that strong design does not always begin with a clear vision. Sometimes it comes from continuing to work, evaluate, and improve until the solution takes shape.",
-        "The finished report was also shared on LinkedIn, extending the visual system into a concise social launch asset.",
+        "The finished report was shared on LinkedIn and published across sustainability pages for companies throughout the XKIG network, extending the work from a long-form publication into a coordinated digital launch.",
+        "My role in these published pieces included designing the materials and managing the process through publication across the network.",
+      ],
+      linksTitle: "View the sustainability pages",
+      links: [
+        {
+          href: "https://xkig.com/sustainability/",
+          label: "XKIG",
+          iconSrc: siteAssets.caseStudies.xkigFavicon,
+        },
+        {
+          href: "https://xylemtree.com/sustainability/",
+          label: "Xylem Tree Experts",
+          iconSrc: siteAssets.caseStudies.xylemFavicon,
+        },
+        {
+          href: "https://kendallco.net/sustainability/",
+          label: "Kendall Vegetation Services",
+          iconSrc: siteAssets.caseStudies.kendallFavicon,
+        },
+        {
+          href: "https://rivercityelectric.com/sustainability/",
+          label: "River City Construction",
+          iconSrc: siteAssets.caseStudies.riverCityFavicon,
+        },
+        {
+          href: "https://canopyinfrastructure.com/sustainability/",
+          label: "Canopy Infrastructure Solutions",
+          iconSrc: siteAssets.caseStudies.canopyFavicon,
+        },
       ],
       images: [
         {
