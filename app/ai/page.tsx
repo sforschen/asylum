@@ -29,15 +29,18 @@ export default function AiPage() {
           <Link className="button" href="/resources/prompt-lab">Explore Prompt Lab</Link>
           <Link className="button" href="/resources/connected-ai">Explore Connected AI</Link>
         </div>}
-        aside={<div className="case-study-hero-media">
+        aside={<figure className={styles.heroFigure}>
+          <div className="case-study-hero-media">
           <MediaModalImage
             src={siteAssets.resources.aiCreativeHero}
-            alt="Hands drawing a green and navy owl beside color swatches and digital crop previews."
+            alt="Green and navy horned owl illustration beside an AI chat checklist, color swatches, and pencil sketches."
             modalTitle="AI for Creatives"
             sizes="(min-width: 900px) 33vw, (min-width: 500px) 450px, 90vw"
             placeholder="blur"
           />
-        </div>}
+          </div>
+          <figcaption>Image made with ChatGPT</figcaption>
+        </figure>}
       />
 
       <ContentSection

@@ -88,7 +88,7 @@ import xylemFavicon from "./site-assets/favicon-xylem.png";
 import kendallFavicon from "./site-assets/favicon-kendall.png";
 import riverCityFavicon from "./site-assets/favicon-river-city.png";
 import canopyFavicon from "./site-assets/favicon-canopy.png";
-import aiCreativeHero from "./site-assets/Hand-Drawn Owl Poster in Navy.png";
+import aiCreativeHero from "./site-assets/Horned owl design study.png";
 
 type Asset = StaticImageData;
 
