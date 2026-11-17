@@ -15,7 +15,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:prompt-lab": "tsc --module commonjs --moduleResolution node --target es2022 --outDir .next/prompt-lab-tests --esModuleInterop --skipLibCheck tests/prompt-lab.test.ts && node --test .next/prompt-lab-tests/tests/prompt-lab.test.js"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.77.1",

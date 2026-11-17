@@ -960,6 +960,7 @@ header .site-nav {
 
 .site-footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spc-m);
 }
 
@@ -4261,6 +4262,17 @@ button.resource-icon-button.secondary:not(.site-nav-toggle):disabled {
     position: static;
     width: auto;
     margin-top: var(--spc-xs);
+  }
+}
+
+@media (54.375rem < width <= 75rem) {
+  .site-brand {
+    font-size: var(--heading-font-size-s);
+  }
+
+  .site-nav-links,
+  .site-header.is-scrolled .site-nav-links {
+    gap: var(--spc-s);
   }
 }
 

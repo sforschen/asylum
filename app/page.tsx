@@ -5,6 +5,7 @@ import Image from "next/image";
 import resourceFeatureImage from "../content/site-assets/alexander-grey-tn57JI3CewI-unsplash.jpg";
 import websiteHeader from "../content/site-assets/header-site-optimized.jpg";
 import CaseStudyFeed from "../components/CaseStudyFeed";
+import CtaSection from "../components/CtaSection";
 
 export const metadata = {
   title: "Home",
@@ -201,6 +202,14 @@ export default function Home() {
         limit={2}
         showViewAll
       />
+      <CtaSection
+        title="Bring your thinking to Prompt Lab"
+        href="/resources/prompt-lab"
+        buttonLabel="Explore Prompt Lab"
+      >
+        Find reusable tasks, strategic prompts, and connected workflows for creative and marketing work. Start
+        with your own ideas and decide what deserves to move forward.
+      </CtaSection>
     </main>
   );
 }

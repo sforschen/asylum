@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/blog", label: "Case Studies" },
   { href: "/knowledge", label: "Knowledge" },
+  { href: "/ai", label: "AI" },
   { href: "/experience", label: "Experience" },
   { href: "/leadership", label: "Leadership" },
   { href: "/portfolio", label: "Portfolio" },
@@ -16,9 +17,34 @@ const navItems = [
 // Client-side header nav so the mobile menu can expand and collapse.
 export default function HeaderNav() {
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) => {
+    const paths = href === "/ai"
+      ? [href, "/resources/prompt-lab", "/resources/connected-ai", "/prompt-lab"]
+      : [href];
+
+    return paths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
+  };
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty("--site-header-height", `${header.getBoundingClientRect().height}px`);
+    };
+
+    updateHeaderHeight();
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(header);
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--site-header-height");
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +68,7 @@ export default function HeaderNav() {
   }, []);
 
   return (
-    <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
+    <header ref={headerRef} className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <nav className="site-nav" aria-label="Primary">
         <div className="site-nav-bar">
           <Link className="site-brand" href="/">Serenity Forschen</Link>

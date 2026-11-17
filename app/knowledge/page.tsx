@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
 import { Bot, IbmWatsonxCodeAssistantForZValidationAssistant, UserAdmin } from "@carbon/icons-react";
 
 import ContentSection from "../../components/ContentSection";
+import AiHighlightCard from "../../components/AiHighlightCard";
 import CtaSection from "../../components/CtaSection";
 import PageIntro from "../../components/PageIntro";
 import SkillBarGroup, { type SkillItem } from "../../components/SkillBarGroup";
@@ -170,24 +170,6 @@ const selectedStrengths = [
   },
 ];
 
-function AiHighlightCard({
-  title,
-  description,
-  icon,
-}: {
-  title: string;
-  description: string;
-  icon: ReactNode;
-}) {
-  return (
-    <article className="ai-highlight-card">
-      <div className="ai-highlight-icon">{icon}</div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </article>
-  );
-}
-
 function SelectedStrengthCard({
   title,
   description,
@@ -257,6 +239,15 @@ export default function KnowledgePage() {
           ))}
         </div>
       </ContentSection>
+
+      <CtaSection
+        title="Put AI to work across your creative tools"
+        href="/resources/connected-ai"
+        buttonLabel="Explore Practical AI Use Cases"
+      >
+        Connect feedback, files, marketing reports, and project context into work you can review and use. See
+        practical examples while keeping your experience and judgment in every step.
+      </CtaSection>
 
       <ContentSection
         id="marketing--design"

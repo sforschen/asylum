@@ -1,8 +1,8 @@
 import type { StaticImageData } from "next/image";
 
-import gardenFull from "./garden.jpg";
-import gruntFull from "./grunt.jpg";
-import snortFull from "./snort.jpg";
+import gardenFull from "./site-assets/garden.jpg";
+import gruntFull from "./site-assets/grunt.jpg";
+import snortFull from "./site-assets/snort.jpg";
 
 import aboutGardenThumb from "./site-assets/about-garden-thumb.jpeg";
 import aboutGruntThumb from "./site-assets/about-grunt-thumb.jpeg";
@@ -88,6 +88,7 @@ import xylemFavicon from "./site-assets/favicon-xylem.png";
 import kendallFavicon from "./site-assets/favicon-kendall.png";
 import riverCityFavicon from "./site-assets/favicon-river-city.png";
 import canopyFavicon from "./site-assets/favicon-canopy.png";
+import aiCreativeHero from "./site-assets/Hand-Drawn Owl Poster in Navy.png";
 
 type Asset = StaticImageData;
 
@@ -97,6 +98,7 @@ export const siteAssets: {
   portfolio: Record<string, Asset>;
   caseStudies: Record<string, Asset>;
   social: Record<string, Asset>;
+  resources: Record<string, Asset>;
 } = {
   about: {
     abstractPaintingBg,
@@ -111,6 +113,9 @@ export const siteAssets: {
   },
   experience: {
     elixir: experienceElixir,
+  },
+  resources: {
+    aiCreativeHero,
   },
   portfolio: {
     angryWoodlandThumb,

@@ -1,0 +1,28 @@
+.resources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spc-l);
+}
+
+.resources h3 {
+  font-size: var(--heading-font-size-s);
+}
+
+.resourceCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.resourceAction {
+  align-self: flex-start;
+  margin-top: auto;
+  max-width: 100%;
+}
+
+@media (width <= 54.375rem) {
+  .resources {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spc-m);
+  }
+}

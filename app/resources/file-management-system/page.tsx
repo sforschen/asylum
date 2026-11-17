@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import FileManagementResourceBuilder from "./FileManagementResourceBuilder";
+import CtaSection from "../../../components/CtaSection";
 import { siteDocuments } from "../../../content/siteDocuments";
 
 export const metadata: Metadata = {
@@ -43,6 +44,14 @@ export default function FileManagementSystemResourcePage() {
       </section>
 
       <FileManagementResourceBuilder />
+      <CtaSection
+        title="Keep your creative work moving"
+        href="/resources/prompt-lab"
+        buttonLabel="Explore Prompt Lab"
+      >
+        Use simple tasks to inspect file organization, strategic prompts to agree on naming rules, and workflows
+        to connect the work while keeping your experience and judgment in the process.
+      </CtaSection>
     </main>
   );
 }
