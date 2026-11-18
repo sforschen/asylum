@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, Idea, UserMultiple, WorkflowAutomation } from "@carbon/icons-react";
 
 import PromptLibrary from "../../../components/prompt-lab/PromptLibrary";
@@ -22,7 +21,7 @@ export default function PromptLabPage() {
       <div className={`page-container ${styles.container}`}>
         <section className={styles.hero} aria-labelledby="prompt-lab-title">
           <div>
-            <p className="page-kicker">A creative toolkit by You Need Serenity</p>
+            <p className="page-kicker">A creative toolkit</p>
             <h1 id="prompt-lab-title">Prompt Lab<span>Better inputs.<br />More human work.</span></h1>
             <p className={styles.lead}>A place for designers and marketers to use AI with purpose. Bring your experience, explore a direction, and build something that still sounds and feels like you.</p>
             <div className={styles.actions}>
@@ -31,13 +30,6 @@ export default function PromptLabPage() {
             </div>
             <p className={styles.heroMeta}>{simpleTasks.length} simple tasks · {prompts.length} strategic prompts · {promptWorkflows.length} workflows</p>
           </div>
-          <aside className={styles.featured} aria-labelledby="featured-prompt-title">
-            <p className={styles.stepNumber}>See the tiers working together</p>
-            <div className={styles.featuredIcon}><WorkflowAutomation size={56} aria-hidden="true" /></div>
-            <h2 id="featured-prompt-title">From approved photos to delivery-ready assets.</h2>
-            <p>Plan the work, resize around the focal point, check the exports, and create an inventory. You choose the direction and review the handoffs.</p>
-            <Link href="/resources/prompt-lab/workflows/image-production" className={styles.textAction}>Follow the image workflow <ArrowRight size={18} aria-hidden="true" /></Link>
-          </aside>
         </section>
       </div>
       <ContentSection

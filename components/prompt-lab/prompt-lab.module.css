@@ -10,10 +10,7 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: center;
+  max-width: var(--max-copy-width);
 }
 
 .hero h1 {
@@ -61,25 +58,6 @@
   margin-top: 1.5rem;
   font-size: 0.8rem;
   color: var(--lab-muted);
-}
-
-.featured {
-  border: 1px solid var(--clr-light-blue);
-  border-top: 5px solid var(--clr-green);
-  border-radius: var(--radius-card);
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-  background: var(--clr-lighter-blue);
-}
-
-.featured h2 {
-  font-size: clamp(1.6rem, 2.7vw, 2.1rem);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.featuredIcon {
-  color: var(--clr-light-blue);
-  padding-block: 1.5rem;
 }
 
 .stepNumber {
@@ -629,7 +607,6 @@
 }
 
 @media (width <= 62rem) {
-  .hero { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem; }
   .promptGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .searchField { grid-column: 1 / -1; }
@@ -638,9 +615,8 @@
 }
 
 @media (width <= 42rem) {
-  .hero, .tierGrid, .workflowGrid, .promptGrid, .contextGrid, .filters { grid-template-columns: minmax(0, 1fr); }
+  .tierGrid, .workflowGrid, .promptGrid, .contextGrid, .filters { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { font-size: clamp(2.7rem, 12vw, 4.5rem); }
-  .featuredIcon { padding-block: 1rem; }
   .formPanel, .previewPanel, .filters { padding: 1.25rem; }
   .yourPart { border-left: 0; border-top: 3px solid var(--clr-green); }
   .workflowSection, .librarySection, .builderSection { padding-top: 3rem; }
