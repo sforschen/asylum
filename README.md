@@ -38,7 +38,7 @@ Transcription, folder organization, and asset inventories need no form input. Im
 and export formats; delivery checks ask for specs; alt text asks for page context; copy formatting asks for
 formats and limits. Visitors provide their actual source material in their AI tool and can edit the copied
 prompt for more advanced requirements.
-All 24 strategic prompts also use a three-step guide and one task-specific prompt, with a single field for
+All 25 strategic prompts also use a three-step guide and one task-specific prompt, with a single field for
 goals and requirements. Optional calendar pickers appear only for production, campaign, editorial, email,
 intake, approval, and capacity planning. Typography also retains editable starter content and customization
 tips. Visitors upload, link, or paste source material directly in their AI assistant; they do not repeat it
@@ -47,6 +47,11 @@ Workflows have dedicated pages with ordered steps, human checks, and explicit ha
 Search, tier/category/workflow filters, examples, copying, TXT downloads, and instruction-only `SKILL.md`
 exports run without an AI API or database. The website does not inspect visitors' files or execute the tasks.
 Project entries stay in component state; they are not saved across visits or passed to external AI tools.
+
+The website accessibility audit prompt in Web & UX defaults to WCAG 2.2 Level AA. It requests findings
+by page and section with evidence, criterion references, priority, specific fixes, and retest steps,
+and keeps unverified findings and untested coverage explicit. The AI assistant using the prompt needs
+access to the actual website or supplied evidence; Prompt Lab itself does not scan websites.
 
 - Edit strategic prompts and categories in `lib/prompt-lab/prompts.ts`, simple tasks in `lib/prompt-lab/tasks.ts`,
   and combined workflow steps in `lib/prompt-lab/library.ts`.
