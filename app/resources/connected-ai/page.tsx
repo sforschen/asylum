@@ -46,7 +46,7 @@ export default function ConnectedAiPage() {
 
       <section className="page-container page-section-content" aria-labelledby="practical-examples">
         <h2 id="practical-examples">Practical ways to connect the work</h2>
-        <p className={styles.sectionLead}>These are example workflows to adapt to your tools. Each one shows the connections, a useful result, and the judgment that stays with you. Open the handoff details for the setup and a simpler way to start.</p>
+        <p className={styles.sectionLead}>These are example workflows to adapt to your tools. Each one shows the connections, a useful result, and the judgment that stays with you. Open the ‘How it works’ dropdown for setup instructions and a simpler way to start.</p>
         <nav className={styles.jumpLinks} aria-label="Example categories">{exampleGroups.map((group) => <a key={group.id} href={`#${group.id}`}>{group.title}</a>)}</nav>
 
         {exampleGroups.map((group) => (
